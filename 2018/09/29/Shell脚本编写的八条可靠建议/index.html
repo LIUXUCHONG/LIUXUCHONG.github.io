@@ -126,13 +126,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Centos7和Centos6.5密码破解
+                        Shell脚本编写的八条可靠建议
                     </div>
                 </div>
             </div>
@@ -156,13 +156,23 @@
             <hr>
             <div class="card-content article-card-content">
                 <div id="articleContent">
-                    <p>昨天做检测流量抓取的时候用到一个服务器，但是由于密码是已经工作的学长设置的，问了问学长管理员的密码是什么，然后试了试不对，自己也猜了好多次也不对，最后一怒之下决定破解密码，下面就是破解Centos7的过程。</p>
-<p><strong>一、</strong><br>1.在这个页面按E  注意时间一定要在5秒（图片最下方有秒数）如果不能准确把握好时间可以开机一直不停的摁E<br><img src="/2018/09/29/Centos7和Centos6-5密码破解/1.png" alt=""><br>2.进入到如下页面后摁↓方向键找到“LANG=ZH-CN.UTF-8”,在这个命令后面输入“rd.break”，完成之后按ctrl+X进入<br><img src="/2018/09/29/Centos7和Centos6-5密码破解/2.png" alt=""><br>3.进入此界面按下图所示操作<br><img src="/2018/09/29/Centos7和Centos6-5密码破解/3.png" alt=""><br>4.重启后耐心等待出现登陆界面即可</p>
-<p><strong>二、</strong><br>出于好奇心在被破解的服务器转了一圈发现了一些centos6虚拟机，由于前面破解成功的喜悦心情，忍不住再想破解一次，说干就干<br><img src="/2018/09/29/Centos7和Centos6-5密码破解/4.png" alt=""><br>1.在开机启动的时候快速按键盘上的“E”键 或者“ESC”键（如果做不到精准快速可以在启动前一直按着或者不停的按），会进入如下界面。如果你的有多个操作系统就会出现多个内核，就会出现多个选项<br><img src="/2018/09/29/Centos7和Centos6-5密码破解/5.png" alt=""></p>
-<ol start="2">
-<li>选择你忘记密码的内核，再次按“E”，出现下图，选择第二项，再次按“E”键，第二项的名称会根据个人的设置有些小差异，但是以kernel开头，一般选择第二项就是了<br><img src="/2018/09/29/Centos7和Centos6-5密码破解/6.png" alt=""><br>3 经过第二步，这个画面可以编辑，在信息的最后加“空格”，直接输入数字的“1”（如图）或者 键入“single”也行，回车确定进入下一步<br><img src="/2018/09/29/Centos7和Centos6-5密码破解/7.png" alt=""><br>这里会根据个人的配置不同显示的信息不同，但是没关系，直接在quiet后面加就行<br><img src="/2018/09/29/Centos7和Centos6-5密码破解/8.png" alt=""><br>4 操作完第三步，会出现下图，是不是感觉又回到第二步了呢？并不是，这里按键盘的”B”键，进入引导系统，耐心等待一小段时间<br><img src="/2018/09/29/Centos7和Centos6-5密码破解/9.png" alt=""><br>5 在下面这个画面中的“#”后输入“passwd root”，重新设置root的密码，密码输入一遍，确认输入一遍，共2遍，然后输入reboot重启系统，root密码重置就完成了<br><img src="/2018/09/29/Centos7和Centos6-5密码破解/10.png" alt=""><br>如下：输入新密码时，可能会提示新密码太简单，同样我们忽略它即可<br><img src="/2018/09/29/Centos7和Centos6-5密码破解/11.png" alt=""><br> 以上即是Centos7和centos6破解管理员密码的方法<pre><code>。。。从前车马很慢，书信很远，一生只够爱一个人！
-</code></pre></li>
-</ol>
+                    <p><strong>1. 指定bash</strong></p>
+<p>shell 脚本的第一行，#!之后应该是什么？如果拿这个问题去问别人，不同的人的回答可能各不相同。<br>我见过/usr/bin/env bash，也见过/bin/bash，还有/usr/bin/bash，还有/bin/sh，还有/usr/bin/env sh。这算是编程界的“’茴’字四种写法”了。<br>在多数情况下，以上五种写法都是等价的。但是，写过程序的人都知道：“少数情况”里往往隐藏着意想不到的坑。<br>如果系统的默认 shell 不是 bash 怎么办？比如某 Linux 发行版的某个版本，默认的 sh 就不是 bash。<br>如果系统的 bash 不是在 /usr/bin/bash 怎么办？<br>我推荐使用 /usr/bin/env bash 和 /bin/bash。前者通过env添加一个中间层，让env在$PATH中搜索bash；后者则是官方背书的，约定俗成的 bash 位置，/usr/bin/bash不过是指向它的一个符号链接。</p>
+<p><strong>2. set -e 和 set -x</strong></p>
+<p>OK，经过一番讨论，现在第一行定下来了。接下来该开始写第二行了吧？<br>且慢！在你开始构思并写下具体的代码逻辑之前，先插入一行set -e和一行set -x。<br>set -x会在执行每一行 shell 脚本时，把执行的内容输出来。它可以让你看到当前执行的情况，里面涉及的变量也会被替换成实际的值。<br>set -e会在执行出错时结束程序，就像其他语言中的“抛出异常”一样。（准确说，不是所有出错的时候都会结束程序，见下面的注）<br>注：set -e结束程序的条件比较复杂，在man bash里面，足足用了一段话描述各种情景。大多数执行都会在出错时退出，除非 shell 命令位于以下情况：<br>一个 pipeline 的非结尾部分，比如 error | ok<br>一个组合语句的非结尾部分，比如 ok &amp;&amp; error || other<br>一连串语句的非结尾部分，比如 error; ok<br>位于判断语句内，包括test、if、while等等。<br>这两个组合在一起用，可以在 debug 的时候替你节省许多时间。出于防御性编程的考虑，有必要在写第一行具体的代码之前就插入它们。扪心自问，写代码的时候能够一次写对的次数有多少？大多数代 码，在提交之前，通常都经历过反复调试修改的过程。与其在焦头烂额之际才引入这两个配置，不如一开始就给 debug 留下余地。在代码终于可以提交之后，再考虑是否保留它们也不迟。</p>
+<p><strong>3. 带上shellcheck</strong></p>
+<p>好了，现在我已经有了三行（样板）代码，具体的业务逻辑一行都没写呢。是不是该开始写了？<br>且慢！工欲善其事，必先利其器。这次，我就介绍一个 shell 脚本编写神器：shellcheck<br>说来惭愧，虽然写了几年 shell 脚本，有些语法我还是记不清楚。这时候就要依仗 shellcheck 指点一下了。shellcheck 除了可以提醒语法问题以外，还能检查出 shell 脚本编写常见的 bad code。本来我的N条建议里面，还有几条是关于这些 bad code 的，不过考虑到 shellcheck 完全可以发掘出这些问题，于是忍痛把它们都剔除在外了。毫无疑问，使用 shellcheck 给我的 shell 编写技能带来了巨大的飞跃。<br>所谓“站在巨人的肩膀上”，虽然我们这些新兵蛋子，技能不如老兵们强，但是我们可以在装备上赶上对方啊！动动手安装一下，就能结识一个循循善诱的“老师”，何乐而不为？<br>顺便一提，shellcheck 居然是用 haskell 写的。谁说 haskell 只能用来装逼？</p>
+<p><strong>4. 变量展开</strong></p>
+<p>在 shell 脚本中，偶尔可以看到这样的做法：echo $xxx | awk/sed/grep/cut… 。看起来大张形势的样子，其实不过是想修改一个变量的值。杀鸡何必用牛刀？bash内建的变量展开机制已经足以满足你各种需求！还是老方法， read the f**k manaul! man bash 然后搜索Parameter Expansion，下面就是你想要的技巧。 </p>
+<p><strong>5. 注意local</strong></p>
+<p>随着代码越写越多，你开始把重复的逻辑提炼成函数。有可能你会掉到bash的一个坑里。在bash，如果不加 local 限定词，变量默认都是全局的。变量默认全局——这跟 js 和 lua 相似；但相较而言，很少有 bash 教程一开始就告知你这个事实。在顶级作用域里，是否是全局变量并不重要。但是在函数里面，声明一个全局变量可能会污染到其他作用域（尤其在你根本没有注意 到这一点的情况下）。所以，对于在函数内声明的变量，请务必记得加上 local 限定词。</p>
+<p><strong>6. trap信号</strong></p>
+<p>如果你写过稍微复杂点的在后台运行的程序，应该知道 posix 标准里面“信号”是什么一回事。如果不知道，直接看下一段。像其他语言一样，shell 也支持处理信号。trap sighandler INT可以在接收到 SIGINT 时调用 sighandler 函数。捕获其他信号的方式以此类推。<br>不过 trap 的主要应用场景可不是捕获哪个信号。trap 命令支持“捕获”许多不同的流程——准确来说，允许用户给特定的流程注入函数调用。其中最为常用的是trap func EXIT和trap func ERR。<br>trap func EXIT允许在脚本结束时调用函数。由于无论正常退出抑或异常退出，所注册的函数都能得以调用，在需要调用一个清理函数的场景下，我都是用它注册清理函数，而不是简单地在脚本结尾调用清理函数。<br>trap func ERR允许在运行出错时调用函数。一个常用的技法是，使用全局变量ERROR存储错误信息，然后在 注册的函数中根据存储的值完成对应的错误报告。把原本四分五裂的错误处理逻辑集中到一处，有时候会起奇效。不过要记住，程序异常退出时，既会调用EXIT 注册的函数，也会调用ERR注册的函数。</p>
+<p><strong>7. 三思后行</strong></p>
+<p>以上几条都是具体的建议，剩下两条比较务虚。<br>这条建议的名字叫“三思而行”。其实无论写什么代码，哪怕只是一个辅助脚本，都要三思而行，切忌粗心大意。不，写脚本的时候更要记住这点。毕竟许多 时候，一个复杂的脚本发端于几行小小的命令。一开始写这个脚本的人，也许以为它只是一次性任务。代码里难免对一些外部条件有些假定，在当时也许是正常的， 但是随着外部环境的变化，这些就成了隐藏的暗礁。雪上加霜的是，几乎没有人会给脚本做测试。除非你去运行它，否则不知道它是否还能正常使用。<br>要想减缓脚本代码的腐烂速度，需要在编写的时候辨清哪些是会变的依赖、哪些是脚本正常运行所不可或缺的。要有适当的抽象，编写可变更的代码；同时要有防御性编程的意识，给自己的代码一道护城河。</p>
+<p><strong>8. 扬长避短</strong></p>
+<p>有些时候，使用 shell 写脚本就意味着难以移植、难以统一地进行错误处理、难以利索地处理数据。<br>虽然使用外部的命令可以方便快捷地实现各种复杂的功能，但作为硬币的反面，不得不依靠grep、sed、awk等各种工具把它们粘合在一起。<br>如果有兼容多平台的需求，还得小心规避诸如BSD和GNU coreutils，bash版本差异之类奇奇怪怪的陷阱。<br>由于缺乏完善的数据结构以及一致的API，shell 脚本在处理复杂的逻辑上力不从心。<br>解决特定的问题要用合适的工具。知道什么时候用 shell，什么时候切换到另外一门更通用的脚本语言（比如ruby/python/perl），这也是编写可靠 shell 脚本的诀窍。如果你的任务可以组合常见的命令来完成，而且只涉及简单的数据，那么 shell 脚本就是适合的锤子。如果你的任务包含较为复杂的逻辑，而且数据结构复杂，那么你需要用ruby/python之类的语言编写脚本。</p>
+<p><img src="/2018/09/29/Shell脚本编写的八条可靠建议/1.png" alt=""></p>
 
                 </div>
                 <hr/>
@@ -182,7 +192,7 @@
                         <span class="reprint-tip">Reprint please specify: </span>
                         <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
                         <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                        <a href="/2018/09/29/Centos7和Centos6-5密码破解/" class="b-link-green">Centos7和Centos6.5密码破解</a>
+                        <a href="/2018/09/29/Shell脚本编写的八条可靠建议/" class="b-link-green">Shell脚本编写的八条可靠建议</a>
                     </p>
                 </div>
             </div>
@@ -199,7 +209,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Sat Sep 29 2018 12:48:51 GMT+0800',
+    id: 'Sat Sep 29 2018 19:18:59 GMT+0800',
     owner: 'blinkfox',
     repo: 'blinkfox.github.io',
     oauth: {
@@ -219,8 +229,8 @@ gitment.render('gitment-content');
 <article id="articles" class="container prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">Previous</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">Current</div>
             <div class="card">
                 <a href="/2018/09/29/Shell脚本编写的八条可靠建议/">
                     <div class="card-image">
@@ -230,11 +240,10 @@ gitment.render('gitment-content');
                         
                         <span class="card-title">Shell脚本编写的八条可靠建议</span>
                     </div>
+
                     <div class="card-content article-content">
-                        <div class="summary">
-                            1. 指定bash
-shell 脚本的第一行，#!之后应该是什么？如果拿这个问题去问别人，不同的人的回答可能各不相同。我见过/usr/bin/env bash，也见过/bin/bash，还有/usr/bin/bash，还有/bin/sh，还
-                        </div>
+                        <div class="summary">1. 指定bash
+shell 脚本的第一行，#!之后应该是什么？如果拿这个问题去问别人，不同的人的回答可能各不相同。我见过/usr/bin/env bash，也见过/bin/bash，还有/usr/bin/bash，还有/bin/sh，还</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-calendar fa-fw"></i>2018-09-29
@@ -247,6 +256,7 @@ shell 脚本的第一行，#!之后应该是什么？如果拿这个问题去问
                             </span>
                         </div>
                     </div>
+
                     
                 </a>
             </div>
@@ -256,21 +266,22 @@ shell 脚本的第一行，#!之后应该是什么？如果拿这个问题去问
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">Next</div>
             <div class="card">
-                <a href="/2018/09/28/Windows10系统安装-NET-Framework-3-5/">
+                <a href="/2018/09/29/Centos7和Centos6-5密码破解/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Windows10系统安装 .NET Framework 3.5">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Centos7和Centos6.5密码破解">
                         
-                        <span class="card-title">Windows10系统安装 .NET Framework 3.5</span>
+                        <span class="card-title">Centos7和Centos6.5密码破解</span>
                     </div>
                     <div class="card-content article-content">
                         <div class="summary">
-                            1、获取压缩包点击链接获取： https://pan.baidu.com/s/1wfOA3lnOcr9e3TCE-61Zfg密码：ytax2、解压包将下载的NET Framework 3.5.zip解压，解压后如下图3、移动文件将解压得到【
+                            昨天做检测流量抓取的时候用到一个服务器，但是由于密码是已经工作的学长设置的，问了问学长管理员的密码是什么，然后试了试不对，自己也猜了好多次也不对，最后一怒之下决定破解密码，下面就是破解Centos7的过程。
+一、1.在这个页面按E  注意时
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-calendar fa-fw"></i>2018-09-28
+                                <i class="fa fa-calendar fa-fw"></i>2018-09-29
                             </span>
                             <span class="publish-author">
                                 <i class="fa fa-user fa-fw"></i>
