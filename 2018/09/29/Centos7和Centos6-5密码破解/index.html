@@ -126,13 +126,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Windows10系统安装 .NET Framework 3.5
+                        Centos7和Centos6.5密码破解
                     </div>
                 </div>
             </div>
@@ -149,15 +149,20 @@
                 
                 <div class="author-info">
                     <span>
-                        <i class="fa fa-calendar fa-fw"></i>2018-09-28
+                        <i class="fa fa-calendar fa-fw"></i>2018-09-29
                     </span>
                 </div>
             </div>
             <hr>
             <div class="card-content article-card-content">
                 <div id="articleContent">
-                    <p><strong>1、获取压缩包</strong><br>点击链接获取： <a href="https://pan.baidu.com/s/1wfOA3lnOcr9e3TCE-61Zfg" target="_blank" rel="noopener">https://pan.baidu.com/s/1wfOA3lnOcr9e3TCE-61Zfg</a><br>密码：ytax<br><img src="/2018/09/28/Windows10系统安装-NET-Framework-3-5/1.png" alt=""><br><strong>2、解压包</strong><br>将下载的NET Framework 3.5.zip解压，解压后如下图<br><img src="/2018/09/28/Windows10系统安装-NET-Framework-3-5/2.png" alt=""><br><strong>3、移动文件</strong><br>将解压得到【sxs】文件夹复制到C盘根目录（用完可以删除）<br><img src="/2018/09/28/Windows10系统安装-NET-Framework-3-5/3.png" alt=""><br><strong>4、运行</strong><br>右键&gt; 以管理员身份运行&gt; NET Framework 3.5，完成</p>
-<p>温馨提示：一定要【右键】以管理员身份运行NET Framework 3.5<br><img src="/2018/09/28/Windows10系统安装-NET-Framework-3-5/4.png" alt=""><br><strong>5、等待完成</strong><br>随后会出现一个黑框，等到100%就完成了！有时速度会很快，闪一下就过去了<br><img src="/2018/09/28/Windows10系统安装-NET-Framework-3-5/5.png" alt=""><br>O……K!!!</p>
+                    <p>昨天做检测流量抓取的时候用到一个服务器，但是由于密码是已经工作的学长设置的，问了问学长管理员的密码是什么，然后试了试不对，自己也猜了好多次也不对，最后一怒之下决定破解密码，下面就是破解Centos7的过程。</p>
+<p><strong>一、</strong><br>1.在这个页面按E  注意时间一定要在5秒（图片最下方有秒数）如果不能准确把握好时间可以开机一直不停的摁E<br><img src="/2018/09/29/Centos7和Centos6-5密码破解/1.png" alt=""><br>2.进入到如下页面后摁↓方向键找到“LANG=ZH-CN.UTF-8”,在这个命令后面输入“rd.break”，完成之后按ctrl+X进入<br><img src="/2018/09/29/Centos7和Centos6-5密码破解/2.png" alt=""><br>3.进入此界面按下图所示操作<br><img src="/2018/09/29/Centos7和Centos6-5密码破解/3.png" alt=""><br>4.重启后耐心等待出现登陆界面即可</p>
+<p><strong>二、</strong><br>出于好奇心在被破解的服务器转了一圈发现了一些centos6虚拟机，由于前面破解成功的喜悦心情，忍不住再想破解一次，说干就干<br><img src="/2018/09/29/Centos7和Centos6-5密码破解/4.png" alt=""><br>1.在开机启动的时候快速按键盘上的“E”键 或者“ESC”键（如果做不到精准快速可以在启动前一直按着或者不停的按），会进入如下界面。如果你的有多个操作系统就会出现多个内核，就会出现多个选项<br><img src="/2018/09/29/Centos7和Centos6-5密码破解/5.png" alt=""></p>
+<ol start="2">
+<li>选择你忘记密码的内核，再次按“E”，出现下图，选择第二项，再次按“E”键，第二项的名称会根据个人的设置有些小差异，但是以kernel开头，一般选择第二项就是了<br><img src="/2018/09/29/Centos7和Centos6-5密码破解/6.png" alt=""><br>3 经过第二步，这个画面可以编辑，在信息的最后加“空格”，直接输入数字的“1”（如图）或者 键入“single”也行，回车确定进入下一步<br><img src="/2018/09/29/Centos7和Centos6-5密码破解/7.png" alt=""><br>这里会根据个人的配置不同显示的信息不同，但是没关系，直接在quiet后面加就行<br><img src="/2018/09/29/Centos7和Centos6-5密码破解/8.png" alt=""><br>4 操作完第三步，会出现下图，是不是感觉又回到第二步了呢？并不是，这里按键盘的”B”键，进入引导系统，耐心等待一小段时间<br><img src="/2018/09/29/Centos7和Centos6-5密码破解/9.png" alt=""><br>5 在下面这个画面中的“#”后输入“passwd root”，重新设置root的密码，密码输入一遍，确认输入一遍，共2遍，然后输入reboot重启系统，root密码重置就完成了<br><img src="/2018/09/29/Centos7和Centos6-5密码破解/10.png" alt=""><br>如下：输入新密码时，可能会提示新密码太简单，同样我们忽略它即可<br><img src="/2018/09/29/Centos7和Centos6-5密码破解/11.png" alt=""><br> 以上即是Centos7和centos6破解管理员密码的方法<pre><code>。。。从前车马很慢，书信很远，一生只够爱一个人！
+</code></pre></li>
+</ol>
 
                 </div>
                 <hr/>
@@ -177,7 +182,7 @@
                         <span class="reprint-tip">Reprint please specify: </span>
                         <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
                         <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                        <a href="/2018/09/28/Windows10系统安装-NET-Framework-3-5/" class="b-link-green">Windows10系统安装 .NET Framework 3.5</a>
+                        <a href="/2018/09/29/Centos7和Centos6-5密码破解/" class="b-link-green">Centos7和Centos6.5密码破解</a>
                     </p>
                 </div>
             </div>
@@ -194,7 +199,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Fri Sep 28 2018 11:57:24 GMT+0800',
+    id: 'Sat Sep 29 2018 12:48:51 GMT+0800',
     owner: 'blinkfox',
     repo: 'blinkfox.github.io',
     oauth: {
@@ -214,8 +219,8 @@ gitment.render('gitment-content');
 <article id="articles" class="container prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">Previous</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">Current</div>
             <div class="card">
                 <a href="/2018/09/29/Centos7和Centos6-5密码破解/">
                     <div class="card-image">
@@ -225,11 +230,10 @@ gitment.render('gitment-content');
                         
                         <span class="card-title">Centos7和Centos6.5密码破解</span>
                     </div>
+
                     <div class="card-content article-content">
-                        <div class="summary">
-                            昨天做检测流量抓取的时候用到一个服务器，但是由于密码是已经工作的学长设置的，问了问学长管理员的密码是什么，然后试了试不对，自己也猜了好多次也不对，最后一怒之下决定破解密码，下面就是破解Centos7的过程。
-一、1.在这个页面按E  注意时
-                        </div>
+                        <div class="summary">昨天做检测流量抓取的时候用到一个服务器，但是由于密码是已经工作的学长设置的，问了问学长管理员的密码是什么，然后试了试不对，自己也猜了好多次也不对，最后一怒之下决定破解密码，下面就是破解Centos7的过程。
+一、1.在这个页面按E  注意时</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-calendar fa-fw"></i>2018-09-29
@@ -242,6 +246,7 @@ gitment.render('gitment-content');
                             </span>
                         </div>
                     </div>
+
                     
                 </a>
             </div>
@@ -251,22 +256,21 @@ gitment.render('gitment-content');
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">Next</div>
             <div class="card">
-                <a href="/2018/09/26/forget-mysql-password-1/">
+                <a href="/2018/09/28/Windows10系统安装-NET-Framework-3-5/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="forget-mysql-password">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Windows10系统安装 .NET Framework 3.5">
                         
-                        <span class="card-title">forget-mysql-password</span>
+                        <span class="card-title">Windows10系统安装 .NET Framework 3.5</span>
                     </div>
                     <div class="card-content article-content">
                         <div class="summary">
-                            1．首先确认服务器出于安全的状态，也就是没有人能够任意地连接MySQL数据库。 
- 因为在重新设置MySQL的root密码的期间，MySQL数据库完全出于没有密码保护的状态下，其他的用户也可以任意地登录和修改MySQL的信息。可以采用将My
+                            1、获取压缩包点击链接获取： https://pan.baidu.com/s/1wfOA3lnOcr9e3TCE-61Zfg密码：ytax2、解压包将下载的NET Framework 3.5.zip解压，解压后如下图3、移动文件将解压得到【
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-calendar fa-fw"></i>2018-09-26
+                                <i class="fa fa-calendar fa-fw"></i>2018-09-28
                             </span>
                             <span class="publish-author">
                                 <i class="fa fa-user fa-fw"></i>
