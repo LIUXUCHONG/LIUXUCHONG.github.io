@@ -126,13 +126,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Kali下 root 用户无法远程登录
+                        VMWare ESXi上传iso镜像文件
                     </div>
                 </div>
             </div>
@@ -149,22 +149,16 @@
                 
                 <div class="author-info">
                     <span>
-                        <i class="fa fa-calendar fa-fw"></i>2018-09-30
+                        <i class="fa fa-calendar fa-fw"></i>2018-10-07
                     </span>
                 </div>
             </div>
             <hr>
             <div class="card-content article-card-content">
                 <div id="articleContent">
-                    <p>网络安全培训期间偶遇了kali这个神奇的系统，决定远程登录玩一玩，可是就是远程不了，上网查了查发现由于Kali采用的是 debian的内核, 默认情况下是无法通ssh 远程登录 root 用户<br>需要修改 ssh 的配置文件<br><strong>一、配置SSH参数</strong><br>修改sshd_config文件，命令为：<br>vi /etc/ssh/sshd_config<br>将#PasswordAuthentication no的注释去掉，并且将NO修改为YES，kali中默认是yes<br>右击桌面，单击打开终端，输入命令<br><img src="/2018/09/30/Kali下-root-用户无法远程登录/1.png" alt=""><br><img src="/2018/09/30/Kali下-root-用户无法远程登录/16.png" alt=""></p>
-<p>在此提示页面直接回车<br><img src="/2018/09/30/Kali下-root-用户无法远程登录/2.png" alt=""></p>
-<p>输入“/”后面加上你要找的内容可以快速匹配到<br><img src="/2018/09/30/Kali下-root-用户无法远程登录/3.png" alt=""></p>
-<p><img src="/2018/09/30/Kali下-root-用户无法远程登录/4.png" alt=""><br>将PermitRootLogin without-password修改为<br>PermitRootLogin yes<br><img src="/2018/09/30/Kali下-root-用户无法远程登录/5.png" alt=""><br>保存wq，退出vim，会提示下图，我们在wq后面加上！强制保存退出</p>
-<p><img src="/2018/09/30/Kali下-root-用户无法远程登录/6.png" alt=""><br><img src="/2018/09/30/Kali下-root-用户无法远程登录/7.png" alt=""></p>
-<p><strong>二、启动SSH服务</strong><br>命令为：<br>/etc/init.d/ssh start<br>或者<br>service ssh start<br>查看SSH服务状态是否正常运行，命令为<br>/etc/init.d/ssh status<br>或者<br>service ssh status<br><img src="/2018/09/30/Kali下-root-用户无法远程登录/8.png" alt=""><br><strong>三、使用SSH登录工具（Putty\SecureCRT\XShell）登录kali</strong><br><img src="/2018/09/30/Kali下-root-用户无法远程登录/9.png" alt=""><br><img src="/2018/09/30/Kali下-root-用户无法远程登录/10.png" alt=""><br><img src="/2018/09/30/Kali下-root-用户无法远程登录/11.png" alt=""><br>输入用户名、密码后，如果使用SSH连接工具还是连不上kali ，如下图所示<br><img src="/2018/09/30/Kali下-root-用户无法远程登录/12.png" alt=""><br>那么需要生成两个密钥：</p>
-<p>#ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key</p>
-<p>#ssh-keygen -t dsa -f /etc/ssh/ssh_host_rsa_key<br>执行命令后都会让输入密码，直接敲回车设置为空即可<br><img src="/2018/09/30/Kali下-root-用户无法远程登录/13.png" alt=""><br>再使用xshell工具重新连接kali，连接成功！！！<br><img src="/2018/09/30/Kali下-root-用户无法远程登录/14.png" alt=""><br><strong>四、设置系统自动启动SSH服务</strong><br>方法一：<br>sysv-rc-conf<br>sysv-rc-conf –list | grep ssh<br>sysv-rc-conf ssh on  //系统自动启动SSH服务<br>sysv-rc-conf ssh off  // 关闭系统自动启动SSH服务<br>方法二：<br>update-rc.d ssh enable  //系统自动启动SSH服务<br>update-rc.d ssh disabled // 关闭系统自动启动SSH服务<br><img src="/2018/09/30/Kali下-root-用户无法远程登录/15.png" alt=""></p>
-<p>。。。从前车马很慢，书信很远，一生只够爱一个人！</p>
+                    <p>打开VMware vSphere Client客户端连接到VMware ESXi</p>
+<p>打开右侧【摘要】选项卡<br><img src="/2018/10/07/VMWare-ESXi上传iso镜像文件/1.png" alt=""></p>
+<p>点击创建文件夹<br><img src="/2018/10/07/VMWare-ESXi上传iso镜像文件/2.png" alt=""><br>选择上传文件<br><img src="/2018/10/07/VMWare-ESXi上传iso镜像文件/3.png" alt=""><br>选择你要上传的镜像并确定<br><img src="/2018/10/07/VMWare-ESXi上传iso镜像文件/4.png" alt=""><br>上传完成<br><img src="/2018/10/07/VMWare-ESXi上传iso镜像文件/5.png" alt=""><br>点击摘要页面的编辑设置<br><img src="/2018/10/07/VMWare-ESXi上传iso镜像文件/6.png" alt=""><br>选择cCD/DVD驱动器1，点击右侧的数据存储ISO文件，浏览<br><img src="/2018/10/07/VMWare-ESXi上传iso镜像文件/7.png" alt=""><br>找到你刚才上传的镜像<br><img src="/2018/10/07/VMWare-ESXi上传iso镜像文件/8.png" alt=""><br><img src="/2018/10/07/VMWare-ESXi上传iso镜像文件/9.png" alt=""><br><img src="/2018/10/07/VMWare-ESXi上传iso镜像文件/10.png" alt=""><br><img src="/2018/10/07/VMWare-ESXi上传iso镜像文件/11.png" alt=""><br>。。。从前车马很慢，书信很远，一生只够爱一个人！</p>
 
                 </div>
                 <hr/>
@@ -184,7 +178,7 @@
                         <span class="reprint-tip">Reprint please specify: </span>
                         <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
                         <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                        <a href="/2018/09/30/Kali下-root-用户无法远程登录/" class="b-link-green">Kali下 root 用户无法远程登录</a>
+                        <a href="/2018/10/07/VMWare-ESXi上传iso镜像文件/" class="b-link-green">VMWare ESXi上传iso镜像文件</a>
                     </p>
                 </div>
             </div>
@@ -201,7 +195,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
     var gitment = new Gitment({
-        id: 'Sun Sep 30 2018 13:41:59 GMT+0800',
+        id: 'Sun Oct 07 2018 15:11:11 GMT+0800',
         owner: 'LIUXUCHONG',
         repo: 'liuxuchong.github.io',
         oauth: {
@@ -221,8 +215,8 @@
 <article id="articles" class="container prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">Previous</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">Current</div>
             <div class="card">
                 <a href="/2018/10/07/VMWare-ESXi上传iso镜像文件/">
                     <div class="card-image">
@@ -232,12 +226,11 @@
                         
                         <span class="card-title">VMWare ESXi上传iso镜像文件</span>
                     </div>
+
                     <div class="card-content article-content">
-                        <div class="summary">
-                            打开VMware vSphere Client客户端连接到VMware ESXi
+                        <div class="summary">打开VMware vSphere Client客户端连接到VMware ESXi
 打开右侧【摘要】选项卡
-点击创建文件夹选择上传文件选择你要上传的镜像并确定上传完成点击摘要页面的编辑设置选择cCD/DVD驱动器1，点击右侧的数据存储ISO文
-                        </div>
+点击创建文件夹选择上传文件选择你要上传的镜像并确定上传完成点击摘要页面的编辑设置选择cCD/DVD驱动器1，点击右侧的数据存储ISO文</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-calendar fa-fw"></i>2018-10-07
@@ -250,6 +243,7 @@
                             </span>
                         </div>
                     </div>
+
                     
                 </a>
             </div>
@@ -259,22 +253,21 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">Next</div>
             <div class="card">
-                <a href="/2018/09/29/Shell脚本编写的八条可靠建议/">
+                <a href="/2018/09/30/Kali下-root-用户无法远程登录/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Shell脚本编写的八条可靠建议">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Kali下 root 用户无法远程登录">
                         
-                        <span class="card-title">Shell脚本编写的八条可靠建议</span>
+                        <span class="card-title">Kali下 root 用户无法远程登录</span>
                     </div>
                     <div class="card-content article-content">
                         <div class="summary">
-                            1. 指定bash
-shell 脚本的第一行，#!之后应该是什么？如果拿这个问题去问别人，不同的人的回答可能各不相同。我见过/usr/bin/env bash，也见过/bin/bash，还有/usr/bin/bash，还有/bin/sh，还
+                            网络安全培训期间偶遇了kali这个神奇的系统，决定远程登录玩一玩，可是就是远程不了，上网查了查发现由于Kali采用的是 debian的内核, 默认情况下是无法通ssh 远程登录 root 用户需要修改 ssh 的配置文件一、配置SSH参数修
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-calendar fa-fw"></i>2018-09-29
+                                <i class="fa fa-calendar fa-fw"></i>2018-09-30
                             </span>
                             <span class="publish-author">
                                 <i class="fa fa-user fa-fw"></i>
