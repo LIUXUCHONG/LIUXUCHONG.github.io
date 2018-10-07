@@ -126,13 +126,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        VMWare ESXi上传iso镜像文件
+                        史上最详细版Centos6安装详细教程
                     </div>
                 </div>
             </div>
@@ -156,9 +156,13 @@
             <hr>
             <div class="card-content article-card-content">
                 <div id="articleContent">
-                    <p>打开VMware vSphere Client客户端连接到VMware ESXi</p>
-<p>打开右侧【摘要】选项卡<br><img src="/2018/10/07/VMWare-ESXi上传iso镜像文件/1.png" alt=""></p>
-<p>点击创建文件夹<br><img src="/2018/10/07/VMWare-ESXi上传iso镜像文件/2.png" alt=""><br>选择上传文件<br><img src="/2018/10/07/VMWare-ESXi上传iso镜像文件/3.png" alt=""><br>选择你要上传的镜像并确定<br><img src="/2018/10/07/VMWare-ESXi上传iso镜像文件/4.png" alt=""><br>上传完成<br><img src="/2018/10/07/VMWare-ESXi上传iso镜像文件/5.png" alt=""><br>点击摘要页面的编辑设置<br><img src="/2018/10/07/VMWare-ESXi上传iso镜像文件/6.png" alt=""><br>选择cCD/DVD驱动器1，点击右侧的数据存储ISO文件，浏览<br><img src="/2018/10/07/VMWare-ESXi上传iso镜像文件/7.png" alt=""><br>找到你刚才上传的镜像<br><img src="/2018/10/07/VMWare-ESXi上传iso镜像文件/8.png" alt=""><br><img src="/2018/10/07/VMWare-ESXi上传iso镜像文件/9.png" alt=""><br><img src="/2018/10/07/VMWare-ESXi上传iso镜像文件/10.png" alt=""><br><img src="/2018/10/07/VMWare-ESXi上传iso镜像文件/11.png" alt=""><br>。。。从前车马很慢，书信很远，一生只够爱一个人！</p>
+                    <p>镜像CentOS-6.8-x86_64-bin-DVD1.ISO<br>将下载好的镜像上传到服务器，并选择该镜像（详情请看上篇exsi镜像上传文章）</p>
+<h2 id="一、安装开始"><a href="#一、安装开始" class="headerlink" title="一、安装开始"></a>一、安装开始</h2><p><img src="/2018/10/07/史上最详细版Centos6安装详细教程/1.png" alt=""><br>开机选择第一项<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/2.png" alt=""><br>这里询问我们是否要对光盘进行校验,这里我们选择  “skip”  跳过<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/3.png" alt=""><br>点击下一步<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/4.png" alt=""></p>
+<h2 id="二、引导设置"><a href="#二、引导设置" class="headerlink" title="二、引导设置"></a>二、引导设置</h2><p>对于英语并不是很好的我来说还是选择中文安装吧<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/5.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/6.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/7.png" alt=""><br>这里警告我们是否放弃所有硬盘数据 ，选择 是<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/8.png" alt=""><br>定义一个主机名<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/9.png" alt=""><br>城市选择上海就ok，注意勾选左下方的小方框<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/10.png" alt=""><br>创建管理员密码，如果密码过于简单会提示，选择无论如何都使用就ok<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/11.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/12.png" alt=""><br>选择创建自定义布局<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/13.png" alt=""></p>
+<h2 id="三、创建分区"><a href="#三、创建分区" class="headerlink" title="三、创建分区"></a>三、创建分区</h2><p>先建立一个/boot 分区  建议200mb空间，步骤如图，后面雷同。<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/14.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/15.png" alt=""><br>再建立一个swap分区 建议大小为内存的1.5倍即可<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/16.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/17.png" alt=""><br>最后我们建立根分区 /  使用所有剩余空间<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/18.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/19.png" alt=""><br>分区完毕,检查分区是否按我们的要求分配.选择下一步<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/20.png" alt=""><br>将要对分区进行格式化操作.选择格式化<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/21.png" alt=""><br>警告我们所有数据将会丢失.选择将改写写入磁盘<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/22.png" alt=""><br>正在对分区进行格式化操作(不可逆)<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/23.png" alt=""></p>
+<h2 id="四、安装包的选择"><a href="#四、安装包的选择" class="headerlink" title="四、安装包的选择"></a>四、安装包的选择</h2><p>勾选第一个 选择下一步<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/24.png" alt=""><br>选择Desktop安装（系统默认最小化安装），自定义安装 。<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/25.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/26.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/27.png" alt=""></p>
+<p>开始安装过程，安装文件包 (需要一些时间) 如果此期间提示错误,请检查安装光盘<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/28.png" alt=""></p>
+<h2 id="五、安装结束，重启，登录系统"><a href="#五、安装结束，重启，登录系统" class="headerlink" title="五、安装结束，重启，登录系统"></a>五、安装结束，重启，登录系统</h2><p><img src="/2018/10/07/史上最详细版Centos6安装详细教程/29.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/30.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/31.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/32.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/33.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/34.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/35.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/36.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/37.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/38.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/39.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/40.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/41.png" alt=""><br>终于完成了，史上最详细版centos6安装教程！<br>。。。从前车马很慢，书信很远，一生只够爱一个人！</p>
 
                 </div>
                 <hr/>
@@ -178,7 +182,7 @@
                         <span class="reprint-tip">Reprint please specify: </span>
                         <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
                         <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                        <a href="/2018/10/07/VMWare-ESXi上传iso镜像文件/" class="b-link-green">VMWare ESXi上传iso镜像文件</a>
+                        <a href="/2018/10/07/史上最详细版Centos6安装详细教程/" class="b-link-green">史上最详细版Centos6安装详细教程</a>
                     </p>
                 </div>
             </div>
@@ -195,7 +199,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
     var gitment = new Gitment({
-        id: 'Sun Oct 07 2018 15:11:11 GMT+0800',
+        id: 'Sun Oct 07 2018 15:49:23 GMT+0800',
         owner: 'LIUXUCHONG',
         repo: 'liuxuchong.github.io',
         oauth: {
@@ -215,8 +219,8 @@
 <article id="articles" class="container prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">Previous</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">Current</div>
             <div class="card">
                 <a href="/2018/10/07/史上最详细版Centos6安装详细教程/">
                     <div class="card-image">
@@ -226,11 +230,10 @@
                         
                         <span class="card-title">史上最详细版Centos6安装详细教程</span>
                     </div>
+
                     <div class="card-content article-content">
-                        <div class="summary">
-                            镜像CentOS-6.8-x86_64-bin-DVD1.ISO将下载好的镜像上传到服务器，并选择该镜像（详情请看上篇exsi镜像上传文章）
-一、安装开始开机选择第一项这里询问我们是否要对光盘进行校验,这里我们选择  “skip”  跳过点
-                        </div>
+                        <div class="summary">镜像CentOS-6.8-x86_64-bin-DVD1.ISO将下载好的镜像上传到服务器，并选择该镜像（详情请看上篇exsi镜像上传文章）
+一、安装开始开机选择第一项这里询问我们是否要对光盘进行校验,这里我们选择  “skip”  跳过点</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-calendar fa-fw"></i>2018-10-07
@@ -243,6 +246,7 @@
                             </span>
                         </div>
                     </div>
+
                     
                 </a>
             </div>
@@ -252,21 +256,23 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">Next</div>
             <div class="card">
-                <a href="/2018/09/30/Kali下-root-用户无法远程登录/">
+                <a href="/2018/10/07/VMWare-ESXi上传iso镜像文件/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Kali下 root 用户无法远程登录">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="VMWare ESXi上传iso镜像文件">
                         
-                        <span class="card-title">Kali下 root 用户无法远程登录</span>
+                        <span class="card-title">VMWare ESXi上传iso镜像文件</span>
                     </div>
                     <div class="card-content article-content">
                         <div class="summary">
-                            网络安全培训期间偶遇了kali这个神奇的系统，决定远程登录玩一玩，可是就是远程不了，上网查了查发现由于Kali采用的是 debian的内核, 默认情况下是无法通ssh 远程登录 root 用户需要修改 ssh 的配置文件一、配置SSH参数修
+                            打开VMware vSphere Client客户端连接到VMware ESXi
+打开右侧【摘要】选项卡
+点击创建文件夹选择上传文件选择你要上传的镜像并确定上传完成点击摘要页面的编辑设置选择cCD/DVD驱动器1，点击右侧的数据存储ISO文
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-calendar fa-fw"></i>2018-09-30
+                                <i class="fa fa-calendar fa-fw"></i>2018-10-07
                             </span>
                             <span class="publish-author">
                                 <i class="fa fa-user fa-fw"></i>
