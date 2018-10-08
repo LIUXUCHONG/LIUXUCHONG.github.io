@@ -126,13 +126,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        史上最详细版Centos6安装详细教程
+                        centos7搭建PXE环境安装CentOS6系统
                     </div>
                 </div>
             </div>
@@ -149,20 +149,61 @@
                 
                 <div class="author-info">
                     <span>
-                        <i class="fa fa-calendar fa-fw"></i>2018-10-07
+                        <i class="fa fa-calendar fa-fw"></i>2018-10-08
                     </span>
                 </div>
             </div>
             <hr>
             <div class="card-content article-card-content">
                 <div id="articleContent">
-                    <p>镜像CentOS-6.8-x86_64-bin-DVD1.ISO<br>将下载好的镜像上传到服务器，并选择该镜像（详情请看上篇exsi镜像上传文章）</p>
-<h2 id="一、安装开始"><a href="#一、安装开始" class="headerlink" title="一、安装开始"></a>一、安装开始</h2><p><img src="/2018/10/07/史上最详细版Centos6安装详细教程/1.png" alt=""><br>开机选择第一项<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/2.png" alt=""><br>这里询问我们是否要对光盘进行校验,这里我们选择  “skip”  跳过<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/3.png" alt=""><br>点击下一步<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/4.png" alt=""></p>
-<h2 id="二、引导设置"><a href="#二、引导设置" class="headerlink" title="二、引导设置"></a>二、引导设置</h2><p>对于英语并不是很好的我来说还是选择中文安装吧<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/5.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/6.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/7.png" alt=""><br>这里警告我们是否放弃所有硬盘数据 ，选择 是<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/8.png" alt=""><br>定义一个主机名<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/9.png" alt=""><br>城市选择上海就ok，注意勾选左下方的小方框<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/10.png" alt=""><br>创建管理员密码，如果密码过于简单会提示，选择无论如何都使用就ok<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/11.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/12.png" alt=""><br>选择创建自定义布局<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/13.png" alt=""></p>
-<h2 id="三、创建分区"><a href="#三、创建分区" class="headerlink" title="三、创建分区"></a>三、创建分区</h2><p>先建立一个/boot 分区  建议200mb空间，步骤如图，后面雷同。<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/14.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/15.png" alt=""><br>再建立一个swap分区 建议大小为内存的1.5倍即可<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/16.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/17.png" alt=""><br>最后我们建立根分区 /  使用所有剩余空间<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/18.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/19.png" alt=""><br>分区完毕,检查分区是否按我们的要求分配.选择下一步<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/20.png" alt=""><br>将要对分区进行格式化操作.选择格式化<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/21.png" alt=""><br>警告我们所有数据将会丢失.选择将改写写入磁盘<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/22.png" alt=""><br>正在对分区进行格式化操作(不可逆)<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/23.png" alt=""></p>
-<h2 id="四、安装包的选择"><a href="#四、安装包的选择" class="headerlink" title="四、安装包的选择"></a>四、安装包的选择</h2><p>勾选第一个 选择下一步<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/24.png" alt=""><br>选择Desktop安装（系统默认最小化安装），自定义安装 。<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/25.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/26.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/27.png" alt=""></p>
-<p>开始安装过程，安装文件包 (需要一些时间) 如果此期间提示错误,请检查安装光盘<br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/28.png" alt=""></p>
-<h2 id="五、安装结束，重启，登录系统"><a href="#五、安装结束，重启，登录系统" class="headerlink" title="五、安装结束，重启，登录系统"></a>五、安装结束，重启，登录系统</h2><p><img src="/2018/10/07/史上最详细版Centos6安装详细教程/29.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/30.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/31.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/32.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/33.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/34.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/35.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/36.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/37.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/38.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/39.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/40.png" alt=""><br><img src="/2018/10/07/史上最详细版Centos6安装详细教程/41.png" alt=""><br>终于完成了，史上最详细版centos6安装教程！<br>。。。从前车马很慢，书信很远，一生只够爱一个人！</p>
+                    <p><strong>一、服务器系统的安装</strong><br>本人在服务器里安装的centos7，最好不是最小化安装，因为最小化安装里面很多命令没有需要你去安装，并且保证能上网。具体步骤请参观<a href="http://blog.51cto.com/13670314/2160430" target="_blank" rel="noopener">–&gt;史上最详细版Centos6安装详细教程</a> ；centos6和centos7的安装步骤是一样的。<br><strong>二、安装TFTP服务</strong></p>
+<p>yum update 首先更新一下yum源，保证yum到的软件都是最新版本<br>mkdir -p /tftpboot 在根目录下创建一个目录用做tftp服务器的根目录<br>vim /etc/xinetd.d/tftp 编辑tftp配置文件<br><img src="/2018/10/08/centos7搭建PXE环境安装CentOS6系统/1.png" alt=""><br>service xinetd restart  或者 systemctl restart xinetd.service  重启xinetd服务<br><strong>三、获取pxelinux.0引导文件</strong></p>
+<p>yum install -y syslinux 安装引导服务<br>pxelinux.0文件在syslinux包中<br>cp /usr/share/syslinux/pxelinux.0 /tftpboot/  复制到刚才创建的/tftpboot目录下<br><strong>四、安装dhcp服务</strong><br>yum install -y dhcp  安装dhcp软件包<br>vim /etc/dhcp/dhcpd.conf 编辑dhcp配置文件<br><img src="/2018/10/08/centos7搭建PXE环境安装CentOS6系统/2.png" alt=""><br>以上画红色下划线处是需要自己改的地方，按照自己的真实情况修改。<br>其中subnet是虚拟机所在网段<br>range 后面跟的是dhcp池的范围<br>next-server 是pxe服务器的ip<br>hardware ethernet 是pxe服务器的硬件地址<br>用ifconfig 命令可以查看到以上所需要的信息</p>
+<p>编辑完毕后保存退出<br>service dhcpd restart 重启dhcp服务器<br><strong>五、安装vsftpd服务</strong></p>
+<blockquote>
+<p>yum install -y vsftpd</p>
+</blockquote>
+<p> 禁用防火墙</p>
+<blockquote>
+<p>systemctl stop firewalld.service </p>
+</blockquote>
+<p>禁止开机启动防火墙</p>
+<blockquote>
+<p>firewallsystemctl disable firewalld.service </p>
+</blockquote>
+<p>setenforce 0 关闭SELinux ，这种修改立时生效，但重启后失效</p>
+<blockquote>
+<p>vim /etc/selinux/config </p>
+</blockquote>
+<p><img src="/2018/10/08/centos7搭建PXE环境安装CentOS6系统/3.png" alt=""><br>改变pub文件夹属主，使ftp用户能够上传数据</p>
+<blockquote>
+<p>chown ftp /var/ftp/pub/</p>
+</blockquote>
+<blockquote>
+<p>vim /etc/vsftpd/vsftpd.conf </p>
+</blockquote>
+<p>确保以下设置<br><img src="/2018/10/08/centos7搭建PXE环境安装CentOS6系统/4.png" alt=""><br><img src="/2018/10/08/centos7搭建PXE环境安装CentOS6系统/5.png" alt=""><br><img src="/2018/10/08/centos7搭建PXE环境安装CentOS6系统/6.png" alt=""><br>重启vsftpd服务</p>
+<blockquote>
+<p>service vsftpd restart</p>
+</blockquote>
+<p>创建目录mkdir -p /var/ftp/pub/iso 并且上传CentOS6 ISO文件到/var/ftp/pub/iso目录下<br>rz上传<br><img src="/2018/10/08/centos7搭建PXE环境安装CentOS6系统/7.png" alt=""><br>如果没有rz命令用 yum install lrzsz安装一下，注意rz只能上传不大于4G的文件，如果大于4G可以用其他方法上传<br> 创建目录用于挂载iso文件</p>
+<blockquote>
+<p>mkdir -p /var/ftp/c6-64 </p>
+</blockquote>
+<p>挂载ISO：</p>
+<blockquote>
+<p>mount -o loop /var/ftp/pub/iso/CentOS-6.8-x86_64-bin-DVD1.iso /var/ftp/c6-64/</p>
+</blockquote>
+<p><strong>六、准备文件</strong><br>复制文件并且创建目录</p>
+<blockquote>
+<p> cp /var/ftp/c6-64/images/pxeboot/vmlinuz /tftpboot/vmlinuz.c6-64<br> cp /var/ftp/c6-64/images/pxeboot/initrd.img /tftpboot/initrd.img.c6-64<br> mkdir -p /tftpboot/pxelinux.cfg<br> vim /tftpboot/pxelinux.cfg/default </p>
+</blockquote>
+<p> 编辑default文件填写如下内容<br><img src="/2018/10/08/centos7搭建PXE环境安装CentOS6系统/8.png" alt=""></p>
+<blockquote>
+<p>default c6<br>prompt 1<br>timeout 100<br>display boot.msg<br>label c6<br>  kernel vmlinuz.c6-64<br>  append initrd=initrd.img.c6-64 method=<a href="ftp://172.18.74.179/c6-64" target="_blank" rel="noopener">ftp://172.18.74.179/c6-64</a> devfs=nomount</p>
+</blockquote>
+<p>其中172.18.74.179是FTP服务器IP<br>创建/tftpboot/boot.msg用于显示信息：<br><img src="/2018/10/08/centos7搭建PXE环境安装CentOS6系统/9.png" alt=""><br>pxe环境已经搭建完毕！</p>
+<p>。。。从前车马很慢，书信很远，一生只够爱一个人！</p>
 
                 </div>
                 <hr/>
@@ -182,7 +223,7 @@
                         <span class="reprint-tip">Reprint please specify: </span>
                         <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
                         <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                        <a href="/2018/10/07/史上最详细版Centos6安装详细教程/" class="b-link-green">史上最详细版Centos6安装详细教程</a>
+                        <a href="/2018/10/08/centos7搭建PXE环境安装CentOS6系统/" class="b-link-green">centos7搭建PXE环境安装CentOS6系统</a>
                     </p>
                 </div>
             </div>
@@ -199,7 +240,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
     var gitment = new Gitment({
-        id: 'Sun Oct 07 2018 15:49:23 GMT+0800',
+        id: 'Mon Oct 08 2018 10:17:37 GMT+0800',
         owner: 'LIUXUCHONG',
         repo: 'liuxuchong.github.io',
         oauth: {
@@ -219,8 +260,8 @@
 <article id="articles" class="container prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">Previous</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">Current</div>
             <div class="card">
                 <a href="/2018/10/08/centos7搭建PXE环境安装CentOS6系统/">
                     <div class="card-image">
@@ -230,10 +271,9 @@
                         
                         <span class="card-title">centos7搭建PXE环境安装CentOS6系统</span>
                     </div>
+
                     <div class="card-content article-content">
-                        <div class="summary">
-                            一、服务器系统的安装本人在服务器里安装的centos7，最好不是最小化安装，因为最小化安装里面很多命令没有需要你去安装，并且保证能上网。具体步骤请参观–&gt;史上最详细版Centos6安装详细教程 ；centos6和centos7的安装步
-                        </div>
+                        <div class="summary">一、服务器系统的安装本人在服务器里安装的centos7，最好不是最小化安装，因为最小化安装里面很多命令没有需要你去安装，并且保证能上网。具体步骤请参观–&gt;史上最详细版Centos6安装详细教程 ；centos6和centos7的安装步</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-calendar fa-fw"></i>2018-10-08
@@ -246,6 +286,7 @@
                             </span>
                         </div>
                     </div>
+
                     
                 </a>
             </div>
@@ -255,19 +296,18 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">Next</div>
             <div class="card">
-                <a href="/2018/10/07/VMWare-ESXi上传iso镜像文件/">
+                <a href="/2018/10/07/史上最详细版Centos6安装详细教程/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="VMWare ESXi上传iso镜像文件">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="史上最详细版Centos6安装详细教程">
                         
-                        <span class="card-title">VMWare ESXi上传iso镜像文件</span>
+                        <span class="card-title">史上最详细版Centos6安装详细教程</span>
                     </div>
                     <div class="card-content article-content">
                         <div class="summary">
-                            打开VMware vSphere Client客户端连接到VMware ESXi
-打开右侧【摘要】选项卡
-点击创建文件夹选择上传文件选择你要上传的镜像并确定上传完成点击摘要页面的编辑设置选择cCD/DVD驱动器1，点击右侧的数据存储ISO文
+                            镜像CentOS-6.8-x86_64-bin-DVD1.ISO将下载好的镜像上传到服务器，并选择该镜像（详情请看上篇exsi镜像上传文章）
+一、安装开始开机选择第一项这里询问我们是否要对光盘进行校验,这里我们选择  “skip”  跳过点
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
