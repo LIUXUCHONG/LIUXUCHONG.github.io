@@ -126,13 +126,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Linux shell脚本快速提升的秘诀
+                        esxi centos7搭建nat和dhcp服务器
                     </div>
                 </div>
             </div>
@@ -149,35 +149,72 @@
                 
                 <div class="author-info">
                     <span>
-                        <i class="fa fa-calendar fa-fw"></i>2018-10-08
+                        <i class="fa fa-calendar fa-fw"></i>2018-10-10
                     </span>
                 </div>
             </div>
             <hr>
             <div class="card-content article-card-content">
                 <div id="articleContent">
-                    <p>学一门语言最重要的就是要动手写一写，否则不管你理论有多么的扎实，都会前功尽弃，练习如下案例将会掌握shell核心，这是51cto推出的一个专栏，以20个实际工作场景的shell脚本案例展开讲解，它们不仅涵盖了shell脚本常见的语法、思路以及技巧，而且还会扩展一些Linux相关的知识。<br><strong>20个案例的核心内容是什么？</strong><br>案例1，用shell脚本实现备份MySQL数据库，数据库的重要性不言而喻，所以做好数据备份是一个合格运维工程师的必备。</p>
-<p>案例2，监控一台Nginx服务器的状态码是否有502状态码，502在Nginx服务器上普遍存在，它极大影响了用户体验，一旦出现502问题就需要第一时间发现并找到问题所在。</p>
-<p>案例3，批量添加100个用户，并给用户设置随机密码，密码设定后还需要给它存放到一个日志文件里，方便查询。</p>
-<p>案例4，用shell脚本自动封访问量异常的IP，并每隔一段时间把不再发起请求的IP给解封，这个功能似乎在web服务器上很实用。</p>
-<p>案例5，用脚本监控本机的磁盘使用情况，包括使用空间以及inode使用量，磁盘空间一旦写满，会影响系统正常运行，有必要实时检查磁盘使用情况，一旦达到设定阈值要第一时间通知到我们。</p>
-<p>案例6，检测两台机器同一个目录下的文件是否有差异，在负载均衡集群中通常是多台服务器上跑了同样的网站，所以需要保证文件内容是一致的。</p>
-<p>案例7，用shell脚本监控MySQL主从架构，看主从的状态是否是正常的，主从不正常就会导致数据不同步，数据不一致将严重影响业务可用性。</p>
-<p>案例8，用shell脚本编写一个运维工具，当运行它的时候，会列出一个命令列表，用户只需要按对应数字就可以运行列表中的命令。</p>
-<p>案例9，用shell脚本监控本机的网卡流量，当网卡流量为0时，需要重启网卡。</p>
-<p>案例10，用shell脚本检测指定域名是否快到期，以免域名到期没有续费被回收。</p>
-<p>案例11，给定一个人员列表，用shell脚本把这些人员分组，比如指定小组的个数，然后脚本可以自动地将这些人员随机地分成若干个小组。</p>
-<p>案例12，当备份的数据库量很大时，如果使用传统的循环遍历方法会花费很长的时间，这是因为shell脚本默认是单线程的，而本脚本需要实现多线程，这样就可以提升备份数据库的速度。</p>
-<p>案例13，在使用CDN的情况下，各地用户访问到的节点是不同的，但如果某个节点有问题时，会影响到部分用户访问，所以需要写一个shell脚本来监测所有节点是否正常。</p>
-<p>案例14，一台服务器上运行着Apache＋PHP＋MySQL服务，上面跑着很多网站，每增加一个网站都需要修改httpd.conf增加一个虚拟主机，并且需要在MySQL数据库里增加一个库，并增加一个MySQL的用户。如果是手动操作这些步骤还是比较繁琐的，该shell脚本可以批量实现这些操作。</p>
-<p>案例15，在工作中会遇到各种各样xml格式的文件，有时的需求是，需要把xml文件里面的内容进行格式化输出。</p>
-<p>案例16，生产环境中，往往有多台Tomcat服务器在运行，有时需要重启Tomcat服务，如果手动执行则需要登录每一台机器，非常麻烦，那么编写一个shell脚本自动登录远程机器并重启Tomcat服务就很有必要。</p>
-<p>案例17，在我们的服务器上跑着各种各样的服务，所以就有了很多日志，日志切割可以用shell脚本实现，但是切割完的老日志，随着时间的推移会越来越多，那么如何把这些老日志归档就需要写一个脚本来按照预设规则来完成。</p>
-<p>案例18，一台阿里云的ECS里运行着Nginx＋PHP-FPM＋MySQL服务，近期收到IO使用率很高的告警，但是这个问题是一瞬间，时间很短，每次登录这台机器的时候发现IO并没有什么问题，所以写一个脚本监控磁盘IO的使用率，当有问题时需要近一步排查具体的问题。</p>
-<p>案例19，一台Tomcat服务器上运行着多个实例，而每一个实例都有记录日志，当遇到问题或者有什么特殊需求时，就需要挨个查看这些实例的日志，为了提升效率所以需要编写一个定制化的shell脚本。</p>
-<p>案例20，虽然目前已经有了各种各样的工具可以实现代码部署，但在早期并没有这样方便好用的工具，当然一些小公司也用不着这样的工具，而是用shell脚本来实现的。</p>
-<p><strong>学完这20个案例你将收获什么？</strong><br>不管你是0基础的Linux初学者，还是入行几年的老鸟，阅读完这20个案例，都会让你从中获得撰写shell脚本的技巧、思想以及Linux相关的技能。对于想要快速提升自己shell脚本能力的朋友来说，这20个案例就像一剂良药，它们会助你在运维工作中越战越猛！</p>
-<p>另外这个专栏对于java程序员以及php程序员也是有极大的帮助，我相信当你学完这20个实战案例并认真吸收其精华后，你就可以拥有至少两年的Linux shell实战经验<br><img src="/2018/10/08/Linux-shell脚本快速提升的秘诀/1.jpg" alt=""></p>
+                    <p><strong>什么是NAT</strong>？</p>
+<p>NAT（Network address translation）即网络地址转换，作为一种过渡解决手段，可以用来减少对全球合法IP地址的需求。简单的说，NAT就是在内部专用网络中使用内部地址，而当内部节点要与外界网络发生联系时，就在边缘路由器或者防火墙处，将内部地址转换成公网地址，从而使得在外网（Internet）上使用一个和数个合法IP地址正常传输数据。其中，这里的外网和内网是相对来讲的，下面假设能够访问互联网的网络为外网。<br><strong>什么是DHCP</strong></p>
+<p>DHCP（Dynamic Host Configuration Protocol，动态主机配置协议）通常被应用在大型的局域网络环境中，主要作用是集中的管理、分配IP地址，使网络环境中的主机动态的获得IP地址、Gateway地址、DNS服务器地址等信息，并能够提升地址的使用率。</p>
+<p><strong>实验环境</strong><br>vSphere Client远程esxi<br>首先新建一个虚拟交换机<br><img src="/2018/10/10/esxi-centos7搭建nat和dhcp服务器/1.png" alt=""><br>注意选择创建交换机的时候，不要选中网卡，把默认选中的网卡前的对勾删掉，之所以这么做，是因为我们要把这个网络的请求都转发到VM Network上去，而不要让它自己走物理网卡出去。<br><img src="/2018/10/10/esxi-centos7搭建nat和dhcp服务器/2.png" alt=""><br>点击下一步给交换机随便起个名字，一路下一步即可<br>然后新建一个双网卡的虚拟机，我用的是最小化安装centos7（步骤在这里就不说了 详情见本人博客）<br>然后打开虚拟机设置<br><img src="/2018/10/10/esxi-centos7搭建nat和dhcp服务器/3.png" alt=""><br>把网卡2连接到我们刚才新建的虚拟交换机上<br>这里记录一下网卡2的mac地址，接下来会用到</p>
+<p>然后开机<br>本人服务器是连接校园网的，所以开机后写了一个脚本连上了校园网后才安装了一些软件，如果不联网会yum不到，自行配置联网<br>输入yum -y update更新yum源，确保我们yum到的软件都是最新的<br>然后输入yum -y install net-tools安装一些基本命令<br>接下来输入ifconfig找到刚才记录的mac地址，把这个网卡ip设置成内网ip，另一个设置成外网ip<br>配置如下，外网ip及网关根据实际情况配置，内网ip可参照互联网协议设置(我这里ens160为外网网卡)<br>私有地址的范围分别是：</p>
+<p>A类地址范围：10.0.0.0—10.255.255.255；</p>
+<p>B类地址范围：172.16.0.0—172.31.255.555；</p>
+<p>C类地址范围：192.168.0.0—192.168.255.255。</p>
+<p>vi /etc/sysconfig/network-scripts/ifcfg-ens160</p>
+<blockquote>
+<p>TYPE=Ethernet<br>BOOTPROTO=static<br>IPADDR=172.18.74.180<br>NAME=ens160<br>DEVICE=ens160<br>ONBOOT=yes<br>GATEWAY=172.18.74.253<br>NETMASK=255.255.255.0<br>DNS1=114.114.114.114<br>DNS2=8.8.8.8</p>
+</blockquote>
+<p>vi /etc/sysconfig/network-scripts/ifcfg-ens192</p>
+<blockquote>
+<p>TYPE=Ethernet<br>BOOTPROTO=static<br>IPADDR=192.168.255.1<br>NAME=ens192<br>DEVICE=ens192<br>ONBOOT=yes<br>NETMASK=255.255.255.0<br>DNS=114.114.114.114</p>
+</blockquote>
+<p>注意不要写网关</p>
+<p>重启网卡</p>
+<blockquote>
+<p>service restart network</p>
+</blockquote>
+<p><strong>防火墙配置</strong><br>关闭防火墙</p>
+<blockquote>
+<p>setenforce 0<br>systemctl stop firewalld<br>systemctl disable firewalld</p>
+</blockquote>
+<p>配置防火墙，让发送至内网网卡(ens192)的数据全部通过</p>
+<blockquote>
+<p>iptables -A FORWARD -i ens192 -j ACCEPT</p>
+</blockquote>
+<p><strong>修改数据报头信息</strong></p>
+<blockquote>
+<p>iptables -t nat -A POSTROUTING -s 192.168.255.0/24 -o ens160 -j MASQUERADE</p>
+</blockquote>
+<p><strong>开启Linux路由功能</strong></p>
+<blockquote>
+<p>echo 1 &gt; /proc/sys/net/ipv4/ip_forward<br>cat /proc/sys/net/ipv4/ip_forward</p>
+</blockquote>
+<p><strong>安装配置DHCP服务</strong><br>安装DHCP服务</p>
+<blockquote>
+<p>yum install -y epel*<br>yum install -y dhcp</p>
+</blockquote>
+<p>复制DHCP配置文件</p>
+<blockquote>
+<p>cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf</p>
+</blockquote>
+<p>编辑并修改dhcpd.conf配置文件</p>
+<blockquote>
+<p>vi /etc/dhcp/dhcpd.conf</p>
+</blockquote>
+<p><img src="/2018/10/10/esxi-centos7搭建nat和dhcp服务器/4.png" alt=""><br>画红线处是修改的地方，后面的代码删除即可<br>解释：<br>subnet后跟子网网段<br>netmask后面是子网掩码<br>range是地址池范围<br>option routers是分发默认网关<br>默认租期时间(秒)<br>  default-lease-time 600；<br>最大租期时间(秒)<br>  max-lease-time 7200；<br>DNS服务器地址(多个地址用”,”隔开)<br>  option domain-name-servers 223.5.5.5, 114.114.114.114；<br>为所分配的域分配域名（名字随便起）<br>  option domain-name “vmnet.com”；</p>
+<p><strong>启动DHCP服务</strong></p>
+<blockquote>
+<p>systemctl restart dhcpd<br>systemctl enable dhcpd</p>
+</blockquote>
+<p><strong>查看启动状态</strong></p>
+<blockquote>
+<p>systemctl status dhcpd<br>netstat -uap | grep dhcpd</p>
+</blockquote>
+<p><img src="/2018/10/10/esxi-centos7搭建nat和dhcp服务器/5.png" alt=""><br>搞定！<br>。。。从前车马很慢，书信很远，一生只够爱一个人！</p>
 
                 </div>
                 <hr/>
@@ -197,7 +234,7 @@
                         <span class="reprint-tip">Reprint please specify: </span>
                         <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
                         <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                        <a href="/2018/10/08/Linux-shell脚本快速提升的秘诀/" class="b-link-green">Linux shell脚本快速提升的秘诀</a>
+                        <a href="/2018/10/10/esxi-centos7搭建nat和dhcp服务器/" class="b-link-green">esxi centos7搭建nat和dhcp服务器</a>
                     </p>
                 </div>
             </div>
@@ -214,7 +251,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
     var gitment = new Gitment({
-        id: 'Mon Oct 08 2018 10:30:16 GMT+0800',
+        id: 'Wed Oct 10 2018 18:00:55 GMT+0800',
         owner: 'LIUXUCHONG',
         repo: 'liuxuchong.github.io',
         oauth: {
@@ -234,8 +271,8 @@
 <article id="articles" class="container prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">Previous</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">Current</div>
             <div class="card">
                 <a href="/2018/10/10/esxi-centos7搭建nat和dhcp服务器/">
                     <div class="card-image">
@@ -245,11 +282,10 @@
                         
                         <span class="card-title">esxi centos7搭建nat和dhcp服务器</span>
                     </div>
+
                     <div class="card-content article-content">
-                        <div class="summary">
-                            什么是NAT？
-NAT（Network address translation）即网络地址转换，作为一种过渡解决手段，可以用来减少对全球合法IP地址的需求。简单的说，NAT就是在内部专用网络中使用内部地址，而当内部节点要与外界网络发生联系时
-                        </div>
+                        <div class="summary">什么是NAT？
+NAT（Network address translation）即网络地址转换，作为一种过渡解决手段，可以用来减少对全球合法IP地址的需求。简单的说，NAT就是在内部专用网络中使用内部地址，而当内部节点要与外界网络发生联系时</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-calendar fa-fw"></i>2018-10-10
@@ -262,6 +298,7 @@ NAT（Network address translation）即网络地址转换，作为一种过渡�
                             </span>
                         </div>
                     </div>
+
                     
                 </a>
             </div>
@@ -271,17 +308,17 @@ NAT（Network address translation）即网络地址转换，作为一种过渡�
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">Next</div>
             <div class="card">
-                <a href="/2018/10/08/centos7搭建PXE环境安装CentOS6系统/">
+                <a href="/2018/10/08/Linux-shell脚本快速提升的秘诀/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="centos7搭建PXE环境安装CentOS6系统">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Linux shell脚本快速提升的秘诀">
                         
-                        <span class="card-title">centos7搭建PXE环境安装CentOS6系统</span>
+                        <span class="card-title">Linux shell脚本快速提升的秘诀</span>
                     </div>
                     <div class="card-content article-content">
                         <div class="summary">
-                            一、服务器系统的安装本人在服务器里安装的centos7，最好不是最小化安装，因为最小化安装里面很多命令没有需要你去安装，并且保证能上网。具体步骤请参观–&gt;史上最详细版Centos6安装详细教程 ；centos6和centos7的安装步
+                            学一门语言最重要的就是要动手写一写，否则不管你理论有多么的扎实，都会前功尽弃，练习如下案例将会掌握shell核心，这是51cto推出的一个专栏，以20个实际工作场景的shell脚本案例展开讲解，它们不仅涵盖了shell脚本常见的语法、思路以
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
