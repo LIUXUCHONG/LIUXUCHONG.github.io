@@ -126,13 +126,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        master jps 没有namenode问题
+                        RSA host key has changed,ssh公钥分发失败
                     </div>
                 </div>
             </div>
@@ -149,14 +149,21 @@
                 
                 <div class="author-info">
                     <span>
-                        <i class="fa fa-calendar fa-fw"></i>2018-10-11
+                        <i class="fa fa-calendar fa-fw"></i>2018-10-12
                     </span>
                 </div>
             </div>
             <hr>
             <div class="card-content article-card-content">
                 <div id="articleContent">
-                    <p>在主节点机器上执行命令/opt/modules/app/hadoop-2.7.4/sbin/start-all.sh（相当于执行/opt/modules/app/hadoop-2.5.0/sbin/start-dfs.sh和/opt/modules/app/hadoop-2.5.0/sbin/start-yarn.sh）<br>然后jps发现没有namenode，查看logs日志<br><img src="/2018/10/11/master-jps-没有namenode问题/1.png" alt=""><br>发现namenode没有格式化<br><img src="/2018/10/11/master-jps-没有namenode问题/2.png" alt=""><br>于是执行格式化namenode节点命令，注意每次格式化时一定要把原来NameNode和DataNode下的文件全部删除，不然会报错，NameNode和DataNode所在目录是在core-site.xml中hadoop.tmp.dir、dfs.namenode.name.dir、dfs.datanode.data.dir属性配置的。<br><img src="/2018/10/11/master-jps-没有namenode问题/3.png" alt=""><br><img src="/2018/10/11/master-jps-没有namenode问题/4.png" alt=""><br><img src="/2018/10/11/master-jps-没有namenode问题/5.png" alt=""><br>/opt/modules/app/hadoop-2.7.4/sbin/start-all.sh<br><img src="/2018/10/11/master-jps-没有namenode问题/6.png" alt=""><br>然后查看tmp目录下有没有新建文件（我的namenode重新格式化了好几次才出现新文件），如图<br><img src="/2018/10/11/master-jps-没有namenode问题/7.png" alt=""><br><img src="/2018/10/11/master-jps-没有namenode问题/8.png" alt=""><br>。。。从前车马很慢，书信很远，一生只够爱一个人！</p>
+                    <p>分发公钥时出现下图错误</p>
+<p><img src="/2018/10/12/RSA-host-key-has-changed-ssh公钥分发失败/1.png" alt=""></p>
+<p>这可能是Linux服务器重新系统、openssh-server重装、更改IP导致的。</p>
+<p>输入以下命令即可</p>
+<blockquote>
+<p>ssh-keygen –R adress-ip-du-serveur</p>
+</blockquote>
+<p><img src="/2018/10/12/RSA-host-key-has-changed-ssh公钥分发失败/2.png" alt=""></p>
 
                 </div>
                 <hr/>
@@ -176,7 +183,7 @@
                         <span class="reprint-tip">Reprint please specify: </span>
                         <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
                         <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                        <a href="/2018/10/11/master-jps-没有namenode问题/" class="b-link-green">master jps 没有namenode问题</a>
+                        <a href="/2018/10/12/RSA-host-key-has-changed-ssh公钥分发失败/" class="b-link-green">RSA host key has changed,ssh公钥分发失败</a>
                     </p>
                 </div>
             </div>
@@ -193,7 +200,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
     var gitment = new Gitment({
-        id: 'Thu Oct 11 2018 15:56:14 GMT+0800',
+        id: 'Fri Oct 12 2018 11:22:49 GMT+0800',
         owner: 'LIUXUCHONG',
         repo: 'liuxuchong.github.io',
         oauth: {
@@ -213,8 +220,8 @@
 <article id="articles" class="container prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">Previous</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">Current</div>
             <div class="card">
                 <a href="/2018/10/12/RSA-host-key-has-changed-ssh公钥分发失败/">
                     <div class="card-image">
@@ -224,9 +231,9 @@
                         
                         <span class="card-title">RSA host key has changed,ssh公钥分发失败</span>
                     </div>
+
                     <div class="card-content article-content">
-                        <div class="summary">
-                            分发公钥时出现下图错误
+                        <div class="summary">分发公钥时出现下图错误
 
 这可能是Linux服务器重新系统、openssh-server重装、更改IP导致的。
 输入以下命令即可
@@ -234,8 +241,7 @@
 ssh-keygen –R adress-ip-du-serveur
 
 
-
-                        </div>
+</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-calendar fa-fw"></i>2018-10-12
@@ -248,6 +254,7 @@ ssh-keygen –R adress-ip-du-serveur
                             </span>
                         </div>
                     </div>
+
                     
                 </a>
             </div>
@@ -257,25 +264,21 @@ ssh-keygen –R adress-ip-du-serveur
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">Next</div>
             <div class="card">
-                <a href="/2018/10/10/Hadoop集群环境搭建/">
+                <a href="/2018/10/11/master-jps-没有namenode问题/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hadoop集群环境搭建">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="master jps 没有namenode问题">
                         
-                        <span class="card-title">Hadoop集群环境搭建</span>
+                        <span class="card-title">master jps 没有namenode问题</span>
                     </div>
                     <div class="card-content article-content">
                         <div class="summary">
-                            第一部分：准备Linux环境创建虚拟机安装系统的步骤在这里就不讲了，详细步骤请看本人其他文章打开建好的虚拟机一、修改Hostname1、 临时修改hostname
-
- hostname bigdata-01.liu.com
-
-这种修改方式，
+                            在主节点机器上执行命令/opt/modules/app/hadoop-2.7.4/sbin/start-all.sh（相当于执行/opt/modules/app/hadoop-2.5.0/sbin/start-dfs.sh和/opt/mod
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-calendar fa-fw"></i>2018-10-10
+                                <i class="fa fa-calendar fa-fw"></i>2018-10-11
                             </span>
                             <span class="publish-author">
                                 <i class="fa fa-user fa-fw"></i>
