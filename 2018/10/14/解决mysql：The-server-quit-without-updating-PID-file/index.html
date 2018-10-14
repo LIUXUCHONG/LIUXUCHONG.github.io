@@ -126,13 +126,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        win10装双系统图文教程
+                        解决mysql：The server quit without updating PID file
                     </div>
                 </div>
             </div>
@@ -149,15 +149,156 @@
                 
                 <div class="author-info">
                     <span>
-                        <i class="fa fa-calendar fa-fw"></i>2018-10-13
+                        <i class="fa fa-calendar fa-fw"></i>2018-10-14
                     </span>
                 </div>
             </div>
             <hr>
             <div class="card-content article-card-content">
                 <div id="articleContent">
-                    <p><strong>第一步、创建新加卷</strong><br>右击我的电脑选择管理，在弹出的新页面点击磁盘管理<br><img src="/2018/10/13/win10装双系统图文教程/1.png" alt=""><br>选择一个空间较大的磁盘右击，点击压缩卷<br>随缘选择要压缩的大小<br><img src="/2018/10/13/win10装双系统图文教程/2.png" alt=""><br>然后会出现一个新的空闲分区<br>右击它，点击新建简单卷<br>根据提示一路默认即可</p>
-<p><strong>第二步、准备iso镜像</strong><br>去官方下载win10的iso镜像并解压到一个盘的根目录（注意不要解压到c和你刚才新建的盘里，必须解压到根目录）<br>解压完后会出现如下图一些文件<br><img src="/2018/10/13/win10装双系统图文教程/3.png" alt=""><br><strong>第三步、安装nt6工具</strong><br>点击链接 <a href="http://down.51cto.com/data/2451277" target="_blank" rel="noopener">chongchong_51cto</a> 获取工具压缩包<br><img src="/2018/10/13/win10装双系统图文教程/4.png" alt=""><br>解压后双击.exe程序<br><img src="/2018/10/13/win10装双系统图文教程/5.png" alt=""><br>点击安装<br><img src="/2018/10/13/win10装双系统图文教程/6.png" alt=""><br>安装完毕点击重启<br><strong>第四步、安装系统</strong><br>选择nt6启动<br><img src="/2018/10/13/win10装双系统图文教程/7.png" alt=""><br>启动后会出现以下界面<br><img src="/2018/10/13/win10装双系统图文教程/8.png" alt=""><br>默认下一步<br><img src="/2018/10/13/win10装双系统图文教程/9.png" alt=""><br>激活可以先跳过，富二代可以激活<br><img src="/2018/10/13/win10装双系统图文教程/10.png" alt=""><br>建议安装专业版<br><img src="/2018/10/13/win10装双系统图文教程/11.png" alt=""><br>左下角勾选我接受，再继续下一步<br><img src="/2018/10/13/win10装双系统图文教程/12.png" alt=""><br>选择自定义<br><img src="/2018/10/13/win10装双系统图文教程/13.png" alt=""><br>选择你刚才新建的分区<br><img src="/2018/10/13/win10装双系统图文教程/14.png" alt=""><br>开始部署文件，请耐心等待…………重启后将继续安装，不用管就行。<br><img src="/2018/10/13/win10装双系统图文教程/15.png" alt=""><br><img src="/2018/10/13/win10装双系统图文教程/16.png" alt=""><br><img src="/2018/10/13/win10装双系统图文教程/17.png" alt=""><br><img src="/2018/10/13/win10装双系统图文教程/18.png" alt=""><br>接下来就进入到了新安装的win10界面了<br>可能会有一些设置在这里没有讲到，不同win10版本情况不同，这里不做细说<br>重启进入原来的系统运行nt6工具点击卸载，即可卸载启动项<br><img src="/2018/10/13/win10装双系统图文教程/19.png" alt=""><br>大功告成！！！</p>
+                    <p><strong>一、卸载原来的mysql</strong><br><img src="http://i2.51cto.com/images/blog/201809/18/22a6191fcc08d1acf5881cbb4bcfe305.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""><br>出现这种错误极有可能是上一个mysql的残留文件没有删除，在/etc目录下查找有没有my.cnf文件，如果有删除它 rm -rf my.cnf。再去/usr/local和root目录下查看有没有mysql的相关文件，全部清除。然后在命令行输入命令：</p>
+<blockquote>
+<p>rpm -qa |grep mysql</p>
+</blockquote>
+<p><img src="http://i2.51cto.com/images/blog/201809/18/0967af76f61a4145e0861d72fdee485c.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""></p>
+<p>把列出的文件全部删除</p>
+<blockquote>
+<p>rpm -e –nodeps  软件名称</p>
+</blockquote>
+<p><img src="http://i2.51cto.com/images/blog/201809/18/f00de2367e6d8eac55425ee2911ba03a.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""><br>然后执行命令</p>
+<blockquote>
+<p>find / -name mysql</p>
+</blockquote>
+<p>意思是从根目录查找，有没有叫mysql的文件<br>把显示出来的文件全部删除</p>
+<blockquote>
+<p>rm -rf 文件路径/</p>
+</blockquote>
+<p><strong>二、安装mysql</strong></p>
+<p><strong>1.获取包</strong><br>全部卸载完成后开始安装mysql<br>在线下载：wget <a href="https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-5.7.22-linux-glibc2.12-x86_64.tar.gz" target="_blank" rel="noopener">https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-5.7.22-linux-glibc2.12-x86_64.tar.gz</a></p>
+<p>然后把压缩包解压到/usr/local目录</p>
+<blockquote>
+<p>tar zxvf mysql-5.7.22-linux-glibc2.12-x86_64.tar.gz /usr/local</p>
+</blockquote>
+<p>进入/usr/local/目录 把解压包重命名为mysql</p>
+<blockquote>
+<p>mv mysql-5.7.22-linux-glibc2.12-x86_64.tar.gz mysql</p>
+</blockquote>
+<p><strong>2.创建用户组和用户</strong></p>
+<p>创建用户组：</p>
+<blockquote>
+<p>groupadd mysql</p>
+</blockquote>
+<p>创建用户：</p>
+<blockquote>
+<p>useradd -r -g mysql mysql</p>
+</blockquote>
+<p>为了安全性，给mysql数据库创建专有用户，该用户只能访问mysql目录，不能访问系统其它目录</p>
+<p>另外不建议直接用root初始化mysql，否则连接mysql时会报错：[ERROR] Fatal error: Please read “Security” section of the manual to find out how to run mysqld as root!<br><strong>3.给mysql目录指定专有用户和用户组</strong><br>首先创建data目录：</p>
+<blockquote>
+<p>cd /usr/local/mysql</p>
+</blockquote>
+<blockquote>
+<p>mkdir data</p>
+</blockquote>
+<p>指定用户和用户组：</p>
+<blockquote>
+<p>cd /usr/local</p>
+</blockquote>
+<blockquote>
+<p>chown -R mysql mysql/</p>
+</blockquote>
+<blockquote>
+<p>chgrp -R mysql mysql/</p>
+</blockquote>
+<p>-R包含目录下所有和目录和文件</p>
+<p><strong>4.初始化mysql</strong></p>
+<blockquote>
+<p>cd /usr/local/mysql/bin</p>
+</blockquote>
+<blockquote>
+<p>./mysqld –initialize –user=mysql –basedir=/usr/local/mysql/ –datadir=/usr/local/mysql/data/ –lc_messages_dir=/usr/local/mysql/share –lc_messages=en_US</p>
+</blockquote>
+<p>记住生成的临时密码<br><img src="http://i2.51cto.com/images/blog/201809/18/46a6018639bfc17679bbfae6afd878ca.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""></p>
+<p>如果忘记密码或者想重新初始化，可以先将mysql/data目录中文件删除，然后再执行初始化命令<br><strong>5.配置my.cnf</strong><br>从5.7.17后mysql就没有默认的my_default.cnf文件，需要手动创建</p>
+<blockquote>
+<p>cd /etc</p>
+</blockquote>
+<blockquote>
+<p>cat&gt;&gt;my.cnf</p>
+</blockquote>
+<p>输入以下内容，ctrl+D退出</p>
+<blockquote>
+<p>[mysqld]<br>basedir=/usr/local/mysql/<br>datadir=/usr/local/mysql/data/</p>
+</blockquote>
+<p><strong>6.启动mysql</strong></p>
+<blockquote>
+<p>cd /usr/local/mysql/bin</p>
+</blockquote>
+<blockquote>
+<p>./mysqld_safe –user=mysql &amp;（回车返回命令行状态）</p>
+</blockquote>
+<p><strong>7.设为开机启动</strong></p>
+<blockquote>
+<p>cd /usr/local/mysql/support-files/</p>
+</blockquote>
+<blockquote>
+<p>cp mysql.server /etc/init.d/mysql</p>
+</blockquote>
+<blockquote>
+<p>vi /etc/init.d/mysql</p>
+</blockquote>
+<p>将mysql目录填上：</p>
+<blockquote>
+<p>basedir=/usr/local/mysql/</p>
+</blockquote>
+<blockquote>
+<p>datadir=/usr/local/mysql/data/</p>
+</blockquote>
+<p>授权：</p>
+<blockquote>
+<p>chmod +x /etc/init.d/mysql</p>
+</blockquote>
+<p>设为开机启动：</p>
+<blockquote>
+<p>chkconfig –add mysql</p>
+</blockquote>
+<p>service启动<br>重启服务：</p>
+<blockquote>
+<p>service mysql restart</p>
+</blockquote>
+<p>停止服务：</p>
+<blockquote>
+<p>service mysql stop</p>
+</blockquote>
+<p>启动服务：</p>
+<blockquote>
+<p>service mysql start</p>
+</blockquote>
+<p>查看服务：</p>
+<blockquote>
+<p>service mysql status</p>
+</blockquote>
+<p><strong>8.登录mysql修改密码授权远程登录</strong></p>
+<blockquote>
+<p>cd /usr/local/mysql/bin</p>
+</blockquote>
+<p>登录：</p>
+<blockquote>
+<p>mysql -u root -p    输入临时密码</p>
+</blockquote>
+<p>修改密码：</p>
+<blockquote>
+<p>set password=password(“root”);</p>
+</blockquote>
+<p>登录授权：</p>
+<blockquote>
+<p>grant all privileges on <em>.</em> to’root’ @’%’ identified by ‘root’</p>
+</blockquote>
+<p>授权生效：</p>
+<blockquote>
+<p>flush privileges</p>
+</blockquote>
+<p>完成！</p>
 
                 </div>
                 <hr/>
@@ -177,7 +318,7 @@
                         <span class="reprint-tip">Reprint please specify: </span>
                         <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
                         <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                        <a href="/2018/10/13/win10装双系统图文教程/" class="b-link-green">win10装双系统图文教程</a>
+                        <a href="/2018/10/14/解决mysql：The-server-quit-without-updating-PID-file/" class="b-link-green">解决mysql：The server quit without updating PID file</a>
                     </p>
                 </div>
             </div>
@@ -194,7 +335,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
     var gitment = new Gitment({
-        id: 'Sat Oct 13 2018 14:06:00 GMT+0800',
+        id: 'Sun Oct 14 2018 20:30:45 GMT+0800',
         owner: 'LIUXUCHONG',
         repo: 'liuxuchong.github.io',
         oauth: {
@@ -214,8 +355,8 @@
 <article id="articles" class="container prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">Previous</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">Current</div>
             <div class="card">
                 <a href="/2018/10/14/解决mysql：The-server-quit-without-updating-PID-file/">
                     <div class="card-image">
@@ -225,10 +366,9 @@
                         
                         <span class="card-title">解决mysql：The server quit without updating PID file</span>
                     </div>
+
                     <div class="card-content article-content">
-                        <div class="summary">
-                            一、卸载原来的mysql出现这种错误极有可能是上一个mysql的残留文件没有删除，在/etc目录下查找有没有my.cnf文件，如果有删除它 rm -rf my.cnf。再去/usr/local和root目录下查看有没有mysql的相关文件，
-                        </div>
+                        <div class="summary">一、卸载原来的mysql出现这种错误极有可能是上一个mysql的残留文件没有删除，在/etc目录下查找有没有my.cnf文件，如果有删除它 rm -rf my.cnf。再去/usr/local和root目录下查看有没有mysql的相关文件，</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-calendar fa-fw"></i>2018-10-14
@@ -241,6 +381,7 @@
                             </span>
                         </div>
                     </div>
+
                     
                 </a>
             </div>
@@ -250,29 +391,22 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">Next</div>
             <div class="card">
-                <a href="/2018/10/12/RSA-host-key-has-changed-ssh公钥分发失败/">
+                <a href="/2018/10/13/win10装双系统图文教程/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="RSA host key has changed,ssh公钥分发失败">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="win10装双系统图文教程">
                         
-                        <span class="card-title">RSA host key has changed,ssh公钥分发失败</span>
+                        <span class="card-title">win10装双系统图文教程</span>
                     </div>
                     <div class="card-content article-content">
                         <div class="summary">
-                            分发公钥时出现下图错误
-
-这可能是Linux服务器重新系统、openssh-server重装、更改IP导致的。
-输入以下命令即可
-
-ssh-keygen –R adress-ip-du-serveur
-
-
-
+                            第一步、创建新加卷右击我的电脑选择管理，在弹出的新页面点击磁盘管理选择一个空间较大的磁盘右击，点击压缩卷随缘选择要压缩的大小然后会出现一个新的空闲分区右击它，点击新建简单卷根据提示一路默认即可
+第二步、准备iso镜像去官方下载win10的i
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-calendar fa-fw"></i>2018-10-12
+                                <i class="fa fa-calendar fa-fw"></i>2018-10-13
                             </span>
                             <span class="publish-author">
                                 <i class="fa fa-user fa-fw"></i>
