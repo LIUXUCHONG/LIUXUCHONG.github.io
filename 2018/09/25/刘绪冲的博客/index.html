@@ -126,13 +126,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        forget-mysql-password
+                        刘绪冲的博客
                     </div>
                 </div>
             </div>
@@ -149,21 +149,14 @@
                 
                 <div class="author-info">
                     <span>
-                        <i class="fa fa-calendar fa-fw"></i>2018-09-26
+                        <i class="fa fa-calendar fa-fw"></i>2018-09-25
                     </span>
                 </div>
             </div>
             <hr>
             <div class="card-content article-card-content">
                 <div id="articleContent">
-                    <p><strong>1．首先确认服务器出于安全的状态，也就是没有人能够任意地连接MySQL数据库。 
-</strong><br> 因为在重新设置MySQL的root密码的期间，MySQL数据库完全出于没有密码保护的<br>状态下，其他的用户也可以任意地登录和修改MySQL的信息。可以采用将MySQL对<br>外的端口封闭，并且停止Apache以及所有的用户进程的方法实现服务器的准安全<br>状态。最安全的状态是到服务器的Console上面操作，并且拔掉网线。<br>如果是在网上租的云服务器那我们就远程修改<br><strong><br>2．修改MySQL的登录设置： </strong></p>
-<p>#vim /etc/my.cnf<br>在[mysqld]的段中加上一句：skip-grant-tables<br>例如：<br>[mysqld]<br>datadir=/var/lib/mysql<br>socket=/var/lib/mysql/mysql.sock<br>skip-grant-tables<br>保存并且退出vi。<br><img src="/2018/09/26/forget-mysql-password-1/1.png" alt=""><br><strong><br>3．重新启动mysqld </strong></p>
-<p>#service mysqld restart<br>Stopping MySQL: [ OK ]<br>Starting MySQL: [ OK ]<br>或者出现：<br>Redirecting to /bin/systemctl restart  mysqld.service<br><img src="/2018/09/26/forget-mysql-password-1/2.png" alt=""><br><strong><br>4．登录并修改MySQL的root密码 </strong></p>
-<p>#mysql<br>Welcome to the MySQL monitor. Commands end with ; or \g.<br>Your MySQL connection id is 3 to server version: 3.23.56<br>Type ‘help;’ or ‘\h’ for help. Type ‘\c’ to clear the buffer.<br>mysql&gt; USE mysql ;<br>Database changed<br>mysql&gt; UPDATE user SET Password = password ( ‘123456’ ) WHERE User = ‘root’ ; （注意括号里单引号内的就是你要重新设置的密码）<br>Query OK, 0 rows affected (0.00 sec)<br>Rows matched: 5 Changed: 0 Warnings: 0<br>如果出现错误<br><img src="/2018/09/26/forget-mysql-password-1/3.png" alt=""><br>换成命令：UPDATE user SET authentication_string = password (‘123’) WHERE user = ‘root’;<br>mysql&gt; flush privileges ;<br>Query OK, 0 rows affected (0.01 sec)<br>mysql&gt; quit<br>Bye<br><img src="/2018/09/26/forget-mysql-password-1/4.png" alt=""><br><strong><br>5．将MySQL的登录设置修改回来 </strong></p>
-<p>#vim /etc/my.cnf<br>将刚才在[mysqld]的段中加上的skip-grant-tables删除<br>保存并且退出vim</p>
-<p><strong><br>6．重新启动mysqld </strong></p>
-<p>#service mysqld restart<br>Stopping MySQL: [ OK ]<br>Starting MySQL: [ OK ]<br>或：<br>Redirecting to /bin/systemctl restart  mysqld.service<br><strong><br>7.检测新密码是否生效</strong><br>输入mysql -u root -p 回车<br>然后输入新密码，回车，如下图修改成功<br><img src="/2018/09/26/forget-mysql-password-1/5.png" alt=""><br>。。。从前车马很慢，书信很远，一生只够爱一个人！</p>
+                    <p>本博客搭建于18年9月初，搭建的目的在于多多学习前沿领域的技术知识，并且巩固自己日常所学的基础知识，如有不足之处请读者指出。<br>本人的github里的博客来自于人的51cto博客：<a href="http://blog.51cto.com/13670314" target="_blank" rel="noopener">http://blog.51cto.com/13670314</a><br>，有的图片左下方有51cto的标识，并不是抄袭的其他人的，而是取自本人的51cto博客。</p>
 
                 </div>
                 <hr/>
@@ -183,7 +176,7 @@
                         <span class="reprint-tip">Reprint please specify: </span>
                         <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
                         <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                        <a href="/2018/09/26/forget-mysql-password-1/" class="b-link-green">forget-mysql-password</a>
+                        <a href="/2018/09/25/刘绪冲的博客/" class="b-link-green">刘绪冲的博客</a>
                     </p>
                 </div>
             </div>
@@ -200,7 +193,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
     var gitment = new Gitment({
-        id: 'Wed Sep 26 2018 21:09:40 GMT+0800',
+        id: 'Tue Sep 25 2018 10:21:10 GMT+0800',
         owner: 'LIUXUCHONG',
         repo: 'liuxuchong.github.io',
         oauth: {
@@ -223,21 +216,22 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">Previous</div>
             <div class="card">
-                <a href="/2018/09/28/Windows10系统安装-NET-Framework-3-5/">
+                <a href="/2018/09/26/forget-mysql-password-1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Windows10系统安装 .NET Framework 3.5">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="forget-mysql-password">
                         
-                        <span class="card-title">Windows10系统安装 .NET Framework 3.5</span>
+                        <span class="card-title">forget-mysql-password</span>
                     </div>
                     <div class="card-content article-content">
                         <div class="summary">
-                            1、获取压缩包点击链接获取： https://pan.baidu.com/s/1wfOA3lnOcr9e3TCE-61Zfg密码：ytax2、解压包将下载的NET Framework 3.5.zip解压，解压后如下图3、移动文件将解压得到【
+                            1．首先确认服务器出于安全的状态，也就是没有人能够任意地连接MySQL数据库。 
+ 因为在重新设置MySQL的root密码的期间，MySQL数据库完全出于没有密码保护的状态下，其他的用户也可以任意地登录和修改MySQL的信息。可以采用将My
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-calendar fa-fw"></i>2018-09-28
+                                <i class="fa fa-calendar fa-fw"></i>2018-09-26
                             </span>
                             <span class="publish-author">
                                 <i class="fa fa-user fa-fw"></i>
@@ -254,7 +248,7 @@
         
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">Next</div>
+            <div class="article-badge right-badge text-color">Current</div>
             <div class="card">
                 <a href="/2018/09/25/刘绪冲的博客/">
                     <div class="card-image">
@@ -264,10 +258,9 @@
                         
                         <span class="card-title">刘绪冲的博客</span>
                     </div>
+
                     <div class="card-content article-content">
-                        <div class="summary">
-                            本博客搭建于18年9月初，搭建的目的在于多多学习前沿领域的技术知识，并且巩固自己日常所学的基础知识，如有不足之处请读者指出。本人的github里的博客来自于人的51cto博客：http://blog.51cto.com/13670314，有
-                        </div>
+                        <div class="summary">本博客搭建于18年9月初，搭建的目的在于多多学习前沿领域的技术知识，并且巩固自己日常所学的基础知识，如有不足之处请读者指出。本人的github里的博客来自于人的51cto博客：http://blog.51cto.com/13670314，有</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-calendar fa-fw"></i>2018-09-25
@@ -280,6 +273,7 @@
                             </span>
                         </div>
                     </div>
+
                     
                 </a>
             </div>
