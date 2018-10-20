@@ -126,13 +126,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        docker出现ipv4 forwarding is disabled
+                        解决Centos yum 更新出错
                     </div>
                 </div>
             </div>
@@ -149,14 +149,40 @@
                 
                 <div class="author-info">
                     <span>
-                        <i class="fa fa-calendar fa-fw"></i>2018-10-16
+                        <i class="fa fa-calendar fa-fw"></i>2018-10-20
                     </span>
                 </div>
             </div>
             <hr>
             <div class="card-content article-card-content">
                 <div id="articleContent">
-                    <p>初学docker的时候遇到这个问题<br><img src="/2018/10/16/docker出现ipv4-forwarding-is-disabled/1.png" alt=""><br>不要慌，只须在/usr/lib/sysctl.d/目录下的00-system.conf文件里添加net.ipv4.ip_forward=1即可<br><img src="/2018/10/16/docker出现ipv4-forwarding-is-disabled/2.png" alt=""><br><img src="/2018/10/16/docker出现ipv4-forwarding-is-disabled/3.png" alt=""><br>保存后，执行命令 systemctl restart &amp;&amp; systemctl<br><img src="/2018/10/16/docker出现ipv4-forwarding-is-disabled/4.png" alt=""><br>   。。。从前车马很慢，书信很远，一生只够爱一个人！</p>
+                    <p>昨天在服务器里装 centos 7，遇到了yum更新失败问题。这个问题是受镜像地址限制的。</p>
+<p>显示错误如下：</p>
+<p><img src="/2018/10/20/解决Centos-yum-更新出错/1.png" alt=""></p>
+<p>出现这个错误，一般就是镜像源的问题：</p>
+<p>镜像连接错误</p>
+<p>这时就考虑使用国内的镜像，比如163镜像。</p>
+<p>解决方法：</p>
+<p>这里以centos 7为例，其他版本把数字改下就好，取大版本号</p>
+<p>cd /etc/yum.repos.d</p>
+<p>mv CentOS-Base.repo CentOS-Base.repo.bak</p>
+<p>vi CentOS-Base.repo</p>
+<blockquote>
+<p>[base]<br>name=Red Hat Enterprise Linux 7.0 -Base<br>baseurl=<a href="http://mirrors.163.com/centos/7/os/$basearch/" target="_blank" rel="noopener">http://mirrors.163.com/centos/7/os/$basearch/</a><br>gpgcheck=1<br>gpgkey=<a href="http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7" target="_blank" rel="noopener">http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7</a><br>[update]<br>name=Red Hat Enterprise Linux 7.0 -Updates<br>baseurl=<a href="http://mirrors.163.com/centos/7/updates/$basearch/" target="_blank" rel="noopener">http://mirrors.163.com/centos/7/updates/$basearch/</a><br>gpgcheck=1<br>gpgkey=<a href="http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7" target="_blank" rel="noopener">http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7</a><br>[extras]<br>name=Red Hat Enterprise Linux 7.0 -Extras<br>baseurl=<a href="http://mirrors.163.com/centos/7/extras/$basearch/" target="_blank" rel="noopener">http://mirrors.163.com/centos/7/extras/$basearch/</a><br>gpgcheck=1<br>gpgkey=<a href="http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7" target="_blank" rel="noopener">http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7</a></p>
+</blockquote>
+<p>保存即可。<br>可能刚改完不能立即生效需要缓冲一段时间，我刚改完时还是现实不行，于是就去吃饭了，回来发现莫名其妙的好了！</p>
+<p>如果出现下面的错误：<br><img src="/2018/10/20/解决Centos-yum-更新出错/2.png" alt=""></p>
+<p>一般就是DNS问题</p>
+<p>测试方法就是ping外网，发现ping不通就是这个问题。</p>
+<p>解决方法：</p>
+<blockquote>
+<p>echo “nameserver 8.8.8.8”&gt;&gt;/etc/resolv.conf</p>
+</blockquote>
+<p>或者编辑解析文件</p>
+<blockquote>
+<p>vi /etc/resolv.conf</p>
+</blockquote>
+<p>添加nameserver 8.8.8.8<br>保存退出即可。<br>然后再yum update就可以了。</p>
 
                 </div>
                 <hr/>
@@ -176,7 +202,7 @@
                         <span class="reprint-tip">Reprint please specify: </span>
                         <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
                         <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                        <a href="/2018/10/16/docker出现ipv4-forwarding-is-disabled/" class="b-link-green">docker出现ipv4 forwarding is disabled</a>
+                        <a href="/2018/10/20/解决Centos-yum-更新出错/" class="b-link-green">解决Centos yum 更新出错</a>
                     </p>
                 </div>
             </div>
@@ -193,7 +219,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
     var gitment = new Gitment({
-        id: 'Tue Oct 16 2018 15:27:30 GMT+0800',
+        id: 'Sat Oct 20 2018 11:02:07 GMT+0800',
         owner: 'LIUXUCHONG',
         repo: 'liuxuchong.github.io',
         oauth: {
@@ -213,8 +239,8 @@
 <article id="articles" class="container prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">Previous</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">Current</div>
             <div class="card">
                 <a href="/2018/10/20/解决Centos-yum-更新出错/">
                     <div class="card-image">
@@ -224,17 +250,16 @@
                         
                         <span class="card-title">解决Centos yum 更新出错</span>
                     </div>
+
                     <div class="card-content article-content">
-                        <div class="summary">
-                            昨天在服务器里装 centos 7，遇到了yum更新失败问题。这个问题是受镜像地址限制的。
+                        <div class="summary">昨天在服务器里装 centos 7，遇到了yum更新失败问题。这个问题是受镜像地址限制的。
 显示错误如下：
 
 出现这个错误，一般就是镜像源的问题：
 镜像连接错误
 这时就考虑使用国内的镜像，比如163镜像。
 解决方法：
-这里以centos 7
-                        </div>
+这里以centos 7</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-calendar fa-fw"></i>2018-10-20
@@ -247,6 +272,7 @@
                             </span>
                         </div>
                     </div>
+
                     
                 </a>
             </div>
@@ -256,21 +282,21 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">Next</div>
             <div class="card">
-                <a href="/2018/10/15/docker容器中没有vi/">
+                <a href="/2018/10/16/docker出现ipv4-forwarding-is-disabled/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="docker容器中没有vi">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="docker出现ipv4 forwarding is disabled">
                         
-                        <span class="card-title">docker容器中没有vi</span>
+                        <span class="card-title">docker出现ipv4 forwarding is disabled</span>
                     </div>
                     <div class="card-content article-content">
                         <div class="summary">
-                            在使用docker容器时，输入vim命令时提示说：vim: command not found，这个时候就需要安装vim，可是当你敲apt-get install vi命令时，提示如下：这时就需要输入命令 apt-get update 这个
+                            初学docker的时候遇到这个问题不要慌，只须在/usr/lib/sysctl.d/目录下的00-system.conf文件里添加net.ipv4.ip_forward=1即可保存后，执行命令 systemctl restart &amp;
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-calendar fa-fw"></i>2018-10-15
+                                <i class="fa fa-calendar fa-fw"></i>2018-10-16
                             </span>
                             <span class="publish-author">
                                 <i class="fa fa-user fa-fw"></i>
