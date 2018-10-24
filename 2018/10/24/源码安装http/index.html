@@ -126,13 +126,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        配置安装光盘为yum源
+                        源码安装http
                     </div>
                 </div>
             </div>
@@ -156,35 +156,75 @@
             <hr>
             <div class="card-content article-card-content">
                 <div id="articleContent">
-                    <p>首先用vsphere连接上光盘<br><img src="/2018/10/24/配置安装光盘为yum源/1.png" alt=""><br>创建一个光盘挂载目录</p>
+                    <p>我们需要先下载三个源码包</p>
 <blockquote>
-<p>[root@localhost /]# mkdir -p /mnt/cdrom/</p>
+<p>wget <a href="http://httpd.apache.org/download.cgi/httpd-2.4.37.tar.gz" target="_blank" rel="noopener">http://httpd.apache.org/download.cgi/httpd-2.4.37.tar.gz</a><br>wget <a href="http://archive.apache.org/dist/apr/apr-1.5.0.tar.gz" target="_blank" rel="noopener">http://archive.apache.org/dist/apr/apr-1.5.0.tar.gz</a><br>wget <a href="http://archive.apache.org/dist/apr/apr-util-1.5.4.tar.gz" target="_blank" rel="noopener">http://archive.apache.org/dist/apr/apr-util-1.5.4.tar.gz</a></p>
 </blockquote>
-<p>挂载光盘</p>
+<p>然后安装编译时需要用到的环境</p>
 <blockquote>
-<p>[root@localhost /]# mount /dev/cdrom /mnt/cdrom/</p>
+<p>yum install -y gcc gcc-c++ cmake</p>
 </blockquote>
-<p>然后我们切换到/etc目录下把yum仓库备份一下</p>
+<p>解压http源码包</p>
 <blockquote>
-<p>[root@localhost yum.repos.d]# mv yum.repos.d yum.repos.d.bak</p>
+<p>tar -zxvf httpd-2.4.37.tar.gz</p>
 </blockquote>
-<p>然后进入创建一个新目录</p>
+<p>如果出现以下错误</p>
 <blockquote>
-<p>[root@localhost yum.repos.d]# mkdir -p /etc/yum.repos.d/</p>
+<p>[root@localhost httpd-2.4.37]# ./configure –prefix=/usr/local/apache24<br>checking for chosen layout… Apache<br>checking for working mkdir -p… yes<br>checking for grep that handles long lines and -e… /usr/bin/grep<br>checking for egrep… /usr/bin/grep -E<br>checking build system type… x86_64-pc-linux-gnu<br>checking host system type… x86_64-pc-linux-gnu<br>checking target system type… x86_64-pc-linux-gnu<br>configure:<br>configure: Configuring Apache Portable Runtime library…<br>configure:<br>checking for APR… no<br>configure: error: APR not found.  Please read the documentation.</p>
 </blockquote>
-<p>编辑Centos-Media.repo</p>
+<p>需要先安装apr</p>
 <blockquote>
-<p>[root@localhost yum.repos.d]# vi Centos-Media.repo</p>
+<p>[root@localhost aprl-1.5.0]tar -zxvf apr-1.5.0.tar.gz</p>
 </blockquote>
-<p>文件内容如下</p>
+<p>进入apr-1.5.0目录</p>
 <blockquote>
-<p>[dvd]<br>name=lxc<br>baseurl=file:///mnt/cdrom<br>enable=1<br>gpgcheck=0</p>
+<p>./configure –prefix=/usr/local/apr/<br>make&amp;&amp;make install</p>
 </blockquote>
-<p>记住这里一定要有三个///前两个是协议，最后一个是根目录<br>然后</p>
+<p>解压apr-util</p>
 <blockquote>
-<p>yum clean all<br>yum makecache</p>
+<p>tar -zxvf apr-util-1.5.4.tar.gz<br>cd apr-util-1.5.4</p>
 </blockquote>
-<p>got it！</p>
+<p>配置apr-util</p>
+<blockquote>
+<p>[root@localhost apr-util-1.5.4]# ./configure –prefix=/usr/local/apr-util/<br>checking build system type… x86_64-unknown-linux-gnu<br>checking host system type… x86_64-unknown-linux-gnu<br>checking target system type… x86_64-unknown-linux-gnu<br>checking for a BSD-compatible install… /usr/bin/install -c<br>checking for working mkdir -p… yes<br>APR-util Version: 1.5.4<br>checking for chosen layout… apr-util<br>checking for gcc… gcc<br>checking whether the C compiler works… yes<br>checking for C compiler default output file name… a.out<br>checking for suffix of executables…<br>checking whether we are cross compiling… no<br>checking for suffix of object files… o<br>checking whether we are using the GNU C compiler… yes<br>checking whether gcc accepts -g… yes<br>checking for gcc option to accept ISO C89… none needed<br>Applying apr-util hints file rules for x86_64-unknown-linux-gnu<br>checking for APR… no<br>configure: error: APR could not be located. Please use the –with-apr option.</p>
+</blockquote>
+<p>报错了我们就按照错误指示重新配置</p>
+<blockquote>
+<p>./configure –prefix=/usr/local/apr-util/ –with-apr=/usr/local/apr/<br>make &amp;&amp; make install</p>
+</blockquote>
+<p>切换到http源的文件下</p>
+<blockquote>
+<p>./configure –prefix=/usr/local/apache24/ –with-apr=/usr/local/apr/ –with-apr-util=/usr/local/apr-util/ </p>
+</blockquote>
+<p>又有新的错误</p>
+<blockquote>
+<p>configure: error: pcre-config for libpcre not found. PCRE is required and available from <a href="http://pcre.org" target="_blank" rel="noopener">http://pcre.org</a><br>/<br>下载pcre源码包</p>
+</blockquote>
+<blockquote>
+<p>wget <a href="https://ftp.pcre.org/pub/pcre/pcre-8.42.tar.gz" target="_blank" rel="noopener">https://ftp.pcre.org/pub/pcre/pcre-8.42.tar.gz</a><br>tar -zxvf pcre-8.42.tar.gz<br>cd pcre-8.42/<br>./configure –prefix=/usr/local/pcre/<br>make &amp;&amp; make install</p>
+</blockquote>
+<p>切换到http目录下</p>
+<blockquote>
+<p>./configure –prefix=/usr/local/apache24/ –with-apr=/usr/local/apr/ –with-apr-util=/usr/local/apr-util/ –with-pcre=/usr/local/pcre/<br>make &amp;&amp; make install</p>
+</blockquote>
+<p>关闭防火墙</p>
+<blockquote>
+<p>[root@localhost httpd-2.4.37]# systemctl stop firewalld.service<br>[root@localhost httpd-2.4.37]# systemctl disable firewalld.service<br>Removed symlink /etc/systemd/system/multi-user.target.wants/firewalld.service.<br>Removed symlink /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service.</p>
+</blockquote>
+<p>启动apache服务</p>
+<blockquote>
+<p>cd /usr/local/apache24/bin/ </p>
+</blockquote>
+<p>[root@localhost bin]# ./apachectl start<br>AH00558: httpd: Could not reliably determine the server’s fully qualified domain name, using localhost.localdomain. Set the ‘ServerName’ directive globally to suppress this message</p>
+<p>但是当我们查看端口时显示80已经启动了</p>
+<blockquote>
+<p>[root@localhost bin]# netstat -napt<br>Active Internet connections (servers and established)<br>Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name<br>tcp        0      0 0.0.0.0:111             0.0.0.0:<em>               LISTEN      679/rpcbind<br>tcp        0      0 0.0.0.0:22              0.0.0.0:</em>               LISTEN      1020/sshd<br>tcp        0      0 127.0.0.1:25            0.0.0.0:<em>               LISTEN      1199/master<br>tcp        0      0 192.168.142.150:22      192.168.142.1:3295      ESTABLISHED 2111/sshd: root@pts<br>tcp        0      0 192.168.142.150:22      192.168.142.1:2396      ESTABLISHED 15748/sshd: root@pt<br>tcp6       0      0 :::111                  :::</em>                    LISTEN      679/rpcbind<br>tcp6       0      0 :::80                   :::<em>                    LISTEN      51813/httpd<br>tcp6       0      0 :::22                   :::</em>                    LISTEN      1020/sshd<br>tcp6       0      0 ::1:25                  :::*                    LISTEN      1199/master       </p>
+</blockquote>
+<p>原因是服务器不能完全确认域名<br>解决方法：</p>
+<blockquote>
+<p>vi /usr/local/apache24/conf/http.conf</p>
+</blockquote>
+<p>把ServerName localhost:80前面的#去掉，保存退出即可。<br>杀死httpd进程，发现杀不死，于是重启虚拟机，开机后查看进程发现httpd没有启动<br>再次启动httpd进程的时候就不会出现不能确认域名的信息了。got it！<br>（后来发现用ps -aux查看http进程号，kill -9 进程id就可以成功杀死）<br><img src="源码安装http/1.png" alt=""></p>
 
                 </div>
                 <hr/>
@@ -204,7 +244,7 @@
                         <span class="reprint-tip">Reprint please specify: </span>
                         <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
                         <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                        <a href="/2018/10/24/配置安装光盘为yum源/" class="b-link-green">配置安装光盘为yum源</a>
+                        <a href="/2018/10/24/源码安装http/" class="b-link-green">源码安装http</a>
                     </p>
                 </div>
             </div>
@@ -221,7 +261,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
     var gitment = new Gitment({
-        id: 'Wed Oct 24 2018 17:10:00 GMT+0800',
+        id: 'Wed Oct 24 2018 17:35:09 GMT+0800',
         owner: 'LIUXUCHONG',
         repo: 'liuxuchong.github.io',
         oauth: {
@@ -241,8 +281,43 @@
 <article id="articles" class="container prev-next articles">
     <div class="row article-row">
         
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">Current</div>
+            <div class="card">
+                <a href="/2018/10/24/源码安装http/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="源码安装http">
+                        
+                        <span class="card-title">源码安装http</span>
+                    </div>
+
+                    <div class="card-content article-content">
+                        <div class="summary">我们需要先下载三个源码包
+
+wget http://httpd.apache.org/download.cgi/httpd-2.4.37.tar.gzwget http://archive.apache.org/dist/apr/apr-1</div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-calendar fa-fw"></i>2018-10-24
+                            </span>
+                            <span class="publish-author">
+                                <i class="fa fa-user fa-fw"></i>
+                                
+                                刘绪冲
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </a>
+            </div>
+        </div>
+        
+        
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">Previous</div>
+            <div class="article-badge right-badge text-color">Next</div>
             <div class="card">
                 <a href="/2018/10/24/搭建ftp的yum源/">
                     <div class="card-image">
@@ -265,46 +340,6 @@
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-calendar fa-fw"></i>2018-10-24
-                            </span>
-                            <span class="publish-author">
-                                <i class="fa fa-user fa-fw"></i>
-                                
-                                刘绪冲
-                                
-                            </span>
-                        </div>
-                    </div>
-                    
-                </a>
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">Next</div>
-            <div class="card">
-                <a href="/2018/10/20/解决Centos-yum-更新出错/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="解决Centos yum 更新出错">
-                        
-                        <span class="card-title">解决Centos yum 更新出错</span>
-                    </div>
-                    <div class="card-content article-content">
-                        <div class="summary">
-                            昨天在服务器里装 centos 7，遇到了yum更新失败问题。这个问题是受镜像地址限制的。
-显示错误如下：
-
-出现这个错误，一般就是镜像源的问题：
-镜像连接错误
-这时就考虑使用国内的镜像，比如163镜像。
-解决方法：
-这里以centos 7
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-calendar fa-fw"></i>2018-10-20
                             </span>
                             <span class="publish-author">
                                 <i class="fa fa-user fa-fw"></i>

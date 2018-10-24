@@ -126,13 +126,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        配置安装光盘为yum源
+                        搭建ftp的yum源
                     </div>
                 </div>
             </div>
@@ -156,35 +156,35 @@
             <hr>
             <div class="card-content article-card-content">
                 <div id="articleContent">
-                    <p>首先用vsphere连接上光盘<br><img src="/2018/10/24/配置安装光盘为yum源/1.png" alt=""><br>创建一个光盘挂载目录</p>
+                    <p>在A机器上搭建ftp服务，B机器安装httpd<br>首先搭建ftp</p>
 <blockquote>
-<p>[root@localhost /]# mkdir -p /mnt/cdrom/</p>
+<p>[root@localhost ~]# yum -y install vsftpd*</p>
 </blockquote>
-<p>挂载光盘</p>
+<p>启动ftp服务</p>
 <blockquote>
-<p>[root@localhost /]# mount /dev/cdrom /mnt/cdrom/</p>
+<p>[root@localhost ~]# /etc/init.d/vsftpd restart<br>Restarting vsftpd (via systemctl):                         [  确定  ]</p>
 </blockquote>
-<p>然后我们切换到/etc目录下把yum仓库备份一下</p>
+<p>创建一个挂载镜像的目录</p>
 <blockquote>
-<p>[root@localhost yum.repos.d]# mv yum.repos.d yum.repos.d.bak</p>
+<p>[root@localhost ~]mkdir -p /mnt/cdrom</p>
 </blockquote>
-<p>然后进入创建一个新目录</p>
+<p>挂载镜像（这里为了省事我直接挂载的光盘）</p>
+<p><img src="/2018/10/24/搭建ftp的yum源/1.png" alt=""></p>
 <blockquote>
-<p>[root@localhost yum.repos.d]# mkdir -p /etc/yum.repos.d/</p>
+<p>[root@localhost ~]mount /dev/cdrom /mnt/cdrom<br>[root@localhost ~]cp /mnt/cdrom/* /var/ftp/pub/ -rf</p>
 </blockquote>
-<p>编辑Centos-Media.repo</p>
+<p>如果var/ftp/pub/目录下有.html文件需要删除</p>
+<p>切换到/var/ftp/pub/repodata目录<br>删除此目录下的TRANS.TBL</p>
 <blockquote>
-<p>[root@localhost yum.repos.d]# vi Centos-Media.repo</p>
+<p>[root@localhost repodata]# rm -rf TRANS.TBL</p>
 </blockquote>
-<p>文件内容如下</p>
-<blockquote>
-<p>[dvd]<br>name=lxc<br>baseurl=file:///mnt/cdrom<br>enable=1<br>gpgcheck=0</p>
-</blockquote>
-<p>记住这里一定要有三个///前两个是协议，最后一个是根目录<br>然后</p>
-<blockquote>
-<p>yum clean all<br>yum makecache</p>
-</blockquote>
-<p>got it！</p>
+<p>访问<a href="ftp://192.168.142.100/pub" target="_blank" rel="noopener">ftp://192.168.142.100/pub</a><br><img src="/2018/10/24/搭建ftp的yum源/2.png" alt=""></p>
+<p>回到B机器修改yum源<br>[root@localhost sbin]# vim /etc/yum.repos.d/ftp.repo </p>
+<p>[yum]<br>name=yum local<br>baseurl=<a href="ftp://192.168.142.100/pub" target="_blank" rel="noopener">ftp://192.168.142.100/pub</a><br>enabled=1<br>gpgcheck=0</p>
+<p>yum install httpd<br>报错<br><img src="/2018/10/24/搭建ftp的yum源/3.png" alt=""></p>
+<p>应该是原来的httpd软件没有卸载干净</p>
+<p>[root@localhost yum.repos.d]# rpm -qa|grep http<br>httpd-tools-2.4.6-80.el7.centos.1.x86_64<br>http-parser-2.7.1-5.el7_4.x86_64<br>[root@localhost yum.repos.d]# rpm -e –nodeps httpd-tools-2.4.6-80.el7.centos.1.x86_64<br>[root@localhost yum.repos.d]# rpm -e –nodeps http-parser-2.7.1-5.el7_4.x86_64<br>然后再次yum install httpd</p>
+<p>当我启动httpd服务时又出错了，于是切换到httpd所在目录执行./httpd<br>查看进程80端口正常运行起来了<br><img src="/2018/10/24/搭建ftp的yum源/4.png" alt=""><br><img src="/2018/10/24/搭建ftp的yum源/5.png" alt=""></p>
 
                 </div>
                 <hr/>
@@ -204,7 +204,7 @@
                         <span class="reprint-tip">Reprint please specify: </span>
                         <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
                         <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                        <a href="/2018/10/24/配置安装光盘为yum源/" class="b-link-green">配置安装光盘为yum源</a>
+                        <a href="/2018/10/24/搭建ftp的yum源/" class="b-link-green">搭建ftp的yum源</a>
                     </p>
                 </div>
             </div>
@@ -221,7 +221,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
     var gitment = new Gitment({
-        id: 'Wed Oct 24 2018 17:10:00 GMT+0800',
+        id: 'Wed Oct 24 2018 17:14:01 GMT+0800',
         owner: 'LIUXUCHONG',
         repo: 'liuxuchong.github.io',
         oauth: {
@@ -244,23 +244,19 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">Previous</div>
             <div class="card">
-                <a href="/2018/10/24/搭建ftp的yum源/">
+                <a href="/2018/10/24/源码安装http/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="搭建ftp的yum源">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="源码安装http">
                         
-                        <span class="card-title">搭建ftp的yum源</span>
+                        <span class="card-title">源码安装http</span>
                     </div>
                     <div class="card-content article-content">
                         <div class="summary">
-                            在A机器上搭建ftp服务，B机器安装httpd首先搭建ftp
+                            我们需要先下载三个源码包
 
-[root@localhost ~]# yum -y install vsftpd*
-
-启动ftp服务
-
-[root@localhost ~]# /etc/init.d/vsf
+wget http://httpd.apache.org/download.cgi/httpd-2.4.37.tar.gzwget http://archive.apache.org/dist/apr/apr-1
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
@@ -283,28 +279,27 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">Next</div>
             <div class="card">
-                <a href="/2018/10/20/解决Centos-yum-更新出错/">
+                <a href="/2018/10/24/配置安装光盘为yum源/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="解决Centos yum 更新出错">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="配置安装光盘为yum源">
                         
-                        <span class="card-title">解决Centos yum 更新出错</span>
+                        <span class="card-title">配置安装光盘为yum源</span>
                     </div>
                     <div class="card-content article-content">
                         <div class="summary">
-                            昨天在服务器里装 centos 7，遇到了yum更新失败问题。这个问题是受镜像地址限制的。
-显示错误如下：
+                            首先用vsphere连接上光盘创建一个光盘挂载目录
 
-出现这个错误，一般就是镜像源的问题：
-镜像连接错误
-这时就考虑使用国内的镜像，比如163镜像。
-解决方法：
-这里以centos 7
+[root@localhost /]# mkdir -p /mnt/cdrom/
+
+挂载光盘
+
+[root@localhost /]# mount /dev/cdrom /mnt/cdr
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-calendar fa-fw"></i>2018-10-20
+                                <i class="fa fa-calendar fa-fw"></i>2018-10-24
                             </span>
                             <span class="publish-author">
                                 <i class="fa fa-user fa-fw"></i>
