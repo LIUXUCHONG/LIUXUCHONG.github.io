@@ -126,13 +126,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Windows打开端口3306
+                        网络实验要求
                     </div>
                 </div>
             </div>
@@ -156,11 +156,20 @@
             <hr>
             <div class="card-content article-card-content">
                 <div id="articleContent">
-                    <p>控制面板→系统和安全→Windows防火墙”，点击左侧菜单中的“高级设置”。Windows 8/8.1、Windows Server 2012用Win+X，搜索防火墙，然后打开。</p>
-<p>鼠标右键点击“入站规则”，从弹出菜单中点击“新建规则”。</p>
-<p>新建规则<br>在“要创建的规则类型”中，点选“端口”，下一步，选择“TCP”，点选“特定本地端口”后填入端口号80。</p>
-<p>填入端口号80<br>点击“下一步”，点选“允许连接”，再点“下一步”，根据用户的实际情况和需求勾选域、专用或共用等选项，最后为这个规则命名。</p>
-<p>设置完成之后，其他计算机就可以顺利访问你的系统80端口了。</p>
+                    <p>实验拓扑<br><img src="/2018/11/18/网络实验要求/1.png" alt=""><br>一、测试安排<br>    本次测试使用cisco Packet Tracer7.0模拟器进行，请按照实验操作文件（pka）的要求完成配置任务。pka文件中的拓扑和设备命名均不许修改，终端和网络设备接口的IP地址按要求进行分配。本次测试的时长为80分钟，系统将自动对各个配置点和连通情况进行测评。<br>二、设备命名和IP地址分配<br>请严格按下表分配IP地址</p>
+<p> <img src="http://i2.51cto.com/images/blog/201811/09/660984e2e6acaa8fc63aa45b74cb891a.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""></p>
+<p>三、实验目标要求<br>1、PC11.2可以ping通DMZ-Srv、Intra-Srv，不可以ping通Inter-Srv<br>2、Laptop22.3可以ping通DMZ-Srv、Intra-Srv、Inter-Srv<br>3、PC-R1可以ping通DMZ-Srv、Intra-Srv、Inter-Srv以及PC22.2<br>4、PC-R2和PC0可以ping通Inter-Srv ，可以访问DMZ-Srv的web服务<br>5、1001、1002、2001三部IP电话可以互通<br>四、配置步骤指导</p>
+<ol>
+<li>配置AS1和AS2两台接入层交换机<br>a)         创建vlan<br>b)        把接口加入vlan</li>
+<li>配置CS核心交换机<br>a)         启用三层路由功能<br>b)        设置trunk封装模式为802.1q，设置与接入层交换机相连的端口为trunk模式<br>c)         创建vlan，把相应接口加入vlan<br>d)        为vlan虚接口设置IP地址<br>e)         设置Fa0/5端口为路由模式，设置端口IP地址<br>f)         设置默认路由指向出口路由器firewall</li>
+<li>配置Firewall出口路由器<br>a)         配置两条静态路由，一条默认路由指向外网，一条路由指向内网<br>b)        配置nat地址转换，使得内网PC能够访问互联网<br>Ø  设置转换访问控制列表（使用扩展访问控制列表，避免与×××冲突）<br>Ø  设置地址转换规则<br>Ø  设定inside和outside接口<br>c)         配置静态地址映射，使得外网能访问DMZ-Srv服务器（启用服务器http服务）<br>Ø  方法1：使用端口映射，避免与×××冲突<br>Ø  方法2：把2.0.0.2映射到内网<br>d)        配置控制列表禁止PC11.2访问互联网<br>Ø  设置扩展访问控制列表，允许PC11.2访问DMZ-Srv、禁止PC11.2访问其他地址、允许所有IP流量<br>Ø  把访问控制列表应用于Firewall内网接口入方向上</li>
+<li>配置ISP1、ISP2、ISP3互联网路由器<br>a)         配置loopback地址作为路由器ID<br>b)        启用ospf路由协议并宣告直连网络<br>c)         检查每台路由器的路由表</li>
+<li>配置Div-R分公司路由器<br>a)         配置路由器接入链路封装格式为PPP<br>b)        配置缺省路由指向ISP2<br>c)         配置NAT网络地址转换（注意使用扩展访问控制列表，避免与×××冲突）</li>
+<li>配置wlan无线接入<br>a)         在无线AP和无线路由器上设置SSID为AP1和AP2、认证方式为WAP2，AP1密码为12345678，AP2密码为87654321<br>b)        在两台笔记本上配置无线网卡，分别接入无线AP和无线路由器</li>
+<li>配置PPPoE接入<br>a)         配置接入cloud的DSL映射<br>b)        配置ISP2路由器支持PPPoE接入，使用AAA认证服务器<br>c)         配置Inter-Srv作为AAA认证服务器<br>d)        在pc0使用PPPoE Dialer接入网络，ipconfig查看地址并ping6.0.0.2<br>e)         配置无线路由器使用PPPoE接入网络</li>
+<li>配置×××<br>a)         在总部Firewall配置端到端IPSec ×××，对端为7.0.0.2，认证方式为pre−share，key为123，加密方式为ah−md5−hmac esp−des，从总部172.16.0.0到分公司192.168.1.0的流量加密<br>b)        在分公司DIV-R配置端到端IPSec ×××，对端为2.0.0.2，认证方式为pre−share，key为123，加密方式为ah−md5−hmac esp−des，从分公司192.168.1.0到总部172.16.0.0的流量加密</li>
+<li>配置VoIP<br>a)         把总部IP电话和callmanager的接入端口加入到voice  vlan1<br>b)        把分公司IP电话和Div-R向内网的接入端口加入到voice  vlan1<br>c)         在公司总部配置callmanager ，测试总部两部电话的连通性<br>d)        在分公司配置Div-R出口路由器作为callmanager，检查分公司IP电话<br>e)         把总部IP电话和callmanager的接入端口加入到vlan100<br>f)         在CS上设置VLAN100的虚接口地址为172.16.100.2<br>g)        在总部callmanager上设置默认路由指向172.16.100.2<br>h)        配置两台callmanager点对点连接，测试总部到分公司电话的连通性</li>
+</ol>
 
                 </div>
                 <hr/>
@@ -180,7 +189,7 @@
                         <span class="reprint-tip">Reprint please specify: </span>
                         <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
                         <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                        <a href="/2018/11/18/Windows打开端口3306/" class="b-link-green">Windows打开端口3306</a>
+                        <a href="/2018/11/18/网络实验要求/" class="b-link-green">网络实验要求</a>
                     </p>
                 </div>
             </div>
@@ -197,7 +206,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
     var gitment = new Gitment({
-        id: 'Sun Nov 18 2018 11:12:47 GMT+0800',
+        id: 'Sun Nov 18 2018 11:23:35 GMT+0800',
         owner: 'LIUXUCHONG',
         repo: 'liuxuchong.github.io',
         oauth: {
@@ -220,17 +229,20 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">Previous</div>
             <div class="card">
-                <a href="/2018/11/18/网络实验要求/">
+                <a href="/2018/11/18/网络实验命令/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="网络实验要求">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="网络实验命令">
                         
-                        <span class="card-title">网络实验要求</span>
+                        <span class="card-title">网络实验命令</span>
                     </div>
                     <div class="card-content article-content">
                         <div class="summary">
-                            实验拓扑一、测试安排    本次测试使用cisco Packet Tracer7.0模拟器进行，请按照实验操作文件（pka）的要求完成配置任务。pka文件中的拓扑和设备命名均不许修改，终端和网络设备接口的IP地址按要求进行分配。本次测试的时
+                            
+配置AS1和AS2两台接入层交换机
+
+#AS1Switch&gt;enSwitch#conf tSwitch(config)#vlan 11Switch(config-vlan)#int f0/2Switch(config-if)#swi
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
@@ -253,17 +265,19 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">Next</div>
             <div class="card">
-                <a href="/2018/11/18/Windows安装apache和php/">
+                <a href="/2018/11/18/Windows打开端口3306/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Windows安装apache和php">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Windows打开端口3306">
                         
-                        <span class="card-title">Windows安装apache和php</span>
+                        <span class="card-title">Windows打开端口3306</span>
                     </div>
                     <div class="card-content article-content">
                         <div class="summary">
-                            一、安装Apache首先下载apache安装包官方下载地址https://www.apachehaus.com/cgi-bin/download.plx#APACHE24VC14解压进入apache的conf目录，用记事本打开httpd.c
+                            控制面板→系统和安全→Windows防火墙”，点击左侧菜单中的“高级设置”。Windows 8/8.1、Windows Server 2012用Win+X，搜索防火墙，然后打开。
+鼠标右键点击“入站规则”，从弹出菜单中点击“新建规则”。
+新
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
