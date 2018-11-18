@@ -126,13 +126,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Windows安装apache和php
+                        Windows打开端口3306
                     </div>
                 </div>
             </div>
@@ -156,37 +156,11 @@
             <hr>
             <div class="card-content article-card-content">
                 <div id="articleContent">
-                    <p>一、安装Apache<br>首先下载apache安装包<br>官方下载地址<br><a href="https://www.apachehaus.com/cgi-bin/download.plx#APACHE24VC14" target="_blank" rel="noopener">https://www.apachehaus.com/cgi-bin/download.plx#APACHE24VC14</a><br><img src="/2018/11/18/Windows安装apache和php/1.png" alt=""><br>解压<br>进入apache的conf目录，用记事本打开httpd.conf，找到如下内容编辑，把此目录修改成自己的目录<br><img src="/2018/11/18/Windows安装apache和php/2.png" alt=""></p>
-<p>修改网站根目录<br><img src="/2018/11/18/Windows安装apache和php/3.png" alt=""><br>接下来进入apache的bin目录<br>复制一下资源管理器的地址栏<br><img src="/2018/11/18/Windows安装apache和php/4.png" alt=""><br>打开windows的命令行<br>进入Apache的bin目录<br>cd C:\apache\httpd-2.4.37-o102p-x64-vc14 (1)\Apache24\bin<br>然后输入httpd -k install进行安装<br><img src="/2018/11/18/Windows安装apache和php/5.png" alt=""><br>安装完成后打开如下软件<br><img src="/2018/11/18/Windows安装apache和php/6.png" alt=""><br>这是apache的管理软件，包含启动、关闭、重启启动Apache的操作，非常方便！<br><img src="/2018/11/18/Windows安装apache和php/7.png" alt=""><br>二、安装PHP<br>官方下载地址<br><a href="https://windows.php.net/download#php-7.2" target="_blank" rel="noopener">https://windows.php.net/download#php-7.2</a><br><img src="/2018/11/18/Windows安装apache和php/8.png" alt=""><br>选择第二个下载，因为第一个版本php安装目录里没有php5apache2_4.dll<br>下载完解压后进入把解压文件重命名为php7<br>进入目录备份一下php.ini-development，然后把原文件重命名为php.ini<br><img src="/2018/11/18/Windows安装apache和php/9.png" alt=""><br>打开Apache的httpd.conf<br>找到如下内容并添加index.php，让Apache默认打开index.php<br><img src="/2018/11/18/Windows安装apache和php/10.png" alt=""><br>在配置文件的最后添加如下内容<br><img src="/2018/11/18/Windows安装apache和php/11.png" alt=""><br>最后打开php的配置文件php.ini</p>
-<ol>
-<li>设置PHP扩展包的具体目录，找到</li>
-</ol>
-<p>; On windows:<br>; extension_dir = “ext”</p>
-<p>改为 (值是ext文件夹的目录)</p>
-<p>; On windows:<br>extension_dir = “C:/php/php7/ext”</p>
-<ol start="2">
-<li>开启相应的库功能，找到需要开启的库的所在行</li>
-</ol>
-<p>;extension=php_curl.dll</p>
-<p>;extension=php_gd2.dll</p>
-<p>;extension=php_mbstring.dll</p>
-<p>;extension=php_mysql.dll</p>
-<p>;extension=php_xmlrpc.dll</p>
-<p>去掉前面的分号(注释)，即改为（没有的在其他扩展后面添加上）</p>
-<p>extension=php_curl.dll</p>
-<p>extension=php_gd2.dll</p>
-<p>extension=php_mbstring.dll</p>
-<p>extension=php_mysqli.dll</p>
-<p>extension=php_xmlrpc.dll<br><img src="/2018/11/18/Windows安装apache和php/12.png" alt=""><br>(不同版本的库名可能不一样，需要根据自己的情况设置)</p>
-<ol start="3">
-<li>设置时区，找到</li>
-</ol>
-<p>;date.timezone =</p>
-<p> 改为</p>
-<p>date.timezone = Asia/Shanghai
-　</p>
-<p>配置完成，检测一下配置是否成功。重启Apache，在站点目录下新建文件index.php，输入内容：</p>
-<p>&lt;?php<br>    phpinfo();<br>?&gt;<br>在浏览器地址栏中输入自己的ip<br><img src="/2018/11/18/Windows安装apache和php/13.png" alt=""></p>
+                    <p>控制面板→系统和安全→Windows防火墙”，点击左侧菜单中的“高级设置”。Windows 8/8.1、Windows Server 2012用Win+X，搜索防火墙，然后打开。</p>
+<p>鼠标右键点击“入站规则”，从弹出菜单中点击“新建规则”。</p>
+<p>新建规则<br>在“要创建的规则类型”中，点选“端口”，下一步，选择“TCP”，点选“特定本地端口”后填入端口号80。</p>
+<p>填入端口号80<br>点击“下一步”，点选“允许连接”，再点“下一步”，根据用户的实际情况和需求勾选域、专用或共用等选项，最后为这个规则命名。</p>
+<p>设置完成之后，其他计算机就可以顺利访问你的系统80端口了。</p>
 
                 </div>
                 <hr/>
@@ -206,7 +180,7 @@
                         <span class="reprint-tip">Reprint please specify: </span>
                         <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
                         <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                        <a href="/2018/11/18/Windows安装apache和php/" class="b-link-green">Windows安装apache和php</a>
+                        <a href="/2018/11/18/Windows打开端口3306/" class="b-link-green">Windows打开端口3306</a>
                     </p>
                 </div>
             </div>
@@ -223,7 +197,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
     var gitment = new Gitment({
-        id: 'Sun Nov 18 2018 10:57:45 GMT+0800',
+        id: 'Sun Nov 18 2018 11:12:47 GMT+0800',
         owner: 'LIUXUCHONG',
         repo: 'liuxuchong.github.io',
         oauth: {
@@ -243,8 +217,8 @@
 <article id="articles" class="container prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">Previous</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">Current</div>
             <div class="card">
                 <a href="/2018/11/18/Windows打开端口3306/">
                     <div class="card-image">
@@ -254,12 +228,11 @@
                         
                         <span class="card-title">Windows打开端口3306</span>
                     </div>
+
                     <div class="card-content article-content">
-                        <div class="summary">
-                            控制面板→系统和安全→Windows防火墙”，点击左侧菜单中的“高级设置”。Windows 8/8.1、Windows Server 2012用Win+X，搜索防火墙，然后打开。
+                        <div class="summary">控制面板→系统和安全→Windows防火墙”，点击左侧菜单中的“高级设置”。Windows 8/8.1、Windows Server 2012用Win+X，搜索防火墙，然后打开。
 鼠标右键点击“入站规则”，从弹出菜单中点击“新建规则”。
-新
-                        </div>
+新</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-calendar fa-fw"></i>2018-11-18
@@ -272,6 +245,7 @@
                             </span>
                         </div>
                     </div>
+
                     
                 </a>
             </div>
@@ -281,21 +255,21 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">Next</div>
             <div class="card">
-                <a href="/2018/11/06/win10家庭版远程桌面函数不受支持/">
+                <a href="/2018/11/18/Windows安装apache和php/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="win10家庭版远程桌面函数不受支持">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Windows安装apache和php">
                         
-                        <span class="card-title">win10家庭版远程桌面函数不受支持</span>
+                        <span class="card-title">Windows安装apache和php</span>
                     </div>
                     <div class="card-content article-content">
                         <div class="summary">
-                            修改注册表可以完美解决，    具体操作如下，修改步骤要谨慎看仔细！    windows+R打开运行  输入regedit打开注册表    依次打开路径    计算机    \HKEY_LOCAL_MACHINE    \SOFTWARE
+                            一、安装Apache首先下载apache安装包官方下载地址https://www.apachehaus.com/cgi-bin/download.plx#APACHE24VC14解压进入apache的conf目录，用记事本打开httpd.c
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-calendar fa-fw"></i>2018-11-06
+                                <i class="fa fa-calendar fa-fw"></i>2018-11-18
                             </span>
                             <span class="publish-author">
                                 <i class="fa fa-user fa-fw"></i>
