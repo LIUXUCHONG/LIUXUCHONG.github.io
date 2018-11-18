@@ -159,7 +159,7 @@
                     <ol>
 <li>配置AS1和AS2两台接入层交换机</li>
 </ol>
-<p>#AS1<br>Switch&gt;en<br>Switch#conf t<br>Switch(config)#vlan 11<br>Switch(config-vlan)#int f0/2<br>Switch(config-if)#switchport mode access<br>Switch(config-if)#switchport access vlan 11<br>Switch(config-if)#int f0/23<br>Switch(config-if)#switchport mode access<br>Switch(config-if)#switchport access vlan 22<br>Switch(config)#int f0/24<br>Switch(config-if)#switchport mode trunk </p>
+<p>#AS1<br>Switch&gt;en<br>Switch#conf t<br>Switch(config)#vlan 11<br>Switch(config-vlan)#int f0/2<br>Switch(config-if)#switchport mode access<br>Switch(config-if)#switchport access vlan 11<br>Switch(config-if)#exit<br>Switch(config)#vlan 22<br>Switch(config-vlan)#int f0/23<br>Switch(config-if)#switchport mode access<br>Switch(config-if)#switchport access vlan 22<br>Switch(config)#int f0/24<br>Switch(config-if)#switchport mode trunk </p>
 <p>#AS2<br>Switch&gt;en<br>Switch#conf t<br>Switch(config)#vlan 22<br>Switch(config-vlan)#int f0/2<br>Switch(config-if)#switchport mode access<br>Switch(config-if)#switchport access vlan 22<br>Switch(config)#int f0/24<br>Switch(config-if)#switchport mode trunk </p>
 <ol start="2">
 <li>配置CS核心交换机</li>
@@ -184,9 +184,9 @@
 <p>Laptop1： –&gt; config –&gt; wireless0 –&gt; SSID: AP2 wpa2-psk:87654321<br>            –&gt; Desktop –&gt; Connect –&gt; Refresh –&gt; 选择AP2 –&gt; Connect</p>
 <p>7、配置PPPoE接入</p>
 <p>Cloud0 —&gt; DSL —&gt; Modem4 <-> Ethernet6<br>                    Modem5 <-> Ethernet6</-></-></p>
-<p>#ISP2<br>Router(config)#int f1/0<br>Router(config-if)#ip address 8.0.0.1 255.0.0.0<br>Router(config)#pppoe enable                                // 配置接口启用pppoe<br>Router(config)#ip local pool mypool 8.0.0.10 8.0.0.100        // 配置地址池<br>Router(config)#username user1 password 0 123            /<br>Router(config)#aaa new-model                 // 启用 AAA<br>Router(config)#aaa authentication ppp default group radius     // 使用 Radius 对所有 PPP 用户进行身份验证<br>Router(config)#radius-server host 6.0.0.2 key 123            // 指定外部 AAA 服务器,设置预共享密钥<br>Router(config)#int virtual-template 1                    // 定义虚拟模板<br>Router(config-if)#ip unnumbered f1/0                     // 借用以太口地址<br>Router(config)#peer default ip address pool mypool     // 设定地址池<br>Router(config)#ppp authentication chap                // 设定认证方式<br>Router(config)#vpdn enable                     // 全局启用虚拟拨号<br>Router(config)#vpdn-group mygroup                 // 定义虚拟拨号组<br>Router(config)#accept-dialin                    // 允许拨号接入<br>Router(config)#protocol pppoe                 // 接入协议为pppoe<br>Router(config)#virtual-template 1            // 设定虚拟模板</p>
+<p>#ISP2<br>Router(config)#int f1/0<br>Router(config-if)#ip address 8.0.0.1 255.0.0.0<br>Router(config)#pppoe enable                                // 配置接口启用pppoe<br>Router(config)#ip local pool mypool 8.0.0.10 8.0.0.100        // 配置地址池<br>Router(config)#username user1 password 0 123            /<br>Router(config)#aaa new-model                 // 启用 AAA<br>Router(config)#aaa authentication ppp default group radius     // 使用 Radius 对所有 PPP 用户进行身份验证<br>Router(config)#radius-server host 6.0.0.2 key 123            // 指定外部 AAA 服务器,设置预共享密钥<br>Router(config)#int virtual-template 1                    // 定义虚拟模板<br>Router(config-if)#ip unnumbered f1/0                     // 借用以太口地址<br>Router(config)#peer default ip address pool mypool     // 设定地址池<br>Router(config)#ppp authentication chap                // 设定认证方式<br>Router(config)#vpdn enable                     // 全局启用虚拟拨号<br>Router(config)#vpdn-group mygroup                 // 定义虚拟拨号组<br>Router(config-vpdn)#accept-dialin<br>// 允许拨号接入<br>Router(config-vpdn-acc-in)#protocol pppoe                 // 接入协议为pppoe<br>Router(config-vpdn-acc-in)#virtual-template 1            // 设定虚拟模板</p>
 <p>#Inter-Srv</p>
-<p>Service —&gt; AAA —&gt;<br>            Network Configuration:<br>                pppoe 4.0.0.2 Radius aaa<br>                ppp   8.0.0.1 Radius aaa<br>            User Setup:<br>                u1         cisco        // 用于 WireLess 认证<br>                test     123        // 用于 PC0 认证<br>在pc0使用PPPoE Dialer接入网络，ipconfig查看地址并ping6.0.0.2<br>        Desktop —&gt; PPPoE —&gt; User Name: test Password: 123<br>配置无线路由器使用PPPoE接入网络<br>        Setup —&gt; PPPoE —&gt; Username: u1 Password: cisco  Save Settings<br>        WireLess —&gt; Basic WireLess Settings —&gt; Network Name: AP2  Standard Channel: 11<br>                 —&gt; WireLess Security —&gt; Security Mode: WAP2 Persional  AES  87654321</p>
+<p>Service —&gt; AAA —&gt;<br>            Network Configuration:<br>                pppoe 4.0.0.2 Radius 123<br>                ppp   8.0.0.1 Radius 123<br>            User Setup:<br>                u1         cisco        // 用于 WireLess 认证<br>                test     123        // 用于 PC0 认证<br>在pc0使用PPPoE Dialer接入网络，ipconfig查看地址并ping6.0.0.2<br>        Desktop —&gt; PPPoE —&gt; User Name: test Password: 123<br>配置无线路由器使用PPPoE接入网络<br>        Setup —&gt; PPPoE —&gt; Username: u1 Password: cisco  Save Settings<br>        WireLess —&gt; Basic WireLess Settings —&gt; Network Name: AP2  Standard Channel: 11<br>                 —&gt; WireLess Security —&gt; Security Mode: WAP2 Persional  AES  87654321</p>
 <p>8、配置×××</p>
 <p>×××，对端为7.0.0.2，认证方式为pre−share，key为123，加密方式为ah−md5−hmac esp−des，从总部172.16.0.0到分公司192.168.1.0的流量加密<br>        FireWall(config)# ip route 0.0.0.0 0.0.0.0 2.0.0.1          // 添加默认路由( 已添加 )# 配置 IKE 协商<br>        FireWall(config)#crypto isakmp enable                    // 启动 IKE<br>        FireWall(config)#crypto isakmp policy 1                    // 建立 IKE 协商策略<br>        FireWall(config-isakmap)#hash md5                        // 认证算法<br>        FireWall(config-isakmap)#authentication pre−share        // 使用预定义密钥<br>        FireWall(config-isakmap)#exit<br>        FireWall(config)#crypto isakmp key aaa address 7.0.0.2    // 设置共享密钥和对端地址</p>
 <p>#配置 IPSec 协商<br>        FireWall(config)#crypto ipsec transform−set testform ah−md5−hmac esp−des<br>        // 定义了使用AH还是ESP协议，以及相应协议所用的算法<br>        FireWall(config)#access−list 102 permit ip 172.16.0.0 0.0.255.255 192.168.1.0 0.0.0.255<br>        // 配置保护访问控制列表，用来定义哪些报文需要经过 IPSec 加密后发送，哪些报文直接发送</p>
@@ -256,7 +256,7 @@ c)在公司总部配置callmanager ，测试总部两部电话的连通性
     # default-router 172.16.100.1
     # option 150 ip 172.16.100.1
         # 配置呼叫服务
-    # telephone-service
+    # telephony-service
     # max-dn 10
     # max-ephone 10
     # ip source-address 172.16.100.1 port 2000
@@ -299,7 +299,7 @@ g)在总部callmanager上设置默认路由指向172.16.100.254
 h)配置两台callmanager点对点连接，测试总部到分公司电话的连通性
     CallManager：
     dial-peer voice 1 voip
-     destination-pattern  2...
+     destination-pattern  2...de
      session target ipv4:192.168.1.1
 
     Router-FW：
@@ -314,7 +314,7 @@ d)配置控制列表禁止PC11.2访问互联网
     Ø 设置扩展访问控制列表，允许PC11.2访问DMZ-Srv、禁止PC11.2访问其他地址、允许所有IP流量
         access-list 103 deny ip 172.16.11.2 0.0.0.0 any
         access-list 103 permit ip 172.16.11.2 0.0.0.0 172.16.254.2 255.555.255.0
-        access-list 103 permit ip any
+        access-list 103 permit ip any any
     Ø 把访问控制列表应用于Firewall内网接口入方向上
         int f0/0 
         ip access-group 103 out 
