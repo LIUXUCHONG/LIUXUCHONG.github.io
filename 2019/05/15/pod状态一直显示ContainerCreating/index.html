@@ -1,0 +1,346 @@
+<!DOCTYPE HTML>
+<html lang="zh-Hans">
+<head>
+    <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content=", hexo-theme-matery">
+    <meta name="description" content="这是刘绪冲的博客">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>九尾狐</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+</head>
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">九尾狐</span>
+                    </a>
+                </div>
+
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">首页</a>
+    </li>
+    
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">标签</a>
+    </li>
+    
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">归档</a>
+    </li>
+    
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">九尾狐</div>
+        <div class="logo-desc">
+            
+            这是刘绪冲的博客
+            
+        </div>
+    </div>
+    <ul class="menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>归档
+            </a>
+        </li>
+        
+    </ul>
+    <div class="social-link">
+        <a href="https://github.com/LIUXUCHONG" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
+           data-position="top" data-delay="50">
+            <i class="fa fa-github fa-lg"></i>
+        </a>
+        <a href="mailto:1187766935@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我"
+           data-position="top" data-delay="50">
+            <i class="fa fa-envelope fa-lg"></i>
+        </a>
+        <a href="#!" class="tooltipped" data-tooltip="QQ号：1187766935" data-position="top" data-delay="50">
+            <i class="fa fa-qq fa-lg"></i>
+        </a>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        pod状态一直显示ContainerCreating
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main class="content">
+
+    <!-- 文章内容详情 -->
+    <div id="artDetail" class="container">
+        <div class="card">
+            <div class="card-content article-info">
+                
+                <div class="author-info">
+                    <span>
+                        <i class="fa fa-calendar fa-fw"></i>2019-05-15
+                    </span>
+                </div>
+            </div>
+            <hr>
+            <div class="card-content article-card-content">
+                <div id="articleContent">
+                    <p>今天在学习kubernetes的时候启动了一个msyql服务，运行命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@liuxuchong kubernetes]# kubectl create -f mysql-rc.yaml</span><br><span class="line">replicationcontroller &quot;mysql&quot; created</span><br><span class="line">[root@liuxuchong kubernetes]# kubectl get all</span><br><span class="line">NAME       DESIRED   CURRENT   READY     AGE</span><br><span class="line">rc/mysql   1         1         0         6m</span><br><span class="line"></span><br><span class="line">NAME             CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE</span><br><span class="line">svc/kubernetes   10.254.0.1   &lt;none&gt;        443/TCP   10m</span><br><span class="line"></span><br><span class="line">NAME             READY     STATUS              RESTARTS   AGE</span><br><span class="line">po/mysql-f7df5   0/1       ContainerCreating   0          6m</span><br></pre></td></tr></table></figure></p>
+<p>可以看到rc没有ready，并且pod一直显示ContainerCreating<br>显示pod详细信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">[root@liuxuchong ca]# kubectl describe pod mysql-f7df5</span><br><span class="line">Name:		mysql-f7df5</span><br><span class="line">Namespace:	default</span><br><span class="line">Node:		127.0.0.1/127.0.0.1</span><br><span class="line">Start Time:	Wed, 15 May 2019 11:56:38 +0800</span><br><span class="line">Labels:		app=mysql</span><br><span class="line">Status:		Pending</span><br><span class="line">IP:		</span><br><span class="line">Controllers:	ReplicationController/mysql</span><br><span class="line">Containers:</span><br><span class="line">  mysql:</span><br><span class="line">    Container ID:	</span><br><span class="line">    Image:		mysql</span><br><span class="line">    Image ID:		</span><br><span class="line">    Port:		3306/TCP</span><br><span class="line">    State:		Waiting</span><br><span class="line">      Reason:		ContainerCreating</span><br><span class="line">    Ready:		False</span><br><span class="line">    Restart Count:	0</span><br><span class="line">    Volume Mounts:	&lt;none&gt;</span><br><span class="line">    Environment Variables:</span><br><span class="line">      MYSQL_ROOT_PASSWORD:	123456</span><br><span class="line">Conditions:</span><br><span class="line">  Type		Status</span><br><span class="line">  Initialized 	True </span><br><span class="line">  Ready 	False </span><br><span class="line">  PodScheduled 	True </span><br><span class="line">No volumes.</span><br><span class="line">QoS Class:	BestEffort</span><br><span class="line">Tolerations:	&lt;none&gt;</span><br><span class="line">Events:</span><br><span class="line">  FirstSeen	LastSeen	Count	From			SubObjectPath	Type		Reason		Message</span><br><span class="line">  ---------	--------	-----	----			-------------	--------	------		-------</span><br><span class="line">  5m		5m		1	&#123;default-scheduler &#125;			Normal		Scheduled	Successfully assigned mysql-f7df5 to 127.0.0.1</span><br><span class="line">  5m		2m		5	&#123;kubelet 127.0.0.1&#125;			Warning		FailedSync	Error syncing pod, skipping: failed to &quot;StartContainer&quot; for &quot;POD&quot; with ErrImagePull: &quot;image pull faileredhat.com/rhel7/pod-infrastructure:latest, this may be because there are no credentials on this request.  details: (open /etc/docker/certs.d/registry.access.redhat.com/redhat-ca.crt: no such file or directory)&quot;</span><br><span class="line"></span><br><span class="line">  4m	5s	19	&#123;kubelet 127.0.0.1&#125;		Warning	FailedSync	Error syncing pod, skipping: failed to &quot;StartContainer&quot; for &quot;POD&quot; with ImagePullBackOff: &quot;Back-off pulling image \&quot;registry.access.redastructure:latest\&quot;&quot;</span><br></pre></td></tr></table></figure></p>
+<p>看到了俩个警告，第一个是说拉取镜像请求失败，括号里的意思是没有这个目录，手动查了一遍发现有这个目录，网上说安装一下rhsm，yum install <em>rhsm</em> -y，发现问题还是没有解决，于是想到拉取镜像需要访问外网，阿里云的机器不能访问外网，于是从国外的服务器拉取了镜像。<br>用命令journalctl -u kubelet -f查看一下日志<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@liuxuchong kubernetes]# journalctl -u kubelet -f</span><br><span class="line">-- Logs begin at Tue 2018-04-10 03:20:48 CST. --</span><br><span class="line">May 15 12:02:25 liuxuchong kubelet[28192]: E0515 12:02:25.614469   28192 docker_manager.go:2159] Failed to create pod infra container: ImagePullBackOff; Skipping pod &quot;mysql-f7df5_default(70ce53f4-76c5-11e9-963f-00163e324a1f)&quot;: Back-off pulling image &quot;registry.access.redhat.com/rhel7/pod-infrastructure:latest&quot;</span><br><span class="line">May 15 12:02:25 liuxuchong kubelet[28192]: E0515 12:02:25.614942   28192 pod_workers.go:184] Error syncing pod 70ce53f4-76c5-11e9-963f-00163e324a1f, skipping: failed to &quot;StartContainer&quot; for &quot;POD&quot; with ImagePullBackOff: &quot;Back-off pulling image \&quot;registry.access.redhat.com/rhel7/pod-infrastructure:latest\&quot;&quot;</span><br></pre></td></tr></table></figure></p>
+<p>果断拉取（可以访问外网的服务器)</p>
+<blockquote>
+<p>docker pull registry.access.redhat.com/rhel7/pod-infrastructure:latest</p>
+</blockquote>
+<p>然后上传到dockerhub上，上传过程就不详细说了，不会自行百度，然后在本地机器上拉取该镜像，改一下名字<br>命名为registry.access.redhat.com/rhel7/pod-infrastructure:latest<br>最后删除原来的rc和pod<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@liuxuchong ca]# kubectl get all</span><br><span class="line">NAME       DESIRED   CURRENT   READY     AGE</span><br><span class="line">rc/mysql   1         1         0         6m</span><br><span class="line"></span><br><span class="line">NAME             CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE</span><br><span class="line">svc/kubernetes   10.254.0.1   &lt;none&gt;        443/TCP   10m</span><br><span class="line"></span><br><span class="line">NAME             READY     STATUS              RESTARTS   AGE</span><br><span class="line">po/mysql-f7df5   0/1       ContainerCreating   0          6m</span><br><span class="line">[root@liuxuchong ca]# kubectl delete rc mysql</span><br><span class="line">replicationcontroller &quot;mysql&quot; deleted</span><br><span class="line">[root@liuxuchong ca]# kubectl delete pod mysql-f7df5</span><br><span class="line">pod &quot;mysql-f7df5&quot; deleted</span><br></pre></td></tr></table></figure></p>
+<p>重新创建<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@liuxuchong kubernetes]# kubectl create -f mysql-rc.yaml </span><br><span class="line">replicationcontroller &quot;mysql&quot; created</span><br><span class="line">[root@liuxuchong kubernetes]# kubectl get rc</span><br><span class="line">NAME      DESIRED   CURRENT   READY     AGE</span><br><span class="line">mysql     1         1         1         7s</span><br><span class="line">[root@liuxuchong kubernetes]# kubectl get pods</span><br><span class="line">NAME          READY     STATUS    RESTARTS   AGE</span><br><span class="line">mysql-r4kxq   1/1       Running   0          12s</span><br></pre></td></tr></table></figure></p>
+<p>pod的状态终于变成了Running</p>
+
+                </div>
+                <hr/>
+
+                <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+                <div class="reprint">
+                    <p>
+                        <span class="reprint-tip">Reprint please specify: </span>
+                        <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
+                        <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                        <a href="/2019/05/15/pod状态一直显示ContainerCreating/" class="b-link-green">pod状态一直显示ContainerCreating</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: 'Wed May 15 2019 18:19:01 GMT+0800',
+        owner: 'LIUXUCHONG',
+        repo: 'liuxuchong.github.io',
+        oauth: {
+            client_id: 'f54de68b257c3f12e872',
+            client_secret: 'e9018bda13811bfed32a87ec29f532e2e108f4d5',
+        },
+    });
+
+    gitment.render('gitment-content');
+</script>
+        
+
+        
+
+        
+
+<article id="articles" class="container prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">Current</div>
+            <div class="card">
+                <a href="/2019/05/15/pod状态一直显示ContainerCreating/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="pod状态一直显示ContainerCreating">
+                        
+                        <span class="card-title">pod状态一直显示ContainerCreating</span>
+                    </div>
+
+                    <div class="card-content article-content">
+                        <div class="summary">今天在学习kubernetes的时候启动了一个msyql服务，运行命令1234567891011[root@liuxuchong kubernetes]# kubectl create -f mysql-rc.yamlreplication</div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-calendar fa-fw"></i>2019-05-15
+                            </span>
+                            <span class="publish-author">
+                                <i class="fa fa-user fa-fw"></i>
+                                
+                                刘绪冲
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </a>
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">Next</div>
+            <div class="card">
+                <a href="/2019/03/15/Windows-Server2016下安装SQL-Server2012集群/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Windows Server2016下安装SQL Server2012集群">
+                        
+                        <span class="card-title">Windows Server2016下安装SQL Server2012集群</span>
+                    </div>
+                    <div class="card-content article-content">
+                        <div class="summary">
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-calendar fa-fw"></i>2019-03-15
+                            </span>
+                            <span class="publish-author">
+                                <i class="fa fa-user fa-fw"></i>
+                                
+                                刘绪冲
+                                
+                            </span>
+                        </div>
+                    </div>
+                    
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</article>
+    </div>
+</main>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        
+        <div class="col s12 m4 l4 social-link">
+            <a href="https://github.com/LIUXUCHONG" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+                <i class="fa fa-github fa-lg"></i>
+            </a>
+            <a href="mailto:1187766935@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+                <i class="fa fa-envelope fa-lg"></i>
+            </a>
+            <a href="https://im.qq.com/" class="tooltipped" data-tooltip="QQ: 1187766935" data-position="top" data-delay="50">
+                <i class="fa fa-qq fa-lg"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input" autofocus="">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-double-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+</body>
+</html>
