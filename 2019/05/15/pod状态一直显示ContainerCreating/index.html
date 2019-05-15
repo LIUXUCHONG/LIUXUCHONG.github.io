@@ -157,26 +157,46 @@
             <div class="card-content article-card-content">
                 <div id="articleContent">
                     <p>今天在学习kubernetes的时候启动了一个msyql服务，运行命令</p>
+<blockquote>
 <p>[root@liuxuchong kubernetes]# kubectl create -f mysql-rc.yaml<br>replicationcontroller “mysql” created<br>[root@liuxuchong kubernetes]# kubectl get all<br>NAME       DESIRED   CURRENT   READY     AGE<br>rc/mysql   1         1         0         6m</p>
+</blockquote>
+<blockquote>
 <p>NAME             CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE<br>svc/kubernetes   10.254.0.1   <none>        443/TCP   10m</none></p>
+</blockquote>
+<blockquote>
 <p>NAME             READY     STATUS              RESTARTS   AGE<br>po/mysql-f7df5   0/1       ContainerCreating   0          6m</p>
+</blockquote>
 <p>可以看到rc没有ready，并且pod一直显示ContainerCreating<br>显示pod详细信息</p>
+<blockquote>
 <p>[root@liuxuchong ca]# kubectl describe pod mysql-f7df5<br>Name:        mysql-f7df5<br>Namespace:    default<br>Node:        127.0.0.1/127.0.0.1<br>Start Time:    Wed, 15 May 2019 11:56:38 +0800<br>Labels:        app=mysql<br>Status:        Pending<br>IP:<br>Controllers:    ReplicationController/mysql<br>Containers:<br>  mysql:<br>    Container ID:<br>    Image:        mysql<br>    Image ID:<br>    Port:        3306/TCP<br>    State:        Waiting<br>      Reason:        ContainerCreating<br>    Ready:        False<br>    Restart Count:    0<br>    Volume Mounts:    <none><br>    Environment Variables:<br>      MYSQL_ROOT_PASSWORD:    123456<br>Conditions:<br>  Type        Status<br>  Initialized     True<br>  Ready     False<br>  PodScheduled     True<br>No volumes.<br>QoS Class:    BestEffort<br>Tolerations:    <none><br>Events:<br>  FirstSeen    LastSeen    Count    From            SubObjectPath    Type        Reason        Message</none></none></p>
+</blockquote>
 <hr>
 <p>  5m        5m        1    {default-scheduler }            Normal        Scheduled    Successfully assigned mysql-f7df5 to 127.0.0.1<br>  5m        2m        5    {kubelet 127.0.0.1}            Warning        FailedSync    Error syncing pod, skipping: failed to “StartContainer” for “POD” with ErrImagePull: “image pull faileredhat.com/rhel7/pod-infrastructure:latest, this may be because there are no credentials on this request.  details: (open /etc/docker/certs.d/registry.access.redhat.com/redhat-ca.crt: no such file or directory)”</p>
-<p>  4m    5s    19    {kubelet 127.0.0.1}        Warning    FailedSync    Error syncing pod, skipping: failed to “StartContainer” for “POD” with ImagePullBackOff: “Back-off pulling image \”registry.access.redastructure:latest\””</p>
+<blockquote>
+<p>4m    5s    19    {kubelet 127.0.0.1}        Warning    FailedSync    Error syncing pod, skipping: failed to “StartContainer” for “POD” with ImagePullBackOff: “Back-off pulling image \”registry.access.redastructure:latest\””</p>
+</blockquote>
 <p>看到了俩个警告，第一个是说拉取镜像请求失败，括号里的意思是没有这个目录，手动查了一遍发现有这个目录，网上说安装一下rhsm，yum install <em>rhsm</em> -y，发现问题还是没有解决，于是想到拉取镜像需要访问外网，阿里云的机器不能访问外网，于是从国外的服务器拉取了镜像。<br>用命令journalctl -u kubelet -f查看一下日志</p>
+<blockquote>
 <p>[root@liuxuchong kubernetes]# journalctl -u kubelet -f<br>– Logs begin at Tue 2018-04-10 03:20:48 CST. –<br>May 15 12:02:25 liuxuchong kubelet[28192]: E0515 12:02:25.614469   28192 docker_manager.go:2159] Failed to create pod infra container: ImagePullBackOff; Skipping pod “mysql-f7df5_default(70ce53f4-76c5-11e9-963f-00163e324a1f)”: Back-off pulling image “registry.access.redhat.com/rhel7/pod-infrastructure:latest”<br>May 15 12:02:25 liuxuchong kubelet[28192]: E0515 12:02:25.614942   28192 pod_workers.go:184] Error syncing pod 70ce53f4-76c5-11e9-963f-00163e324a1f, skipping: failed to “StartContainer” for “POD” with ImagePullBackOff: “Back-off pulling image \”registry.access.redhat.com/rhel7/pod-infrastructure:latest\””</p>
+</blockquote>
 <p>果断拉取（可以访问外网的服务器)</p>
 <blockquote>
 <p>docker pull registry.access.redhat.com/rhel7/pod-infrastructure:latest</p>
 </blockquote>
 <p>然后上传到dockerhub上，上传过程就不详细说了，不会自行百度，然后在本地机器上拉取该镜像，改一下名字<br>命名为registry.access.redhat.com/rhel7/pod-infrastructure:latest<br>最后删除原来的rc和pod</p>
+<blockquote>
 <p>[root@liuxuchong ca]# kubectl get all<br>NAME       DESIRED   CURRENT   READY     AGE<br>rc/mysql   1         1         0         6m</p>
+</blockquote>
+<blockquote>
 <p>NAME             CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE<br>svc/kubernetes   10.254.0.1   <none>        443/TCP   10m</none></p>
+</blockquote>
+<blockquote>
 <p>NAME             READY     STATUS              RESTARTS   AGE<br>po/mysql-f7df5   0/1       ContainerCreating   0          6m<br>[root@liuxuchong ca]# kubectl delete rc mysql<br>replicationcontroller “mysql” deleted<br>[root@liuxuchong ca]# kubectl delete pod mysql-f7df5<br>pod “mysql-f7df5” deleted</p>
+</blockquote>
 <p>重新创建</p>
+<blockquote>
 <p>[root@liuxuchong kubernetes]# kubectl create -f mysql-rc.yaml<br>replicationcontroller “mysql” created<br>[root@liuxuchong kubernetes]# kubectl get rc<br>NAME      DESIRED   CURRENT   READY     AGE<br>mysql     1         1         1         7s<br>[root@liuxuchong kubernetes]# kubectl get pods<br>NAME          READY     STATUS    RESTARTS   AGE<br>mysql-r4kxq   1/1       Running   0          12s</p>
+</blockquote>
 <p>pod的状态终于变成了Running</p>
 
                 </div>
@@ -248,7 +268,8 @@
 
                     <div class="card-content article-content">
                         <div class="summary">今天在学习kubernetes的时候启动了一个msyql服务，运行命令
-[root@liuxuchong kubernetes]# kubectl create -f mysql-rc.yamlreplicationcontroller “</div>
+
+[root@liuxuchong kubernetes]# kubectl create -f mysql-rc.yamlreplicationcontroller </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-calendar fa-fw"></i>2019-05-15
