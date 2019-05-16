@@ -1,0 +1,466 @@
+<!DOCTYPE HTML>
+<html lang="zh-Hans">
+<head>
+    <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content=", hexo-theme-matery">
+    <meta name="description" content="这是刘绪冲的博客">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>九尾狐</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+</head>
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">九尾狐</span>
+                    </a>
+                </div>
+
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">首页</a>
+    </li>
+    
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">标签</a>
+    </li>
+    
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">归档</a>
+    </li>
+    
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">九尾狐</div>
+        <div class="logo-desc">
+            
+            这是刘绪冲的博客
+            
+        </div>
+    </div>
+    <ul class="menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>归档
+            </a>
+        </li>
+        
+    </ul>
+    <div class="social-link">
+        <a href="https://github.com/LIUXUCHONG" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
+           data-position="top" data-delay="50">
+            <i class="fa fa-github fa-lg"></i>
+        </a>
+        <a href="mailto:1187766935@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我"
+           data-position="top" data-delay="50">
+            <i class="fa fa-envelope fa-lg"></i>
+        </a>
+        <a href="#!" class="tooltipped" data-tooltip="QQ号：1187766935" data-position="top" data-delay="50">
+            <i class="fa fa-qq fa-lg"></i>
+        </a>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        kubeadm搭建kubernetes集群
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main class="content">
+
+    <!-- 文章内容详情 -->
+    <div id="artDetail" class="container">
+        <div class="card">
+            <div class="card-content article-info">
+                
+                <div class="author-info">
+                    <span>
+                        <i class="fa fa-calendar fa-fw"></i>2019-05-16
+                    </span>
+                </div>
+            </div>
+            <hr>
+            <div class="card-content article-card-content">
+                <div id="articleContent">
+                    <p><strong>一、环境准备</strong><br>首先我的三个ubuntu云主机的配置如下</p>
+<table>
+<thead>
+<tr>
+<th>cpu数量</th>
+<th>内存</th>
+<th>磁盘</th>
+<th>Ubuntu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>8G</td>
+<td>20G</td>
+<td>18.04LTS</td>
+</tr>
+</tbody>
+</table>
+<p>而且能保证三台机器都能连接外网<br>这里的所有命令都是在root用户下操作的</p>
+<p><strong>二、安装</strong></p>
+<p><strong>1.在所有的节点上安装Docker和kubeadm</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root@instance-ubuntu-1:~# apt-get install curl -y </span><br><span class="line">root@instance-ubuntu-1:~# curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -</span><br><span class="line">root@instance-ubuntu-1:~#  cat &lt;&lt;EOF &gt; /etc/apt/sources.list.d/kubernetes.list</span><br><span class="line">deb http://apt.kubernetes.io/ kubernetes-xenial main</span><br><span class="line">EOF</span><br><span class="line">root@instance-ubuntu-1:~# apt-get update</span><br><span class="line">root@instance-ubuntu-1:~# apt-get install -y docker.io kubeadm</span><br></pre></td></tr></table></figure>
+<pre><code>上述安装过程中，kubeadm,kubectl,kubelet,kubernetes-cni这几个二进制文件都会被自动安装好。
+直接使用+Ubuntu+的+docker.io+的安装源，原因是+Docker+公司每次发布的最新的+Docker+CE（社区版）产品往往还没有经过+Kubernetes+项目的验证，可能会有兼容性方面的问题。
+</code></pre><p><strong>2.部署kubernetes的Master节点</strong></p>
+<blockquote>
+<p>root@instance-ubuntu-1:~# vim kubeadm.yaml<br>apiVersion: kubeadm v1.11<br>kind: MasterConfiguration<br>controllerManagerExtraArgs:<br>  horizontal-pod-autoscaler-use-rest-clients: “true”<br>  horizontal-pod-autoscaler-sync-period: “10s”<br>  node-monitor-grace-period: “10s”<br>apiServerExtraArgs:<br>  runtime-config: “api/all=true”<br>kubernetesVersion: “stable-1.11”</p>
+</blockquote>
+<blockquote>
+<p>root@instance-ubuntu-1:~# kubeadm init –config kubeadm.yaml</p>
+</blockquote>
+<p>如果有报错</p>
+<blockquote>
+<p>your configuration file uses an old API spec: “kubeadm.k8s.io/v1alpha1”. Please use kubeadm v1.11 instead and run ‘kubeadm config migrate –old-config old.yaml –new-config new.yaml’, which will write the new, similar spec using a newer API version.</p>
+</blockquote>
+<p>把apiServer改成你对应的版本</p>
+<p>再次运行kubeadm init –config kubeadm.yaml</p>
+<p>这样就可以完成Master的部署了，稍等片刻，部署完成后，kubeadm会生成一条指令 </p>
+<blockquote>
+<p>kubeadm join 10.168.0.6:6443 –token k0jhnn.a7l33i18ehbl1aze \<br>    –discovery-token-ca-cert-hash sha256:064420e731f201b1601bb0bb39ccfef0e581a83449a043b60036cfb4537e5c67</p>
+</blockquote>
+<p>kubeadm join 命令是用来给Master节点添加更多的Work节点的，记住此命令，下面会用到。</p>
+<p>此外，kubeadm会提示提示第一次使用集群所需要的配置命令。</p>
+<blockquote>
+<p>root@instance-ubuntu-1:~#  mkdir -p $HOME/.kube<br>root@instance-ubuntu-1:~#  cp -i /etc/kubernetes/admin.conf $HOME/.kube/config<br>root@instance-ubuntu-1:~#  chown $(id -u):$(id -g) $HOME/.kube/config</p>
+</blockquote>
+<p>因为Kubernetes 集群默认需要加密方式访问。所以，这几条命令，就是将刚刚部署生成的 Kubernetes 集群的安全配置文件，保存到当前用户的.kube 目录下，kubectl 默认会使用这个目录下的授权信息访问 Kubernetes 集群。如果不这么做的话，我们每次都需要通过 export KUBECONFIG 环境变量告诉 kubectl 这个安全配置文件的位置。<br>现在，我们就可以使用  kubectl get命令来查看当前唯一一个节点的状态了</p>
+<blockquote>
+<p>root@instance-ubuntu-1:~# kubectl get nodes<br>NAME                     STATUS        ROLES    AGE     VERSION<br>instance-ubuntu-1   NotReady      master    3h52m   v1.14.1             </p>
+</blockquote>
+<p>主节点的状态为什么会是NotReady，我们查看一下master节点的详细信息</p>
+<blockquote>
+<p>root@instance-ubuntu-1:~# kubectl describe node instance-ubuntu-1</p>
+</blockquote>
+<p>会显示</p>
+<blockquote>
+<p>Ready   False … KubeletNotReady  runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized</p>
+</blockquote>
+<p>这是因为我们还没有部署任何网络插件</p>
+<p><strong>3.部署网络插件</strong></p>
+<p>在 Kubernetes 项目“一切皆容器”的设计理念指导下，部署网络插件非常简单，只需要执行一句 kubectl apply 指令，以 Weave 为例：</p>
+<blockquote>
+<p>root@instance-ubuntu-1:~# kubectl apply -f <a href="https://git.io/weave-kube-1.6" target="_blank" rel="noopener">https://git.io/weave-kube-1.6</a></p>
+</blockquote>
+<p>部署完成后检查一下</p>
+<blockquote>
+<p>root@instance-ubuntu-1:~# kubectl get pods -n kube-system<br>NAME                                        READY   STATUS    RESTARTS   AGE<br>coredns-fb8b8dccf-lc69z                     1/1     Running   0          3h57m<br>coredns-fb8b8dccf-p2p4k                     1/1     Running   0          3h57m<br>etcd-instance-ubuntu-1                      1/1     Running   0          3h56m<br>kube-apiserver-instance-ubuntu-1            1/1     Running   0          3h56m<br>kube-controller-manager-instance-ubuntu-1   1/1     Running   0          3h56m<br>kube-proxy-pksmg                            1/1     Running   0          3h47m<br>kube-proxy-qb2cl                            1/1     Running   0          3h57m<br>kube-proxy-z6q42                            1/1     Running   0          3h47m<br>kube-scheduler-instance-ubuntu-1            1/1     Running   0          3h56m<br>kubernetes-dashboard-5f7b999d65-rkkqq       1/1     Running   0          3h29m<br>weave-net-f5kgb                             2/2     Running   1          3h47m<br>weave-net-fxxq2                             2/2     Running   0          3h47m<br>weave-net-nplfj                             2/2     Running   0          3h50m</p>
+</blockquote>
+<p>可以看到所有pod都运行起来了 而刚刚部署的 Weave 网络插件则在 kube-system 下面新建了一个名叫 weave-net-cmk27 的 Pod，一般来说，这些 Pod 就是容器网络插件在每个节点上的控制组件。 Kubernetes  支持容器网络插件，使用的是一个名叫 CNI 的通用接口，它也是当前容器网络的事实标准，市面上的所有容器网络开源项目都可以通过 CNI 接入 Kubernetes，比如 Flannel、Calico、Canal、Romana 等等，它们的部署方式也都是类似的“一键部署”。至此，Kubernetes 的 Master 节点就部署完成了。如果你只需要一个单节点的 Kubernetes，现在你就可以使用了。不过，在默认情况下，Kubernetes 的 Master 节点是不能运行用户 Pod 的，第4部分会讲到如何处理。</p>
+<p><strong>4.部署 Kubernetes 的 Worker 节点</strong><br>   Kubernetes 的 Worker 节点跟 Master 节点几乎是相同的，它们运行着的都是一个 kubelet 组件。唯一的区别在于，在 kubeadm init 的过程中，kubelet 启动后，Master 节点上还会自动运行 kube-apiserver、kube-scheduler、kube-controller-manger 这三个系统 Pod。 所以，相比之下，部署 Worker 节点反而是最简单的，只需要两步即可完成。<br>     第一步，在所有 Worker 节点上执行<strong>二、安装</strong>，第1节的所有步骤。<br>     第二步，执行部署 Master 节点时生成的 kubeadm join 指令：</p>
+<pre><code> &gt;kubeadm join 10.168.0.6:6443 --token k0jhnn.a7l33i18ehbl1aze \
+--discovery-token-ca-cert-hash sha256:064420e731f201b1601bb0bb39ccfef0e581a83449a043b60036cfb4537e5c67
+</code></pre><p>通过 Taint/Toleration 调整 Master 执行 Pod 的策略 前面提到过，默认情况下 Master 节点是不允许运行用户  Pod 的。而 Kubernetes 做到这一点，依靠的是 Kubernetes  的 Taint/Toleration 机制。 它的原理非常简单：一旦某个节点被加上了一个 Taint，即被“打上了污点”，那么所有 Pod 就都不能在这个节点上运行，因为 Kubernetes 的 Pod 都有“洁癖”。 除非，有个别的 Pod 声明自己能“容忍”这个“污点”，即声明了 Toleration，它才可以在这个节点上运行。 其中，为节点打上“污点”（Taint）的命令是：</p>
+<blockquote>
+<p>root@instance-ubuntu-1:~#  kubectl taint nodes instance-ubuntu-1 foo=bar:NoSchedule</p>
+</blockquote>
+<p>这时，该 node1 节点上就会增加一个键值对格式的 Taint，即：foo=bar:NoSchedule<br>。其中值里面的 NoSchedule，意味着这个 Taint 只会在调度新 Pod 时产生作用，而不会影响已经在 node1 上运行的 Pod，哪怕它们没有 Toleration。</p>
+<p>现在回到我们已经搭建的集群上来。这时，如果你通过 kubectl describe 检查一下 Master 节点的 Taint 字段，就会有所发现了：</p>
+<blockquote>
+<p>root@instance-ubuntu-1:~# kubectl describe node master</p>
+</blockquote>
+<p><strong>5.部署Dashboard可视化插件</strong><br>在 Kubernetes 社区中，有一个很受欢迎的 Dashboard 项目，它可以给用户提供一个可视化的 Web 界面来查看当前集群的各种信息。毫不意外，它的部署也相当简单</p>
+<blockquote>
+<p>kubectl create -f<br><a href="https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml" target="_blank" rel="noopener">https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml</a></p>
+</blockquote>
+<p>部署完成之后，我们就可以查看+Dashboard+对应的+Pod+的状态了</p>
+<blockquote>
+<p>root@instance-ubuntu-1:~# kubectl get pods -n kube-system</p>
+</blockquote>
+<blockquote>
+<p>kubernetes-dashboard-6948bdb78-f67xk   1/1       Running   0          1m</p>
+</blockquote>
+<p>需要注意的是，由于 Dashboard 是一个 Web Server，很多人经常会在自己的公有云上无意地暴露+Dashboard 的端口，从而造成安全隐患。所以，1.7 版本之后的 Dashboard  项目部署完成后，默认只能通过 Proxy 的方式在本地访问。具体的操作，你可以查看 Dashboard+项目的官方文档。 而如果你想从集群外访问这个 Dashboard 的话，就需要用到 Ingress</p>
+<p><strong>6.部署容器存储插件</strong></p>
+<p>为什么要部署Rook呢？<br>通常我们建立容器的时候需要把数据卷挂在到宿主机上的目录，或者文件挂在到容器的Mount Namespace中，<br>从而实现主机和容器共享这些目录，但是，如果你在另一台机器上启动一个容器，就没有办法看到其它机器上的容器挂载的数据卷，这就是所谓的容器典型特征：无状态。<br>这时候容器就需要持久化存储，就是用来保存容器的状态，存储插件会在容器里挂载一个基于网络或者其他机制的远程数据卷，使得在容器里创建的文件实际上是保存在远程存储服务器上，或者是以分布式的方式保存在多个节点上，与当前宿主机没有任何绑定关系。这样，无论你在其他哪个宿主机上启动新的容器，都可以请求挂载指定的持久化存储卷，从而访问到数据卷里保存的内容。这就是所谓持久化。</p>
+<p>Rook 项目是一个基于 Ceph 的 Kubernetes 存储插件（它后期也在加入对更多存储实现的支持）。不过，不同于对  Ceph 的简单封装，Rook 在自己的实现中加入了水平扩展、迁移、灾难备份、监控等大量的企业级功能，使得这个项目变成了一个完整的、生产级别可用的容器存储插件。</p>
+<p>部署Ceph存储后端</p>
+<blockquote>
+<p>kubectl apply -f <a href="https://raw.githubusercontent.com/rook/rook/master/cluster/examples/kubernetes/ceph/operator.yaml" target="_blank" rel="noopener">https://raw.githubusercontent.com/rook/rook/master/cluster/examples/kubernetes/ceph/operator.yaml</a></p>
+</blockquote>
+<blockquote>
+<p>kubectl apply -f <a href="https://raw.githubusercontent.com/rook/rook/master/cluster/examples/kubernetes/ceph/cluster.yaml" target="_blank" rel="noopener">https://raw.githubusercontent.com/rook/rook/master/cluster/examples/kubernetes/ceph/cluster.yaml</a></p>
+</blockquote>
+<p>在部署完成后，可以看到Rook项目会将自己的Pod防止在由它管理的两个Namesoace当中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;root@instance-ubuntu-1:~# kubectl get pods -n rook-ceph-system</span><br><span class="line">NAME                                                           READY     STATUS    RESTARTS   AGE</span><br><span class="line">rook-ceph-agent-7cm42                                 1/1           Running          0             18s</span><br><span class="line">rook-ceph-operator-78d4587c68c-7fj72         1/1           Running          0             44s</span><br><span class="line">rook-discover-2ctcv                                        1/1           Running          0             18s</span><br><span class="line"></span><br><span class="line">&gt;root@instance-ubuntu-1:~# kubectl get pods -n rook-ceph</span><br><span class="line">NAME                              READY     STATUS    RESTARTS   AGE</span><br><span class="line">rook-ceph-mon0-kxrgh        1/1         Running          0              13s</span><br><span class="line">rook-ceph-mon1-7dk2t        1/1         Running          0               5s</span><br></pre></td></tr></table></figure>
+<p>这样，一个基于 Rook 持久化存储集群就以容器的方式运行起来了，而接下来在 Kubernetes 项目上创建的所有 Pod 就能够通过 Persistent Volume（PV）和 Persistent Volume Claim（PVC）的方式，在容器里挂载由 Ceph 提供的数据卷了。</p>
+
+                </div>
+                <hr/>
+
+                <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+                <div class="reprint">
+                    <p>
+                        <span class="reprint-tip">Reprint please specify: </span>
+                        <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
+                        <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                        <a href="/2019/05/16/kubeadm搭建kubernetes集群/" class="b-link-green">kubeadm搭建kubernetes集群</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: 'Thu May 16 2019 17:24:42 GMT+0800',
+        owner: 'LIUXUCHONG',
+        repo: 'liuxuchong.github.io',
+        oauth: {
+            client_id: 'f54de68b257c3f12e872',
+            client_secret: 'e9018bda13811bfed32a87ec29f532e2e108f4d5',
+        },
+    });
+
+    gitment.render('gitment-content');
+</script>
+        
+
+        
+
+        
+
+<article id="articles" class="container prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">Current</div>
+            <div class="card">
+                <a href="/2019/05/16/kubeadm搭建kubernetes集群/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="kubeadm搭建kubernetes集群">
+                        
+                        <span class="card-title">kubeadm搭建kubernetes集群</span>
+                    </div>
+
+                    <div class="card-content article-content">
+                        <div class="summary">一、环境准备首先我的三个ubuntu云主机的配置如下
+
+
+
+cpu数量
+内存
+磁盘
+Ubuntu
+
+
+
+
+2
+8G
+20G
+18.04LTS
+
+
+
+而且能保证三台机器都能连接外网这里的所有命令都是在root用户下操作的
+二、安装
+1.在所有</div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-calendar fa-fw"></i>2019-05-16
+                            </span>
+                            <span class="publish-author">
+                                <i class="fa fa-user fa-fw"></i>
+                                
+                                刘绪冲
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </a>
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">Next</div>
+            <div class="card">
+                <a href="/2019/05/15/pod状态一直显示ContainerCreating/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="pod状态一直显示ContainerCreating">
+                        
+                        <span class="card-title">pod状态一直显示ContainerCreating</span>
+                    </div>
+                    <div class="card-content article-content">
+                        <div class="summary">
+                            今天在学习kubernetes的时候启动了一个msyql服务，运行命令
+
+[root@liuxuchong kubernetes]# kubectl create -f mysql-rc.yamlreplicationcontroller 
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-calendar fa-fw"></i>2019-05-15
+                            </span>
+                            <span class="publish-author">
+                                <i class="fa fa-user fa-fw"></i>
+                                
+                                刘绪冲
+                                
+                            </span>
+                        </div>
+                    </div>
+                    
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</article>
+    </div>
+</main>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        
+        <div class="col s12 m4 l4 social-link">
+            <a href="https://github.com/LIUXUCHONG" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+                <i class="fa fa-github fa-lg"></i>
+            </a>
+            <a href="mailto:1187766935@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+                <i class="fa fa-envelope fa-lg"></i>
+            </a>
+            <a href="https://im.qq.com/" class="tooltipped" data-tooltip="QQ: 1187766935" data-position="top" data-delay="50">
+                <i class="fa fa-qq fa-lg"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input" autofocus="">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-double-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+</body>
+</html>
