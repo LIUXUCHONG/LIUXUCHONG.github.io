@@ -157,38 +157,77 @@
             <div class="card-content article-card-content">
                 <div id="articleContent">
                     <h3 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1 安装node.js"></a>1 安装node.js</h3><p>下载nodejs<br><a href="http://nodejs.cn/download/" target="_blank" rel="noopener">http://nodejs.cn/download/</a><br>关键步骤截图，其他默认即可。<br><img src="/2019/06/20/轻松搭建Hexo-Github博客/1.png" alt=""></p>
-<p>然后win+r输入cmd打开命令行，输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure></p>
+<p>然后win+r输入cmd打开命令行，输入</p>
+<blockquote>
+<p>node -v<br>npm -v</p>
+</blockquote>
 <p><img src="/2019/06/20/轻松搭建Hexo-Github博客/2.png" alt=""><br>安装成功</p>
 <h3 id="2-安装git"><a href="#2-安装git" class="headerlink" title="2 安装git"></a>2 安装git</h3><p>下载git<br><a href="https://git-scm.com/download" target="_blank" rel="noopener">https://git-scm.com/download</a><br>关键步骤截图<br><img src="/2019/06/20/轻松搭建Hexo-Github博客/3.png" alt=""></p>
-<p><img src="/2019/06/20/轻松搭建Hexo-Github博客/4.png" alt=""><br>其他默认安装即可<br>检查git是否安装好，输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2019/06/20/轻松搭建Hexo-Github博客/4.png" alt=""><br>其他默认安装即可<br>检查git是否安装好，输入</p>
+<blockquote>
+<p>git –version</p>
+</blockquote>
 <p><img src="/2019/06/20/轻松搭建Hexo-Github博客/5.png" alt=""></p>
 <p>在自己认为合适的位置创建一个个文件夹，我的是E:\hexo ，在命令行界面进入该文件夹，然后使用 npm 即可完成 Hexo 的安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">npm install hexo --save</span><br></pre></td></tr></table></figure>
-<p><img src="/2019/06/20/轻松搭建Hexo-Github博客/6.png" alt=""><br>安装完成，可能会有WARN，但不会影响正常使用<br>检查hexo是否安装好<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>npm install -g hexo-cli<br>npm install hexo –save</p>
+</blockquote>
+<p><img src="/2019/06/20/轻松搭建Hexo-Github博客/6.png" alt=""><br>安装完成，可能会有WARN，但不会影响正常使用<br>检查hexo是否安装好</p>
+<blockquote>
+<p>hexo -v</p>
+</blockquote>
 <p><img src="/2019/06/20/轻松搭建Hexo-Github博客/7.png" alt=""></p>
 <h3 id="3-Hexo的配置"><a href="#3-Hexo的配置" class="headerlink" title="3 Hexo的配置"></a>3 Hexo的配置</h3><p>在当前目录下新建一个名为blog的文件夹，用于存放博客网站的信息<br>在命令行进入blog，初始化该文件夹，并安装所需组件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init </span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>hexo init<br>npm install</p>
+</blockquote>
 <p>安装完成后，检测是否安装成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>hexo g<br>hexo s</p>
+</blockquote>
 <p>然后会提示你访问<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a><br><img src="/2019/06/20/轻松搭建Hexo-Github博客/8.png" alt=""><br>出现该界面说明Hexo在本地的配置完成了。</p>
 <h3 id="4-GitHub账号与配置"><a href="#4-GitHub账号与配置" class="headerlink" title="4 GitHub账号与配置"></a>4 GitHub账号与配置</h3><p><a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a><br>登陆github账号，如果还没有github账号先注册，进入网站后，Sign up 进行注册， 填写自己的用户名，邮箱，密码（邮箱后面会用到验证账户）<br>注册完成后，新建代码仓库<br>点击网页右上角”+” 中的New repo ，新建仓库<br><img src="/2019/06/20/轻松搭建Hexo-Github博客/9.png" alt=""></p>
 <p>在该界面输入仓库名，描述信息，选择共有或私有仓库<br>注意仓库名要和你的用户名一致(yourname.github.io)，否则后面会访问错误<br><img src="/2019/06/20/轻松搭建Hexo-Github博客/10.png" alt=""></p>
 <p>创建完成后会自动显示你的仓库界面<br><img src="/2019/06/20/轻松搭建Hexo-Github博客/11.png" alt=""><br>点击选项栏 Setting ，向下拖至此处，将none 选项选为第一个选项，开启GitHub Pages功能 并Save，可以暂时Change theme，以供暂时访问，但是后面我们使用的是Hexo主题，两者并不冲突<br><img src="/2019/06/20/轻松搭建Hexo-Github博客/12.png" alt=""><br>稍等片刻即可看到提示创建成功，至此github配置完成。</p>
-<h3 id="5-配置Git个人信息"><a href="#5-配置Git个人信息" class="headerlink" title="5 配置Git个人信息"></a>5 配置Git个人信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --golbal user.name &quot;username&quot;</span><br><span class="line">git config --global user.email &quot;11877.....@example.com&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="5-配置Git个人信息"><a href="#5-配置Git个人信息" class="headerlink" title="5 配置Git个人信息"></a>5 配置Git个人信息</h3><blockquote>
+<p>git config –golbal user.name “username”<br>git config –global user.email “<a href="mailto:11877.....@example.com" target="_blank" rel="noopener">11877.....@example.com</a>“</p>
+</blockquote>
 <p> 查看用户信息，可以看到刚才的配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>git config –list </p>
+</blockquote>
 <p>在blog目录新建文件夹daemon ，进入到该文件夹中<br>右击进入 Git Bash Here</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  git init</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>git init</p>
+</blockquote>
 <p>该命令将创建一个名为 .git 的子目录，这个子目录含有你初始化的 Git 仓库中所有的必须文件，这些文件是 Git 仓库的骨干</p>
-<p><img src="/2019/06/20/轻松搭建Hexo-Github博客/13.png" alt=""><br><img src="/2019/06/20/轻松搭建Hexo-Github博客/14.png" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh  </span><br><span class="line">ls</span><br><span class="line">cat id_rsa.pub</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2019/06/20/轻松搭建Hexo-Github博客/15.png" alt=""><br>如果没有 id_rsa.pub文件先在本地生成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</span><br></pre></td></tr></table></figure></p>
-<p>然后复制cat 到的内容<br>进入Github的个人设置界，点击New Ssh Key<br><img src="/2019/06/20/轻松搭建Hexo-Github博客/16.png" alt=""><br>把刚才复制的内容粘贴到key里<br>返回命令行，输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2019/06/20/轻松搭建Hexo-Github博客/13.png" alt=""><br><img src="/2019/06/20/轻松搭建Hexo-Github博客/14.png" alt=""></p>
+<blockquote>
+<p>cd ~/.ssh<br>ls<br>cat id_rsa.pub</p>
+</blockquote>
+<p><img src="/2019/06/20/轻松搭建Hexo-Github博客/15.png" alt=""><br>如果没有 id_rsa.pub文件先在本地生成</p>
+<blockquote>
+<p>ssh-keygen -t rsa -C “<a href="mailto:youremail@example.com" target="_blank" rel="noopener">youremail@example.com</a>“</p>
+</blockquote>
+<p>然后复制cat 到的内容<br>进入Github的个人设置界，点击New Ssh Key<br><img src="/2019/06/20/轻松搭建Hexo-Github博客/16.png" alt=""><br>把刚才复制的内容粘贴到key里<br>返回命令行，输入</p>
+<blockquote>
+<p>ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a></p>
+</blockquote>
 <p><img src="/2019/06/20/轻松搭建Hexo-Github博客/17.png" alt=""></p>
 <h3 id="6-编辑hexo配置文件"><a href="#6-编辑hexo配置文件" class="headerlink" title="6 编辑hexo配置文件"></a>6 编辑hexo配置文件</h3><p>编辑 hexo下的blog下的_config.yml<br>配置仓库<br><img src="/2019/06/20/轻松搭建Hexo-Github博客/18.png" alt=""><br>开启目录<br><img src="/2019/06/20/轻松搭建Hexo-Github博客/19.png" alt=""></p>
 <p>编辑daemon.git 下的config<br><img src="/2019/06/20/轻松搭建Hexo-Github博客/20.png" alt=""></p>
-<p>然后进入 hexo\blog ，右击进入 git bash<br>安装扩展<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure></p>
-<p>安装图片显示插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure></p>
-<p>然后运行hexo n “xxxx”来生成md博文时，/source/_posts文件夹内除了xxxx.md文件还有一个同名的文件夹，编辑好文章之后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g   //  生成</span><br><span class="line">hexo d   //  部署</span><br></pre></td></tr></table></figure></p>
+<p>然后进入 hexo\blog ，右击进入 git bash<br>安装扩展</p>
+<blockquote>
+<p>npm install –save hexo-deployer-git</p>
+</blockquote>
+<p>安装图片显示插件</p>
+<blockquote>
+<p>npm install hexo-asset-image –save</p>
+</blockquote>
+<p>然后运行hexo n “xxxx”来生成md博文时，/source/_<br>posts文件夹内除了xxxx.md文件还有一个同名的文件夹，编辑好文章之后</p>
+<blockquote>
+<p>hexo g   //  生成<br>hexo d   //  部署</p>
+</blockquote>
 <p>初次部署的时候会弹出登陆框，需要登陆一下github<br><img src="/2019/06/20/轻松搭建Hexo-Github博客/21.png" alt=""><br>稍等即可完成部署<br>然后访问yourname.github.io就可以看到自己的博客了<br><img src="/2019/06/20/轻松搭建Hexo-Github博客/22.png" alt=""></p>
 
                 </div>
@@ -260,9 +299,12 @@
 
                     <div class="card-content article-content">
                         <div class="summary">1 安装node.js下载nodejshttp://nodejs.cn/download/关键步骤截图，其他默认即可。
-然后win+r输入cmd打开命令行，输入12node -vnpm -v
+然后win+r输入cmd打开命令行，输入
+
+node -vnpm -v
+
 安装成功
-2 安装git下载githttps:/</div>
+2 安装git下载githttps:</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-calendar fa-fw"></i>2019-06-20
