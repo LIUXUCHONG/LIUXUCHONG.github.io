@@ -1,0 +1,642 @@
+<!DOCTYPE HTML>
+<html lang="zh-Hans">
+<head>
+    <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content=", hexo-theme-matery">
+    <meta name="description" content="这是刘绪冲的博客">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>九尾狐</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+</head>
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">九尾狐</span>
+                    </a>
+                </div>
+
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">首页</a>
+    </li>
+    
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">标签</a>
+    </li>
+    
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">归档</a>
+    </li>
+    
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">九尾狐</div>
+        <div class="logo-desc">
+            
+            这是刘绪冲的博客
+            
+        </div>
+    </div>
+    <ul class="menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>归档
+            </a>
+        </li>
+        
+    </ul>
+    <div class="social-link">
+        <a href="https://github.com/LIUXUCHONG" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
+           data-position="top" data-delay="50">
+            <i class="fa fa-github fa-lg"></i>
+        </a>
+        <a href="mailto:1187766935@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我"
+           data-position="top" data-delay="50">
+            <i class="fa fa-envelope fa-lg"></i>
+        </a>
+        <a href="#!" class="tooltipped" data-tooltip="QQ号：1187766935" data-position="top" data-delay="50">
+            <i class="fa fa-qq fa-lg"></i>
+        </a>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        基于容器实现高并发网站
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main class="content">
+
+    <!-- 文章内容详情 -->
+    <div id="artDetail" class="container">
+        <div class="card">
+            <div class="card-content article-info">
+                
+                <div class="author-info">
+                    <span>
+                        <i class="fa fa-calendar fa-fw"></i>2019-06-20
+                    </span>
+                </div>
+            </div>
+            <hr>
+            <div class="card-content article-card-content">
+                <div id="articleContent">
+                    <p><strong>一、环境准备</strong></p>
+<table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>宿主机</th>
+<th>Nginx1</th>
+<th>APP1</th>
+<th>APP2</th>
+<th>NFS</th>
+<th>mysql-master</th>
+<th>mysql-slave</th>
+<th>Zabbix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IP</td>
+<td>192.168.142.158</td>
+<td>172.19.0.11</td>
+<td>172.19.0.111</td>
+<td>172.19.0.112</td>
+<td>172.19.0.1</td>
+<td>172.19.0.201</td>
+<td>172.19.0.202</td>
+<td>172.19.0.254</td>
+</tr>
+</tbody>
+</table>
+<p>其中宿主机是centos7.6系统，docker版本是1.13.1。<br>网站架构如下<br><img src="/2019/06/20/基于容器实现高并发网站/1.png" alt=""></p>
+<p><strong>二、配置测试网络环境</strong></p>
+<p>1.配置centos7虚拟机环境，安装docker并配置本地仓库<br> 1)设置网络为nat模式，编辑网卡配置文件，使得虚拟机能够访问互联网<br>2)检查安装docker，修改/etc/docker/daemon.json文件，配置本地仓库</p>
+<blockquote>
+<p>{<br>“insecure-registries”: [“172.18.74.119”]<br>}</p>
+</blockquote>
+<p>3)删除所有容器和镜像，删除docker创建的网络</p>
+<blockquote>
+<p>#docker ps -a</p>
+<p>#docker rm -f 容器id</p>
+<p>#docker images</p>
+<p>#docker rmi 镜像id</p>
+<p>#docker network ls</p>
+<p>#docker network rm 网络id</p>
+</blockquote>
+<p>4)重新加载daemon配置，并重启docker</p>
+<blockquote>
+<p>#systemctl daemon-reload</p>
+<p>#systemctl restart docker</p>
+</blockquote>
+<p>2.从ftp服务器下载启动centos7虚拟机，从本地仓库下载测试所需4个镜像（也可以从dockerhub的dockerliuxc/netlab镜像仓库中拉取）</p>
+<blockquote>
+<p>#docker  pull 172.18.74.119/netlab/nginx</p>
+<p>#docker  pull 172.18.74.119/netlab/php-apache</p>
+<p>#docker  pull 172.18.74.119/netlab/mysql</p>
+<p>#docker  pull 172.18.74.119/netlab/zabbix</p>
+</blockquote>
+<p>3.创建docker网络，根据拓扑图要求，按指定IP启动6个容器（nginx1、APP1、APP2、mysql-master、mysql-slave、zabbix）</p>
+<blockquote>
+<p>#docker network create –subnet=172.19.0.0/16 cluster</p>
+<p>#docker run -d –privileged –net cluster –ip 172.19.0.11 -p 80:80 –name nginx1 &gt;172.18.74.119/netlab/nginx  /usr/sbin/init</p>
+<p>#docker run -d –privileged –net cluster –ip 172.19.0.111 –name APP1 172.18.74.119/netlab/php-apache  /usr/sbin/init</p>
+<p>#docker run -d –privileged –net cluster –ip 172.19.0.112 –name APP2 172.18.74.119/netlab/php-apache  /usr/sbin/init</p>
+<p>#docker run -d –privileged –net cluster –ip 172.19.0.201 –name mysql-master 172.18.74.119/netlab/mysql  /usr/sbin/init</p>
+<p>#docker run -d –privileged –net cluster –ip 172.19.0.202 –name mysql-slave 172.18.74.119/netlab/mysql  /usr/sbin/init</p>
+<p>#docker run -d –privileged –net cluster –ip 172.19.0.254 -p 8080:80 –name zabbix 172.18.74.119/netlab/zabbix  /usr/sbin/init </p>
+</blockquote>
+<p>4.在linux宿主机能ping通nginx1、APP1、mysql-master、zabbix</p>
+<p><img src="/2019/06/20/基于容器实现高并发网站/2.png" alt=""></p>
+<p><strong>三、配置nginx1和APP1、APP2实现负载均衡</strong></p>
+<ol>
+<li>编辑APP1和APP2的httpd.conf文件，配置web主目录为/var/www;</li>
+</ol>
+<blockquote>
+<p>[root@localhost ~]# docker exec -it APP1 bash<br>[root@ece96d9f5f13 /]# vi /etc/httpd/conf/httpd.conf<br>[root@ece96d9f5f13 /]# cat  /etc/httpd/conf/httpd.conf |grep Documentroot<br>[root@ece96d9f5f13 /]# cat  /etc/httpd/conf/httpd.conf |grep DocumentRoot</p>
+</blockquote>
+<p>#DocumentRoot: The directory out of which you will serve your<br>DocumentRoot “/var/www”</p>
+<p>   #access content that does not live under the DocumentRoot.</p>
+<p>APP2同上<br>2.在APP1和APP2的/var/www目录下编辑index.php文件;<br>APP1：</p>
+<blockquote>
+<p>[root@ece96d9f5f13 www]# vi index.php<br>[root@ece96d9f5f13 www]# cat index.php<br><a href="mailto:APP1@172.19.0.111" target="_blank" rel="noopener">APP1@172.19.0.111</a></p>
+</blockquote>
+<p>APP2：</p>
+<blockquote>
+<p>[root@570244a8a296 www]# vi index.php<br>[root@570244a8a296 www]# cat index.php<br><a href="mailto:APP2@172.19.0.112" target="_blank" rel="noopener">APP2@172.19.0.112</a></p>
+</blockquote>
+<p>3.在nginx1配置一般轮询负载均衡，后端服务器为APP1和APP2，nginx1配置文件</p>
+<blockquote>
+<p>[root@localhost ~]# docker exec -it nginx1 bash<br>[root@b67c1232dc59 /]# vi /etc/nginx/conf.d/default.conf</p>
+</blockquote>
+<blockquote>
+<p>server {<br>    listen       80;<br>    server_name  localhost;<br>    location / {<br>     proxy_pass <a href="http://APP" target="_blank" rel="noopener">http://APP</a>;<br>    }</p>
+</blockquote>
+<blockquote>
+<p>}<br>upstream APP {<br>   server 172.19.0.111;<br>   server 172.19.0.112;<br>}</p>
+</blockquote>
+<p>4.在主机浏览器访问“http://宿主机 ens32地址，可以分别看到“APP1@IP地址”和“APP2@IP地址”。<br><img src="/2019/06/20/基于容器实现高并发网站/3.png" alt=""></p>
+<p><img src="/2019/06/20/基于容器实现高并发网站/4.png" alt=""></p>
+<p><strong>四、配置宿主机nfs实现文件共享和和动静分离</strong></p>
+<p>1.在宿主机安装nfs-utils，启动nfs服务，配置共享目录。上传自己的照片文件my.jpg到宿主机的共享目录中；</p>
+<blockquote>
+<p>[root@localhost ~]# yum install nfs-utils -y<br>[root@localhost ~]# systemctl start nfs<br>[root@localhost ~]# vim /etc/sysconfig/nfs</p>
+</blockquote>
+<p><img src="/2019/06/20/基于容器实现高并发网站/5.png" alt=""></p>
+<blockquote>
+<p>[root@localhost ~]# systemctl start rpcbind<br>[root@localhost ~]# systemctl start nfs<br>[root@localhost www]# mkdir -p /var/www/share<br>[root@localhost www]# chmod 777 /var/www/share/<br>[root@localhost www]# vi /etc/exports</p>
+</blockquote>
+<blockquote>
+<p>/var/www/share  172.19.0.*(rw,sync)</p>
+</blockquote>
+<p>注意//172.19开头的IP都可以访问share目录，星号后面没空格 ro只读，rw读写<br>上传图片到/var/www/share目录下</p>
+<p><img src="/2019/06/20/基于容器实现高并发网站/6.png" alt=""><br>2.在APP1和APP2上安装nfs-utils，查看nfs上的共享目录，并挂载到本地/var/www/share</p>
+<blockquote>
+<p>[root@570244a8a296 www]# yum install nfs-utils -y<br>[root@570244a8a296 www]# showmount -e 172.19.0.1<br>Export list for 172.19.0.1:<br>/var/www/share 172.19.0.*<br>[root@570244a8a296 www]# mkdir /var/www/share<br>[root@570244a8a296 www]# mount 172.19.0.1:/var/www/share /var/www/share</p>
+</blockquote>
+<p>3.在APP1和APP2的/var/www目录下编辑index.php文件</p>
+<blockquote>
+<p>&lt;?php<br>function serverIp(){    //获取服务器IP地址<br>    if(isset($_SERVER)){<br>        if($_SERVER[‘SERVER_ADDR’]){<br>             $server_ip=$_SERVER[‘SERVER_ADDR’];<br>            }else{<br>               $server_ip=$_SERVER[‘LOCAL_ADDR’];<br>           }<br>      }else{<br>          $server_ip = getenv(‘SERVER_ADDR’);<br>    }<br>      return $server_ip;<br>   }<br> ?&gt;<br>&lt;!doctype html&gt;</p>
+</blockquote>
+<html><br><head><br><meta charset="utf-8"><br><title>动静分离测试</title><br><link rel="stylesheet" type="text/css" href="share/banner.css"><br><script type="text/javascript" src="share/jquery-1.7.2.min.js"></script><br></head><br><body><br>    <div class="banner"><br>      <ul><br>        <li><img src="/2019/06/20/基于容器实现高并发网站/share/my.jpg"></li><br>        <li><img src="/2019/06/20/基于容器实现高并发网站/share/my.gif"></li><br>      </ul><br>    </div><br>    <div class="main_list"><br>        <ul><br>          <li><a href="#">动静分离测试…</a></li><br>          <li><a href="#">动静分离测试…</a></li><br>        </ul><br>      </div><br> <span>&lt;?php echo serverIp(); ?&gt;</span><br></body><br></html>
+
+<p>4.在nginx1配置动静分离，动态内容请求APP1和APP2，静态资源请求宿主机，nginx1配置文件</p>
+<blockquote>
+<p>[root@b67c1232dc59 /]# vi /etc/nginx/conf.d/default.conf<br>server {<br>    listen       80;<br>    server_name  localhost;<br>    location / {<br>     proxy_pass <a href="http://APP" target="_blank" rel="noopener">http://APP</a>;<br>    }<br>   location ~.(gif|jpg|jpeg|png|bmp|swf|css|js)$ {<br>          proxy_pass <a href="http://172.19.0.1:81" target="_blank" rel="noopener">http://172.19.0.1:81</a>;</p>
+</blockquote>
+<blockquote>
+<p>}<br>}<br>upstream APP {<br>   server 172.19.0.111;<br>   server 172.19.0.112;<br>}</p>
+</blockquote>
+<p>5.在主机浏览器访问http:// ens32地址时分别看到“APP1@IP地址”和“APP2@IP地址”，都能显示自己的照片。</p>
+<p><img src="/2019/06/20/基于容器实现高并发网站/7.png" alt=""></p>
+<p><img src="/2019/06/20/基于容器实现高并发网站/8.png" alt=""></p>
+<p><strong>五、配置mysql实现主从复制和读写分离</strong></p>
+<p>1.编辑/etc/my.cnf文件，配置mysql-master和mysql-slave的server-id，开启master的binlog日志，启动mysqld服务，在mysql-master上show master status；</p>
+<blockquote>
+<p>[root@localhost ~]# docker exec -it mysql-master bash<br>[root@8475a892f7c4 /]# vi /etc/my.cnf</p>
+</blockquote>
+<p>在[mysqld]下添加</p>
+<blockquote>
+<p>server-id=1<br>log-bin=mysql-bin<br>binlog_format=mixed</p>
+</blockquote>
+<blockquote>
+<p>[root@localhost ~]# docker exec -it mysql-slave bash<br>[root@7b656287a94b /]# vi /etc/my.cnf</p>
+</blockquote>
+<p>在[mysqld]下添加</p>
+<blockquote>
+<p>server-id=2</p>
+</blockquote>
+<p>在master上：</p>
+<blockquote>
+<p>[root@8475a892f7c4 /]# mysql -u root -p<br>Enter password:</p>
+</blockquote>
+<p>Welcome to the MySQL monitor.  Commands end with ; or \g.<br>Your MySQL connection id is 9<br>Server version: 5.6.44-log MySQL Community Server (GPL)</p>
+<p>Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.</p>
+<p>Oracle is a registered trademark of Oracle Corporation and/or its<br>affiliates. Other names may be trademarks of their respective<br>owners.</p>
+<p>Type ‘help;’ or ‘\h’ for help. Type ‘\c’ to clear the current input statement.</p>
+<p>mysql&gt; show master status;<br>+——————+———-+————–+——————+——————-+<br>| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB | Executed_Gtid_Set |<br>+——————+———-+————–+——————+——————-+<br>| mysql-bin.000002 |      790 |              |                  |                   |<br>+——————+———-+————–+——————+——————-+<br>1 row in set (0.00 sec)</p>
+<p>mysql&gt;</p>
+<p>2.在mysql-master上创建测试数据库、数据表并插入数据；在master上授权给复制用户；</p>
+<p><img src="/2019/06/20/基于容器实现高并发网站/9.png" alt=""></p>
+<blockquote>
+<p>mysql&gt;grant replication slave on <em>.</em> to rep@’172.19.0.202’ identified by ‘123’;</p>
+</blockquote>
+<p>3.导出master的数据库并导入到slave上，在slave上配置复制参数并开启复制，show slave status \G查看复制状态</p>
+<blockquote>
+<p>[root@8475a892f7c4 /]# mysqldump -u root -p –all-databases | gzip &gt; /root/database_date ‘+%m-%d-%Y’.sql.gz<br>[root@localhost ~]# docker cp 8475a892f7c4:/root/database_06-18-2019.sql.gz ./<br>[root@localhost ~]# docker cp ./database_06-18-2019.sql.gz 7b656287a94b:/root<br>[root@mysql-slave ~]# gzip -d database_06-18-2019.sql.gz<br>[root@mysql-slave ~]# mysql -u root -p &lt;database_06-18-2019.sql</p>
+</blockquote>
+<p>slave:</p>
+<blockquote>
+<p>mysql&gt; CHANGE MASTER TO MASTER_HOST=’172.19.0.201’, MASTER_USER=’rep’, MASTER_PASSWORD=’123’, MASTER_LOG_FILE=’mysql-bin.000002’, MASTER_LOG_POS=790;</p>
+</blockquote>
+<blockquote>
+<p>mysql&gt; show slave status\G;<br><strong><strong><strong><strong><strong><strong>***</strong></strong></strong></strong></strong></strong> 1. row <strong><strong><strong><strong><strong><strong>***</strong></strong></strong></strong></strong></strong><br>               Slave_IO_State: Waiting for master to send event<br>                  Master_Host: 172.19.0.201<br>                  Master_User: rep<br>                  Master_Port: 3306<br>                Connect_Retry: 60<br>              Master_Log_File: mysql-bin.000002<br>          Read_Master_Log_Pos: 790<br>               Relay_Log_File: mysqld-relay-bin.000002<br>                Relay_Log_Pos: 745<br>        Relay_Master_Log_File: mysql-bin.000002<br>             Slave_IO_Running: Yes<br>            Slave_SQL_Running: Yes<br>              Replicate_Do_DB:<br>          Replicate_Ignore_DB:<br>           Replicate_Do_Table:<br>       Replicate_Ignore_Table:<br>      Replicate_Wild_Do_Table:<br>  Replicate_Wild_Ignore_Table:<br>                   Last_Errno: 0<br>                   Last_Error:<br>                 Skip_Counter: 0<br>          Exec_Master_Log_Pos: 790<br>              Relay_Log_Space: 919<br>              Until_Condition: None<br>               Until_Log_File:<br>                Until_Log_Pos: 0<br>           Master_SSL_Allowed: No<br>           Master_SSL_CA_File:<br>           Master_SSL_CA_Path:<br>              Master_SSL_Cert:<br>            Master_SSL_Cipher:<br>               Master_SSL_Key:<br>        Seconds_Behind_Master: 0<br>Master_SSL_Verify_Server_Cert: No<br>                Last_IO_Errno: 0<br>                Last_IO_Error:<br>               Last_SQL_Errno: 0<br>               Last_SQL_Error:<br>  Replicate_Ignore_Server_Ids:<br>             Master_Server_Id: 1<br>                  Master_UUID: c9db6142-8bfd-11e9-b3b7-0242ac110002<br>             Master_Info_File: /var/lib/mysql/master.info<br>                    SQL_Delay: 0<br>          SQL_Remaining_Delay: NULL<br>      Slave_SQL_Running_State: Slave has read all relay log; waiting for the slave I/O thread to update it<br>           Master_Retry_Count: 86400<br>                  Master_Bind:<br>      Last_IO_Error_Timestamp:<br>     Last_SQL_Error_Timestamp:<br>               Master_SSL_Crl:<br>           Master_SSL_Crlpath:<br>           Retrieved_Gtid_Set:<br>            Executed_Gtid_Set:<br>                Auto_Position: 0<br>1 row in set (0.00 sec)</p>
+</blockquote>
+<blockquote>
+<p>ERROR:<br>No query specified</p>
+</blockquote>
+<p>4.在APP1上安装mysql-proxy并配置读写分离，编辑mysql-proxy.cnf配置文件</p>
+<blockquote>
+<p>[root@ece96d9f5f13 www]# wget <a href="http://ftp.ntu.edu.tw/pub/MySQL/Downloads/MySQL-Proxy/mysql-proxy-0.8.5-linux-glibc2.3-x86-64bit.tar.gz" target="_blank" rel="noopener">http://ftp.ntu.edu.tw/pub/MySQL/Downloads/MySQL-Proxy/mysql-proxy-0.8.5-linux-glibc2.3-x86-64bit.tar.gz</a></p>
+</blockquote>
+<blockquote>
+<p>[root@ece96d9f5f13 www]# tar -zxvf mysql-proxy-0.8.5-linux-glibc2.3-x86-64bit.tar.gz<br>[root@ece96d9f5f13 www]# mv mysql-proxy-0.8.5-linux-glibc2.3-x86-64bit /usr/local/mysql-proxy<br>[root@ece96d9f5f13 www]# cd /usr/local/mysql-proxy<br>[root@ece96d9f5f13 mysql-proxy]# mkdir lua<br>[root@ece96d9f5f13 mysql-proxy]# mkdir logs<br>[root@ece96d9f5f13 mysql-proxy]# ls<br>bin  include  lib  libexec  licenses  logs  lua  lus  share<br>[root@ece96d9f5f13 mysql-proxy]# cp  share/doc/mysql-proxy/rw-splitting.lua ./lua<br>[root@ece96d9f5f13 mysql-proxy]# cp share/doc/mysql-proxy/admin-sql.lua ./lua<br>[root@ece96d9f5f13 mysql-proxy]# vi /etc/mysql-proxy.cnf<br>[mysql-proxy]<br>user=root<br>admin-username=myproxy<br>admin-password=123456<br>proxy-address=127.0.0.1:3306<br>proxy-read-only-backend-addresses=172.19.0.202<br>proxy-backend-addresses=172.19.0.201<br>proxy-lua-script=/usr/local/mysql-proxy/lua/rw-splitting.lua<br>admin-lua-script=/usr/local/mysql-proxy/lua/admin-sql.lua<br>log-file=/usr/local/mysql-proxy/logs/mysql-proxy.log<br>log-level=info<br>[root@ece96d9f5f13 mysql-proxy]# chmod 660 /etc/mysql-proxy.cnf<br>[root@ece96d9f5f13 mysql-proxy]# vi /usr/local/mysql-proxy/lua/rw-splitting.lua<br>if not proxy.global.config.rwsplit then<br> proxy.global.config.rwsplit = {<br>  min_idle_connections = 1, #默认超过4个连接数时，才开始读写分离，改为1<br>  max_idle_connections = 1, #默认8，改为1<br>  is_debug = false<br> }<br>end<br>[root@ece96d9f5f13 mysql-proxy]# /usr/local/mysql-proxy/bin/mysql-proxy –defaults-file=/etc/mysql-proxy.cnf –daemon</p>
+</blockquote>
+<p>5.检查点1：在master上插入数据，slave上能够查询。<br>master：</p>
+<blockquote>
+<p>mysql&gt; insert into users(user_name,user_passwd) values (“liu2”,passwd(“456”));</p>
+</blockquote>
+<p>slave：</p>
+<blockquote>
+<p>mysql&gt; select <em> from ttt.users;<br>+———–+——————————————-+<br>| user_name | user_passwd                               |<br>+———–+——————————————-+<br>| liu       | </em>23AE809DDACAF96AF0FD78ED04B6A265E05AA257 |<br>| liu2      | *531E182E2F72080AB0740FE2F2D689DBE0146E04 |<br>+———–+——————————————-+<br>2 rows in set (0.00 sec)</p>
+</blockquote>
+<p>6.在APP1上连接本机mysql-proxy，测试读写分离</p>
+<blockquote>
+<p>[root@ece96d9f5f13 mysql-proxy]# mysql -umyproxy -h127.0.0.1 -p123456 -e “select <em> from ttt.users;”<br>Warning: Using a password on the command line interface can be insecure.<br>+———–+——————————————-+<br>| user_name | user_passwd                               |<br>+———–+——————————————-+<br>| liu       | </em>23AE809DDACAF96AF0FD78ED04B6A265E05AA257 |<br>| liu2      | *531E182E2F72080AB0740FE2F2D689DBE0146E04 |<br>+———–+——————————————-+</p>
+</blockquote>
+<p><strong>六、配置zabbix主机监控系统，监控nginx1、APP1、mysql-slave</strong></p>
+<p>zabbix镜像已经做好，具体步骤如下：<br>步骤1：启动容器安装apache和php环境<br>1)启动centos容器并进入</p>
+<blockquote>
+<p>docker run -d –privileged –net cluster –ip 172.18.0.254 -p 80:80 –name zabbix mysql /usr/sbin/init<br>2)安装启用中文语言包</p>
+</blockquote>
+<blockquote>
+<p>yum install kde-l10n-Chinese<br>localedef -c -f UTF-8 -i zh_CN zh_CN.utf8</p>
+</blockquote>
+<p>3)安装apache 和php</p>
+<blockquote>
+<p>yum install httpd -y<br>yum install php-common php-gd php-mbstring php-xml php-bcmath php-mysql php-cli php-devel php-pear -y</p>
+</blockquote>
+<p>4)编写info.php在主机用浏览器访问</p>
+<p>步骤2：使用yum方式安装zabbix<br>官方文档<a href="https://www.zabbix.com/cn/download" target="_blank" rel="noopener">https://www.zabbix.com/cn/download</a><br>1)安装zabbix的yum源</p>
+<blockquote>
+<p>rpm -Uvh <a href="https://repo.zabbix.com/zabbix/4.2/rhel/7/x86_64/zabbix-release-4.2-1.el7.noarch.rpm" target="_blank" rel="noopener">https://repo.zabbix.com/zabbix/4.2/rhel/7/x86_64/zabbix-release-4.2-1.el7.noarch.rpm</a></p>
+</blockquote>
+<p>2)安装Zabbix server，Web前端，agent</p>
+<blockquote>
+<p>yum install zabbix-server-mysql zabbix-web-mysql zabbix-agent -y</p>
+</blockquote>
+<p>4)编写info.php在主机用浏览器访问， 截图</p>
+<p>步骤2：使用yum方式安装zabbix<br>官方文档<a href="https://www.zabbix.com/cn/download" target="_blank" rel="noopener">https://www.zabbix.com/cn/download</a><br>1)安装zabbix的yum源</p>
+<blockquote>
+<p>rpm -Uvh <a href="https://repo.zabbix.com/zabbix/4.2/rhel/7/x86_64/zabbix-release-4.2-1.el7.noarch.rpm" target="_blank" rel="noopener">https://repo.zabbix.com/zabbix/4.2/rhel/7/x86_64/zabbix-release-4.2-1.el7.noarch.rpm</a></p>
+</blockquote>
+<p>2)安装Zabbix server，Web前端，agent</p>
+<blockquote>
+<p>yum install zabbix-server-mysql zabbix-web-mysql zabbix-agent</p>
+</blockquote>
+<p>步骤3：配置容器提交为zabbix 镜像<br>1)设置mysqld、httpd为自启动</p>
+<blockquote>
+<p>systemctl enable mysqld<br>systemctl enable httpd</p>
+</blockquote>
+<p>2)提交容器为镜像</p>
+<blockquote>
+<p>docker commit 容器ID  zabbix</p>
+</blockquote>
+<p>这里需要注意在容器里安装zabbix后<br>在/usr/share/doc/下面不会有zabbix-server-mysql zabbix-web-mysql zabbix-agent这三个文件，需要从主机安装一遍zabbix然后把文件拷贝到容器里再提交为镜像。过程比较繁琐，直接拉取镜像就好。<br>进入zabbix容器<br>进入数据库</p>
+<blockquote>
+<p>mysql&gt; create database zabbix character set utf8 collate utf8_bin;<br>mysql&gt; grant all privileges on zabbix.* to zabbix@localhost identified by ‘123456’;</p>
+</blockquote>
+<p>初始化数据库</p>
+<blockquote>
+<p>[root@43fbe3017c3e /]# zcat /usr/share/doc/zabbix-server-mysql-4.2.3/create.sql.gz | mysql -uzabbix -p123456 zabbix</p>
+</blockquote>
+<p>等待一段时间<br>启动Zabbix Server进程<br>//在zabbix_server.conf中编辑数据库配置</p>
+<blockquote>
+<p>[root@43fbe3017c3e /]# vi /etc/zabbix/zabbix_server.conf<br>DBHost=localhost<br>DBName=zabbix<br>DBUser=zabbix<br>DBPassword=123456</p>
+</blockquote>
+<p>启动Zabbix Server进程</p>
+<blockquote>
+<p>[root@43fbe3017c3e /]# systemctl start zabbix-server</p>
+</blockquote>
+<p>编辑Zabbix前端的PHP配置</p>
+<blockquote>
+<p>[root@43fbe3017c3e /]# vi /etc/httpd/conf.d/zabbix.conf<br>php_value date.timezone Asia/Shanghai</p>
+</blockquote>
+<p><img src="/2019/06/20/基于容器实现高并发网站/10.png" alt=""></p>
+<p>5)重启httpd服务，使用web界面完成zabbix安装</p>
+<p>[&gt;root@43fbe3017c3e /]# systemctl restart httpd </p>
+<p>在主机浏览器访问<a href="http://zabbix" target="_blank" rel="noopener">http://zabbix</a> IP:8080/zabbix<br><img src="/2019/06/20/基于容器实现高并发网站/11.png" alt=""><br><img src="/2019/06/20/基于容器实现高并发网站/12.png" alt=""><br><img src="/2019/06/20/基于容器实现高并发网站/13.png" alt=""><br><img src="/2019/06/20/基于容器实现高并发网站/14.png" alt=""><br>6)在web界面登录zabbix，用户名密码为Admin:zabbix，修改为中文界面</p>
+<p><img src="/2019/06/20/基于容器实现高并发网站/15.png" alt=""><br><img src="/2019/06/20/基于容器实现高并发网站/16.png" alt=""></p>
+<p>步骤1：在被监控主机安装启用zabbix agent<br>1)安装zabbix的yum源</p>
+<blockquote>
+<p>rpm -Uvh <a href="https://repo.zabbix.com/zabbix/4.2/rhel/7/x86_64/zabbix-release-4.2-1.el7.noarch.rpm" target="_blank" rel="noopener">https://repo.zabbix.com/zabbix/4.2/rhel/7/x86_64/zabbix-release-4.2-1.el7.noarch.rpm</a></p>
+</blockquote>
+<p>2)安装zabbix agent</p>
+<blockquote>
+<p>yum install zabbix-agent -y</p>
+</blockquote>
+<p>3)编辑zabbix_agentd.conf</p>
+<blockquote>
+<p>vi /etc/zabbix/zabbix_agentd.conf</p>
+</blockquote>
+<p>//更改Server即可</p>
+<blockquote>
+<p>Server=172.18.0.254</p>
+</blockquote>
+<p>4)启用zabbix agent服务</p>
+<blockquote>
+<p>systemctl start zabbix-agent </p>
+</blockquote>
+<p>步骤2：在监控主机操作zabbix<br>1）、添加主机</p>
+<p><img src="/2019/06/20/基于容器实现高并发网站/17.png" alt=""><br><img src="/2019/06/20/基于容器实现高并发网站/18.png" alt=""><br><img src="/2019/06/20/基于容器实现高并发网站/19.png" alt=""><br>2）、添加监控项<br><img src="/2019/06/20/基于容器实现高并发网站/20.png" alt=""><br><img src="/2019/06/20/基于容器实现高并发网站/21.png" alt=""><br><img src="/2019/06/20/基于容器实现高并发网站/22.png" alt=""><br>3）、创建图形<br><img src="/2019/06/20/基于容器实现高并发网站/23.png" alt=""><br><img src="/2019/06/20/基于容器实现高并发网站/24.png" alt=""><br>4）监测图形，查看监测图形显示主机cpu使用状态<br>5）监测聚合图形<br>最后两步不能正常显示仍在完善。</p>
+
+                </div>
+                <hr/>
+
+                <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+                <div class="reprint">
+                    <p>
+                        <span class="reprint-tip">Reprint please specify: </span>
+                        <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
+                        <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                        <a href="/2019/06/20/基于容器实现高并发网站/" class="b-link-green">基于容器实现高并发网站</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: 'Thu Jun 20 2019 14:56:58 GMT+0800',
+        owner: 'LIUXUCHONG',
+        repo: 'liuxuchong.github.io',
+        oauth: {
+            client_id: 'f54de68b257c3f12e872',
+            client_secret: 'e9018bda13811bfed32a87ec29f532e2e108f4d5',
+        },
+    });
+
+    gitment.render('gitment-content');
+</script>
+        
+
+        
+
+        
+
+<article id="articles" class="container prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">Current</div>
+            <div class="card">
+                <a href="/2019/06/20/基于容器实现高并发网站/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="基于容器实现高并发网站">
+                        
+                        <span class="card-title">基于容器实现高并发网站</span>
+                    </div>
+
+                    <div class="card-content article-content">
+                        <div class="summary">一、环境准备
+
+
+
+NAME
+宿主机
+Nginx1
+APP1
+APP2
+NFS
+mysql-master
+mysql-slave
+Zabbix
+
+
+
+
+IP
+192.168.142.158
+172.19.0.11
+172.19.0.111
+</div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-calendar fa-fw"></i>2019-06-20
+                            </span>
+                            <span class="publish-author">
+                                <i class="fa fa-user fa-fw"></i>
+                                
+                                刘绪冲
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </a>
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">Next</div>
+            <div class="card">
+                <a href="/2019/06/20/轻松搭建Hexo-Github博客/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="轻松搭建Hexo+Github博客">
+                        
+                        <span class="card-title">轻松搭建Hexo+Github博客</span>
+                    </div>
+                    <div class="card-content article-content">
+                        <div class="summary">
+                            1 安装node.js下载nodejshttp://nodejs.cn/download/关键步骤截图，其他默认即可。
+然后win+r输入cmd打开命令行，输入
+
+node -vnpm -v
+
+安装成功
+2 安装git下载githttps:
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-calendar fa-fw"></i>2019-06-20
+                            </span>
+                            <span class="publish-author">
+                                <i class="fa fa-user fa-fw"></i>
+                                
+                                刘绪冲
+                                
+                            </span>
+                        </div>
+                    </div>
+                    
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</article>
+    </div>
+</main>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        
+        <div class="col s12 m4 l4 social-link">
+            <a href="https://github.com/LIUXUCHONG" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+                <i class="fa fa-github fa-lg"></i>
+            </a>
+            <a href="mailto:1187766935@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+                <i class="fa fa-envelope fa-lg"></i>
+            </a>
+            <a href="https://im.qq.com/" class="tooltipped" data-tooltip="QQ: 1187766935" data-position="top" data-delay="50">
+                <i class="fa fa-qq fa-lg"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input" autofocus="">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-double-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+</body>
+</html>
