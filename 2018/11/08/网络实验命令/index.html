@@ -1,0 +1,506 @@
+<!DOCTYPE HTML>
+<html lang="zh-Hans">
+<head>
+    <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content=", hexo-theme-matery">
+    <meta name="description" content="这是刘绪冲的博客">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>九尾狐</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+</head>
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">九尾狐</span>
+                    </a>
+                </div>
+
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">首页</a>
+    </li>
+    
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">标签</a>
+    </li>
+    
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">归档</a>
+    </li>
+    
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">九尾狐</div>
+        <div class="logo-desc">
+            
+            这是刘绪冲的博客
+            
+        </div>
+    </div>
+    <ul class="menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>归档
+            </a>
+        </li>
+        
+    </ul>
+    <div class="social-link">
+        <a href="https://github.com/LIUXUCHONG" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
+           data-position="top" data-delay="50">
+            <i class="fa fa-github fa-lg"></i>
+        </a>
+        <a href="mailto:1187766935@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我"
+           data-position="top" data-delay="50">
+            <i class="fa fa-envelope fa-lg"></i>
+        </a>
+        <a href="#!" class="tooltipped" data-tooltip="QQ号：1187766935" data-position="top" data-delay="50">
+            <i class="fa fa-qq fa-lg"></i>
+        </a>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        网络实验命令
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main class="content">
+
+    <!-- 文章内容详情 -->
+    <div id="artDetail" class="container">
+        <div class="card">
+            <div class="card-content article-info">
+                
+                <div class="author-info">
+                    <span>
+                        <i class="fa fa-calendar fa-fw"></i>2018-11-08
+                    </span>
+                </div>
+            </div>
+            <hr>
+            <div class="card-content article-card-content">
+                <div id="articleContent">
+                    <ol>
+<li>配置AS1和AS2两台接入层交换机</li>
+</ol>
+<p>#AS1<br>Switch&gt;en<br>Switch#conf t<br>Switch(config)#vlan 11<br>Switch(config-vlan)#int f0/2<br>Switch(config-if)#switchport mode access<br>Switch(config-if)#switchport access vlan 11<br>Switch(config-if)#exit<br>Switch(config)#vlan 22<br>Switch(config-vlan)#int f0/23<br>Switch(config-if)#switchport mode access<br>Switch(config-if)#switchport access vlan 22<br>Switch(config)#int f0/24<br>Switch(config-if)#switchport mode trunk </p>
+<p>#AS2<br>Switch&gt;en<br>Switch#conf t<br>Switch(config)#vlan 22<br>Switch(config-vlan)#int f0/2<br>Switch(config-if)#switchport mode access<br>Switch(config-if)#switchport access vlan 22<br>Switch(config)#int f0/24<br>Switch(config-if)#switchport mode trunk </p>
+<ol start="2">
+<li>配置CS核心交换机</li>
+</ol>
+<p>#CS<br>Switch&gt;en<br>Switch#conf t<br>Switch(config)#ip routing </p>
+<p>Switch(config)#int f0/1<br>Switch(config-if)#switchport trunk encapsulation dot1q<br>Switch(config-if)#switchport mode trunk<br>Switch(config)#int f0/2<br>Switch(config-if)#switchport trunk encapsulation dot1q<br>Switch(config-if)#switchport mode trunk</p>
+<p>Switch(config)#vlan 11<br>Switch(config-vlan)#vlan 22<br>Switch(config-vlan)#vlan 100<br>Switch(config-vlan)#vlan 200<br>Switch(config-vlan)#int f0/24<br>Switch(config-if)#no shutdown<br>Switch(config-if)#switchport access vlan 200<br>Switch(config-if)#int vlan 1<br>Switch(config-if)#no shutdown<br>Switch(config-if)#int f0/22<br>Switch(config-if)#no shutdown<br>Switch(config-if)#switchport access vlan 1<br>Switch(config-if)#int f0/6<br>Switch(config-if)#no shutdown<br>Switch(config-if)#switchport access vlan 100</p>
+<p>Switch(config-if)#int f0/1<br>Switch(config-if)#no shutdown<br>Switch(config-if)#int f0/2<br>Switch(config-if)#no shutdown<br>Switch(config)#int vlan 1<br>Switch(config-if)#ip address 172.16.1.1 255.255.255.0<br>Switch(config-if)#int vlan 11<br>Switch(config-if)#ip address 172.16.11.1 255.255.255.0<br>Switch(config-if)#int vlan 22<br>Switch(config-if)#ip address 172.16.22.1 255.255.255.0<br>Switch(config-if)#int vlan 100<br>Switch(config-if)#ip address 172.16.100.254 255.255.255.0<br>Switch(config-if)#int vlan 200<br>Switch(config-if)#ip address 172.16.200.1 255.255.255.0</p>
+<p>Switch(config-if)#int f0/5<br>Switch(config-if)#no switchport<br>Switch(config-if)#ip address 172.16.253.1 255.255.255.0<br>Switch(config)#ip route 0.0.0.0 0.0.0.0 172.16.253.2</p>
+<ol start="3">
+<li>配置Firewall出口路由器</li>
+</ol>
+<p>Router(config)#ip route 0.0.0.0 0.0.0.0 2.0.0.1<br>Router(config)#ip route 172.16.0.0 255.255.0.0 172.16.253.1<br>Router(config)#access-list 101 deny ip 172.16.0.0 0.0.255.255 192.168.1.0 0.0.0.255<br>Router(config)#access-list 101 permit ip 172.16.0.0 0.0.255.255 any<br>Router(config)#ip nat inside source list 101 interface f1/0 overload<br>Router(config)#int f0/0<br>Router(config-if)#ip access-group 101 in<br>Router(config-if)#ip nat inside<br>Router(config-if)#int f1/0<br>Router(config-if)#ip access-group 101 out<br>Router(config-if)#ip nat outside<br>Router(config)#ip nat inside source static 172.16.254.2 2.0.0.3<br>Router(config)#int f0/1<br>Router(config-if)#ip nat inside<br>Router(config)#access-list 103 deny ip 172.16.11.2 0.0.0.0 any<br>Router(config)#access-list 103 permit ip 172.16.11.2 0.0.0.0 172.16.254.2 255.555.255.0<br>Router(config)#access-list 103 permit ip any<br>Router(config)#int f0/0<br>Router(config-if)#ip access-group 103 out<br>4.配置ISP1、ISP2、ISP3互联网路由器</p>
+<p>#ISP1<br>Router(config)#int loopback 0<br>Router(config-if)#ip address 1.1.1.1 255.0.0.0<br>Router(config)#router ospf 1<br>Router(config-router)#network 2.0.0.0 0.0.0.7 area 0<br>Router(config-router)#network 3.0.0.0 0.0.0.255 area 0<br>Router(config-router)#network 5.0.0.0 0.0.0.255 area 0<br>Router(config-router)#end<br>Router#show ip route </p>
+<p>#ISP2<br>Router(config)#int loopback 0<br>Router(config-if)#ip address 2.2.2.2 255.0.0.0<br>Router(config-if)#exit<br>Router(config)#router ospf 1<br>Router(config-router)#network 5.0.0.0 0.0.0.255 area 0<br>Router(config-router)#network 4.0.0.0 0.0.0.255 area 0<br>Router(config-router)#network 8.0.0.0 0.0.0.255 area 0<br>Router(config-router)#network 7.0.0.0 0.0.0.3 area 0<br>Router(config-router)#end<br>Router#show ip route</p>
+<p>#ISP3<br>Router(config)#int loopback 0<br>Router(config-if)#ip address 9.9.9.9 255.0.0.0<br>Router(config-if)#exit<br>Router(config)#route ospf 1<br>Router(config-router)#network 3.0.0.0 0.0.0.255 area 0<br>Router(config-router)#network 6.0.0.0 0.0.0.255 area 0<br>Router(config-router)#network 4.0.0.0 0.0.0.255 area 0<br>Router(config-router)#end<br>Router#show ip route</p>
+<p>5.配置Div-R分公司路由器</p>
+<p>#ISP2<br>ISP2(config)# interface serial 0/1/0<br>ISP2(config-if)# clock rate 2000000<br>ISP2(config-if)# encapsulation ppp<br>ISP2(config-if)# ppp authentication pap            // 认证方式为PAP加密<br>ISP2(config)# username user1 password 0 123    //主认证方配置</p>
+<p>#Div-R<br>Div-R(config)# interface serial 0/1/0<br>Div-R(config-if)# encapsulation ppp<br>Div-R(config-if)# ppp authentication pap            // 认证方式为PAP加密<br>Div-R(config-if)# ppp pap sent-username user1 password 0 123<br>Div-R(config)#ip route 0.0.0.0 0.0.0.0 7.0.0.1<br>Div-R(config)#access-list 101 deny ip 192.168.1.0 0.0.0.255 172.16.0.0 0.0.255.255<br>Div-R(config)#access-list 101 permit ip 192.168.1.0 0.0.0.255 any<br>Div-R(config)#ip nat inside source list 101 int s0/1/0 overload<br>Div-R(config)#int s0/1/0<br>Div-R(config-if)#ip nat outside<br>Div-R(config)#int f0/0<br>Div-R(config-if)#ip nat inside</p>
+<p>6、配置wlan无线接入</p>
+<p>AP –&gt; Config –&gt; Port 1 –&gt; SSID: AP1 WPA2-PSK: 12345678<br>Wireless Router0 –&gt; Config –&gt; Wireless –&gt; SSID: AP2 WPA2-PSK: 87654321<br>在两台笔记本上配置无线网卡，分别接入无线AP和无线路由器<br>Laptop22.3：手动配置静态 IP 地址172.16.22.3<br>Laptop22.3： –&gt; config –&gt; wireless0 –&gt; SSID: AP1 wpa2-psk:12345678</p>
+<p>Laptop1： –&gt; config –&gt; wireless0 –&gt; SSID: AP2 wpa2-psk:87654321<br>            –&gt; Desktop –&gt; Connect –&gt; Refresh –&gt; 选择AP2 –&gt; Connect</p>
+<p>7、配置PPPoE接入</p>
+<p>Cloud0 —&gt; DSL —&gt; Modem4 <-> Ethernet6<br>                    Modem5 <-> Ethernet6</-></-></p>
+<p>#ISP2<br>Router(config)#int f1/0<br>Router(config-if)#ip address 8.0.0.1 255.0.0.0<br>Router(config)#pppoe enable                                // 配置接口启用pppoe<br>Router(config)#ip local pool mypool 8.0.0.10 8.0.0.100        // 配置地址池<br>Router(config)#username user1 password 0 123            /<br>Router(config)#aaa new-model                 // 启用 AAA<br>Router(config)#aaa authentication ppp default group radius     // 使用 Radius 对所有 PPP 用户进行身份验证<br>Router(config)#radius-server host 6.0.0.2 key 123            // 指定外部 AAA 服务器,设置预共享密钥<br>Router(config)#int virtual-template 1                    // 定义虚拟模板<br>Router(config-if)#ip unnumbered f1/0                     // 借用以太口地址<br>Router(config)#peer default ip address pool mypool     // 设定地址池<br>Router(config)#ppp authentication chap                // 设定认证方式<br>Router(config)#vpdn enable                     // 全局启用虚拟拨号<br>Router(config)#vpdn-group mygroup                 // 定义虚拟拨号组<br>Router(config-vpdn)#accept-dialin<br>// 允许拨号接入<br>Router(config-vpdn-acc-in)#protocol pppoe                 // 接入协议为pppoe<br>Router(config-vpdn-acc-in)#virtual-template 1            // 设定虚拟模板</p>
+<p>#Inter-Srv</p>
+<p>Service —&gt; AAA —&gt;<br>            Network Configuration:<br>                pppoe 4.0.0.2 Radius 123<br>                ppp   8.0.0.1 Radius 123<br>            User Setup:<br>                u1         cisco        // 用于 WireLess 认证<br>                test     123        // 用于 PC0 认证<br>在pc0使用PPPoE Dialer接入网络，ipconfig查看地址并ping6.0.0.2<br>        Desktop —&gt; PPPoE —&gt; User Name: test Password: 123<br>配置无线路由器使用PPPoE接入网络<br>        Setup —&gt; PPPoE —&gt; Username: u1 Password: cisco  Save Settings<br>        WireLess —&gt; Basic WireLess Settings —&gt; Network Name: AP2  Standard Channel: 11<br>                 —&gt; WireLess Security —&gt; Security Mode: WAP2 Persional  AES  87654321</p>
+<p>8、配置×××</p>
+<p>×××，对端为7.0.0.2，认证方式为pre−share，key为123，加密方式为ah−md5−hmac esp−des，从总部172.16.0.0到分公司192.168.1.0的流量加密<br>        FireWall(config)# ip route 0.0.0.0 0.0.0.0 2.0.0.1          // 添加默认路由( 已添加 )# 配置 IKE 协商<br>        FireWall(config)#crypto isakmp enable                    // 启动 IKE<br>        FireWall(config)#crypto isakmp policy 1                    // 建立 IKE 协商策略<br>        FireWall(config-isakmap)#hash md5                        // 认证算法<br>        FireWall(config-isakmap)#authentication pre−share        // 使用预定义密钥<br>        FireWall(config-isakmap)#exit<br>        FireWall(config)#crypto isakmp key aaa address 7.0.0.2    // 设置共享密钥和对端地址</p>
+<p>#配置 IPSec 协商<br>        FireWall(config)#crypto ipsec transform−set testform ah−md5−hmac esp−des<br>        // 定义了使用AH还是ESP协议，以及相应协议所用的算法<br>        FireWall(config)#access−list 102 permit ip 172.16.0.0 0.0.255.255 192.168.1.0 0.0.0.255<br>        // 配置保护访问控制列表，用来定义哪些报文需要经过 IPSec 加密后发送，哪些报文直接发送</p>
+<pre><code>    #配置端口的应用
+    FireWall(config)#crypto map testmap 1 ipsec−isakmp        // 创建 Crypto Maps 
+    FireWall(config-crypto-map)#set peer 7.0.0.2            // 对端地址
+    FireWall(config-crypto-map)#set transform−set  testform    // 传输模式的名称
+    FireWall(config-crypto-map)#match address 102            // ACL编号( access-list 102 )
+    FireWall(config)#interface f1/0                            // 应用 Crypto Maps 到端口上
+    FireWall(config-if)# crypto map testmap
+
+    #检查 IPSec 配置
+    Router# show crypto isakmp policy                    // 查看IKE策略
+    Router# show crypto ipsec transform-set                // 查看 IPSec 策略
+    Router# show crypto ipsec sa                        // 查看SA信息
+    Router# show crypto map                                // 查看加密映
+
+#DIV-R
+在分公司DIV-R配置端到端IPSec ×××，对端为2.0.0.2，认证方式为pre−share，key为123，加密方式为ah−md5−hmac esp−des，从分公司192.168.1.0到总部172.16.0.0的流量加密
+    DIV-R(config)# ip route 0.0.0.0 0.0.0.0 2.0.0.1          // 添加默认路由( 已添加 )
+
+    # 配置 IKE 协商
+    DIV-R(config)#crypto isakmp enable                    // 启动 IKE 
+    DIV-R(config)#crypto isakmp policy 1                    // 建立 IKE 协商策略
+    DIV-R(config-isakmap)#hash md5                        // 认证算法
+    DIV-R(config-isakmap)#authentication pre−share        // 使用预定义密钥
+    DIV-R(config-isakmap)#exit
+    DIV-R(config)#crypto isakmp key 123 address 2.0.0.2    // 设置共享密钥和对端地址
+
+    # 配置 IPSec 协商
+    DIV-R(config)#crypto ipsec transform−set testform ah−md5−hmac esp−des
+    // 定义了使用AH还是ESP协议，以及相应协议所用的算法
+    DIV-R(config)#access−list 102 permit ip 192.168.1.0 0.0.0.255 172.16.0.0 0.0.255.255
+    // 配置保护访问控制列表，用来定义哪些报文需要经过 IPSec 加密后发送，哪些报文直接发送
+
+    # 配置端口的应用
+    DIV-R(config)#crypto map testmap 1 ipsec−isakmp        // 创建 Crypto Maps 
+    DIV-R(config-crypto-map)#set peer 2.0.0.2            // 对端地址
+    DIV-R(config-crypto-map)#set transform−set  testform    // 传输模式的名称
+    DIV-R(config-crypto-map)#match address 102            // ACL编号( access-list 102 )
+    DIV-R(config)#interface s0/1/0                            // 应用 Crypto Maps 到端口上
+    DIV-R(config-if)# crypto map testmap
+
+    # 检查 IPSec 配置
+    Router# show crypto isakmp policy                    // 查看IKE策略
+    Router# show crypto ipsec transform-set                // 查看 IPSec 策略
+    Router# show crypto ipsec sa                        // 查看SA信息
+    Router# show crypto map                                // 查看加密映射
+</code></pre><p>9、配置VoIP<br>    a)把总部IP电话和callmanager的接入端口加入到voice  vlan1<br>        AS1：<br>            vlan 100<br>            int f0/1<br>            switchport mode access<br>            switchport access vlan 100<br>            switchport voice vlan 1<br>        AS2:<br>            vlan 100<br>            int f0/1<br>            switchport mode access<br>            switchport access vlan 100<br>            switchport voice vlan 1<br>        CS:<br>            int f0/6<br>            switchport mode access<br>            switchport access vlan 100<br>            switchport voice vlan 1</p>
+<pre><code>b)把分公司IP电话和Div-R向内网的接入端口加入到voice  vlan1
+    Switch3:
+        int f0/1
+        switchport voice vlan 1
+        switchport mode access
+        int f0/24
+        switchport mode access
+        switchport voice vlan 1
+
+c)在公司总部配置callmanager ，测试总部两部电话的连通性
+    CallManager:
+        # 配置接口
+    # int f0/0
+    # ip add 172.16.100.1 255.255.255.0
+        # 配置DHCP
+    # ip dhcp pool voice
+    # network 172.16.100.0 255.255.255.0
+    # default-router 172.16.100.1
+    # option 150 ip 172.16.100.1
+        # 配置呼叫服务
+    # telephony-service
+    # max-dn 10
+    # max-ephone 10
+    # ip source-address 172.16.100.1 port 2000
+    # auto assign 1 to 10
+        # 为电话配置号码
+    # ephone-dn 1
+    # number 1001
+    # ephone-dn 2
+    # number 1002 
+
+d)在分公司配置Div-R出口路由器作为callmanager，检查分公司IP电话
+    Router:
+        # 配置接口
+    # int f0/0
+    # ip add 192.168.1.1 255.255.255.0
+        # 配置DHCP
+    # ip dhcp pool voip
+    # network 192.168.1.0 255.255.255.0
+    # default-router 192.168.1.1
+    # option 150 ip 192.168.1.1
+        # 配置呼叫服务
+    # telephone-service
+    # max-dn 10
+    # max-ephone 10
+    # ip source-address 192.168.1.1 port 2000
+    # auto assign 1 to 10
+        # 为电话配置号码
+    # ephone-dn 1
+    # number 2001
+e)把总部IP电话和callmanager的接入端口加入到vlan100
+    在 9、a) 中已经完成该步操作
+
+f)在CS上设置VLAN100的虚接口地址为172.16.100.254
+    int vlan 100
+    ip address 172.16.100.254 255.255.255.0
+
+g)在总部callmanager上设置默认路由指向172.16.100.254
+    ip route 0.0.0.0 0.0.0.0 172.16.100.254
+
+h)配置两台callmanager点对点连接，测试总部到分公司电话的连通性
+    CallManager：
+    dial-peer voice 1 voip
+     destination-pattern  2...de
+     session target ipv4:192.168.1.1
+
+    Router-FW：
+    dial-peer voice 1 voip
+     destination-pattern  1...
+     session target ipv4:172.16.100.1
+
+
+限制 11.2 上网
+d)配置控制列表禁止PC11.2访问互联网
+    ( ☆☆☆建议最后设置该规则☆☆☆ )
+    Ø 设置扩展访问控制列表，允许PC11.2访问DMZ-Srv、禁止PC11.2访问其他地址、允许所有IP流量
+        access-list 103 deny ip 172.16.11.2 0.0.0.0 any
+        access-list 103 permit ip 172.16.11.2 0.0.0.0 172.16.254.2 255.555.255.0
+        access-list 103 permit ip any any
+    Ø 把访问控制列表应用于Firewall内网接口入方向上
+        int f0/0 
+        ip access-group 103 out 
+</code></pre>
+                </div>
+                <hr/>
+
+                <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+                <div class="reprint">
+                    <p>
+                        <span class="reprint-tip">Reprint please specify: </span>
+                        <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
+                        <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                        <a href="/2018/11/08/网络实验命令/" class="b-link-green">网络实验命令</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: 'Thu Nov 08 2018 11:25:18 GMT+0800',
+        owner: 'LIUXUCHONG',
+        repo: 'liuxuchong.github.io',
+        oauth: {
+            client_id: 'f54de68b257c3f12e872',
+            client_secret: 'e9018bda13811bfed32a87ec29f532e2e108f4d5',
+        },
+    });
+
+    gitment.render('gitment-content');
+</script>
+        
+
+        
+
+        
+
+<article id="articles" class="container prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">Previous</div>
+            <div class="card">
+                <a href="/2018/11/10/源码安装http/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="源码安装http">
+                        
+                        <span class="card-title">源码安装http</span>
+                    </div>
+                    <div class="card-content article-content">
+                        <div class="summary">
+                            我们需要先下载三个源码包
+
+wget http://httpd.apache.org/download.cgi/httpd-2.4.37.tar.gzwget http://archive.apache.org/dist/apr/apr-1
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-calendar fa-fw"></i>2018-11-10
+                            </span>
+                            <span class="publish-author">
+                                <i class="fa fa-user fa-fw"></i>
+                                
+                                刘绪冲
+                                
+                            </span>
+                        </div>
+                    </div>
+                    
+                </a>
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">Next</div>
+            <div class="card">
+                <a href="/2018/11/05/搭建ftp的yum源/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="搭建ftp的yum源">
+                        
+                        <span class="card-title">搭建ftp的yum源</span>
+                    </div>
+                    <div class="card-content article-content">
+                        <div class="summary">
+                            在A机器上搭建ftp服务，B机器安装httpd首先搭建ftp
+
+[root@localhost ~]# yum -y install vsftpd*
+
+启动ftp服务
+
+[root@localhost ~]# /etc/init.d/vsf
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-calendar fa-fw"></i>2018-11-05
+                            </span>
+                            <span class="publish-author">
+                                <i class="fa fa-user fa-fw"></i>
+                                
+                                刘绪冲
+                                
+                            </span>
+                        </div>
+                    </div>
+                    
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</article>
+    </div>
+</main>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        
+        <div class="col s12 m4 l4 social-link">
+            <a href="https://github.com/LIUXUCHONG" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+                <i class="fa fa-github fa-lg"></i>
+            </a>
+            <a href="mailto:1187766935@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+                <i class="fa fa-envelope fa-lg"></i>
+            </a>
+            <a href="https://im.qq.com/" class="tooltipped" data-tooltip="QQ: 1187766935" data-position="top" data-delay="50">
+                <i class="fa fa-qq fa-lg"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input" autofocus="">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-double-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+</body>
+</html>

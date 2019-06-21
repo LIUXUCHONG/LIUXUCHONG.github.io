@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<html lang="zh-Hans">
+<head>
+    <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content=", hexo-theme-matery">
+    <meta name="description" content="这是刘绪冲的博客">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>九尾狐</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+</head>
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">九尾狐</span>
+                    </a>
+                </div>
+
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">首页</a>
+    </li>
+    
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">标签</a>
+    </li>
+    
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">归档</a>
+    </li>
+    
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">九尾狐</div>
+        <div class="logo-desc">
+            
+            这是刘绪冲的博客
+            
+        </div>
+    </div>
+    <ul class="menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>归档
+            </a>
+        </li>
+        
+    </ul>
+    <div class="social-link">
+        <a href="https://github.com/LIUXUCHONG" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
+           data-position="top" data-delay="50">
+            <i class="fa fa-github fa-lg"></i>
+        </a>
+        <a href="mailto:1187766935@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我"
+           data-position="top" data-delay="50">
+            <i class="fa fa-envelope fa-lg"></i>
+        </a>
+        <a href="#!" class="tooltipped" data-tooltip="QQ号：1187766935" data-position="top" data-delay="50">
+            <i class="fa fa-qq fa-lg"></i>
+        </a>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        解决Centos yum 更新出错
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main class="content">
+
+    <!-- 文章内容详情 -->
+    <div id="artDetail" class="container">
+        <div class="card">
+            <div class="card-content article-info">
+                
+                <div class="author-info">
+                    <span>
+                        <i class="fa fa-calendar fa-fw"></i>2018-10-25
+                    </span>
+                </div>
+            </div>
+            <hr>
+            <div class="card-content article-card-content">
+                <div id="articleContent">
+                    <p>昨天在服务器里装 centos 7，遇到了yum更新失败问题。这个问题是受镜像地址限制的。</p>
+<p>显示错误如下：</p>
+<p><img src="/2018/10/25/解决Centos-yum-更新出错/1.png" alt=""></p>
+<p>出现这个错误，一般就是镜像源的问题：</p>
+<p>镜像连接错误</p>
+<p>这时就考虑使用国内的镜像，比如163镜像。</p>
+<p>解决方法：</p>
+<p>这里以centos 7为例，其他版本把数字改下就好，取大版本号</p>
+<p>cd /etc/yum.repos.d</p>
+<p>mv CentOS-Base.repo CentOS-Base.repo.bak</p>
+<p>vi CentOS-Base.repo</p>
+<blockquote>
+<p>[base]<br>name=Red Hat Enterprise Linux 7.0 -Base<br>baseurl=<a href="http://mirrors.163.com/centos/7/os/$basearch/" target="_blank" rel="noopener">http://mirrors.163.com/centos/7/os/$basearch/</a><br>gpgcheck=1<br>gpgkey=<a href="http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7" target="_blank" rel="noopener">http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7</a><br>[update]<br>name=Red Hat Enterprise Linux 7.0 -Updates<br>baseurl=<a href="http://mirrors.163.com/centos/7/updates/$basearch/" target="_blank" rel="noopener">http://mirrors.163.com/centos/7/updates/$basearch/</a><br>gpgcheck=1<br>gpgkey=<a href="http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7" target="_blank" rel="noopener">http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7</a><br>[extras]<br>name=Red Hat Enterprise Linux 7.0 -Extras<br>baseurl=<a href="http://mirrors.163.com/centos/7/extras/$basearch/" target="_blank" rel="noopener">http://mirrors.163.com/centos/7/extras/$basearch/</a><br>gpgcheck=1<br>gpgkey=<a href="http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7" target="_blank" rel="noopener">http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7</a></p>
+</blockquote>
+<p>保存即可。<br>可能刚改完不能立即生效需要缓冲一段时间，我刚改完时还是现实不行，于是就去吃饭了，回来发现莫名其妙的好了！</p>
+<p>如果出现下面的错误：<br><img src="/2018/10/25/解决Centos-yum-更新出错/2.png" alt=""></p>
+<p>一般就是DNS问题</p>
+<p>测试方法就是ping外网，发现ping不通就是这个问题。</p>
+<p>解决方法：</p>
+<blockquote>
+<p>echo “nameserver 8.8.8.8”&gt;&gt;/etc/resolv.conf</p>
+</blockquote>
+<p>或者编辑解析文件</p>
+<blockquote>
+<p>vi /etc/resolv.conf</p>
+</blockquote>
+<p>添加nameserver 8.8.8.8<br>保存退出即可。<br>然后再yum update就可以了。</p>
+
+                </div>
+                <hr/>
+
+                <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+                <div class="reprint">
+                    <p>
+                        <span class="reprint-tip">Reprint please specify: </span>
+                        <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
+                        <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                        <a href="/2018/10/25/解决Centos-yum-更新出错/" class="b-link-green">解决Centos yum 更新出错</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: 'Thu Oct 25 2018 11:02:07 GMT+0800',
+        owner: 'LIUXUCHONG',
+        repo: 'liuxuchong.github.io',
+        oauth: {
+            client_id: 'f54de68b257c3f12e872',
+            client_secret: 'e9018bda13811bfed32a87ec29f532e2e108f4d5',
+        },
+    });
+
+    gitment.render('gitment-content');
+</script>
+        
+
+        
+
+        
+
+<article id="articles" class="container prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">Previous</div>
+            <div class="card">
+                <a href="/2018/10/25/解决mysql：The-server-quit-without-updating-PID-file/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="解决mysql：The server quit without updating PID file">
+                        
+                        <span class="card-title">解决mysql：The server quit without updating PID file</span>
+                    </div>
+                    <div class="card-content article-content">
+                        <div class="summary">
+                            一、卸载原来的mysql出现这种错误极有可能是上一个mysql的残留文件没有删除，在/etc目录下查找有没有my.cnf文件，如果有删除它 rm -rf my.cnf。再去/usr/local和root目录下查看有没有mysql的相关文件，
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-calendar fa-fw"></i>2018-10-25
+                            </span>
+                            <span class="publish-author">
+                                <i class="fa fa-user fa-fw"></i>
+                                
+                                刘绪冲
+                                
+                            </span>
+                        </div>
+                    </div>
+                    
+                </a>
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">Next</div>
+            <div class="card">
+                <a href="/2018/10/22/docker容器中没有vi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="docker容器中没有vi">
+                        
+                        <span class="card-title">docker容器中没有vi</span>
+                    </div>
+                    <div class="card-content article-content">
+                        <div class="summary">
+                            在使用docker容器时，输入vim命令时提示说：vim: command not found，这个时候就需要安装vim，可是当你敲apt-get install vi命令时，提示如下：这时就需要输入命令 apt-get update 这个
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-calendar fa-fw"></i>2018-10-22
+                            </span>
+                            <span class="publish-author">
+                                <i class="fa fa-user fa-fw"></i>
+                                
+                                刘绪冲
+                                
+                            </span>
+                        </div>
+                    </div>
+                    
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</article>
+    </div>
+</main>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        
+        <div class="col s12 m4 l4 social-link">
+            <a href="https://github.com/LIUXUCHONG" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+                <i class="fa fa-github fa-lg"></i>
+            </a>
+            <a href="mailto:1187766935@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+                <i class="fa fa-envelope fa-lg"></i>
+            </a>
+            <a href="https://im.qq.com/" class="tooltipped" data-tooltip="QQ: 1187766935" data-position="top" data-delay="50">
+                <i class="fa fa-qq fa-lg"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input" autofocus="">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-double-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+</body>
+</html>

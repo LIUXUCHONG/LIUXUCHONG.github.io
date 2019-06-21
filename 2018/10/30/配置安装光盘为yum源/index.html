@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+<html lang="zh-Hans">
+<head>
+    <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content=", hexo-theme-matery">
+    <meta name="description" content="这是刘绪冲的博客">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>九尾狐</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+</head>
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">九尾狐</span>
+                    </a>
+                </div>
+
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">首页</a>
+    </li>
+    
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">标签</a>
+    </li>
+    
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">归档</a>
+    </li>
+    
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">九尾狐</div>
+        <div class="logo-desc">
+            
+            这是刘绪冲的博客
+            
+        </div>
+    </div>
+    <ul class="menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>归档
+            </a>
+        </li>
+        
+    </ul>
+    <div class="social-link">
+        <a href="https://github.com/LIUXUCHONG" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
+           data-position="top" data-delay="50">
+            <i class="fa fa-github fa-lg"></i>
+        </a>
+        <a href="mailto:1187766935@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我"
+           data-position="top" data-delay="50">
+            <i class="fa fa-envelope fa-lg"></i>
+        </a>
+        <a href="#!" class="tooltipped" data-tooltip="QQ号：1187766935" data-position="top" data-delay="50">
+            <i class="fa fa-qq fa-lg"></i>
+        </a>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        配置安装光盘为yum源
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main class="content">
+
+    <!-- 文章内容详情 -->
+    <div id="artDetail" class="container">
+        <div class="card">
+            <div class="card-content article-info">
+                
+                <div class="author-info">
+                    <span>
+                        <i class="fa fa-calendar fa-fw"></i>2018-10-30
+                    </span>
+                </div>
+            </div>
+            <hr>
+            <div class="card-content article-card-content">
+                <div id="articleContent">
+                    <p>首先用vsphere连接上光盘<br><img src="/2018/10/30/配置安装光盘为yum源/1.png" alt=""><br>创建一个光盘挂载目录</p>
+<blockquote>
+<p>[root@localhost /]# mkdir -p /mnt/cdrom/</p>
+</blockquote>
+<p>挂载光盘</p>
+<blockquote>
+<p>[root@localhost /]# mount /dev/cdrom /mnt/cdrom/</p>
+</blockquote>
+<p>然后我们切换到/etc目录下把yum仓库备份一下</p>
+<blockquote>
+<p>[root@localhost yum.repos.d]# mv yum.repos.d yum.repos.d.bak</p>
+</blockquote>
+<p>然后进入创建一个新目录</p>
+<blockquote>
+<p>[root@localhost yum.repos.d]# mkdir -p /etc/yum.repos.d/</p>
+</blockquote>
+<p>编辑Centos-Media.repo</p>
+<blockquote>
+<p>[root@localhost yum.repos.d]# vi Centos-Media.repo</p>
+</blockquote>
+<p>文件内容如下</p>
+<blockquote>
+<p>[dvd]<br>name=lxc<br>baseurl=file:///mnt/cdrom<br>enable=1<br>gpgcheck=0</p>
+</blockquote>
+<p>记住这里一定要有三个///前两个是协议，最后一个是根目录<br>然后</p>
+<blockquote>
+<p>yum clean all<br>yum makecache</p>
+</blockquote>
+<p>got it！</p>
+
+                </div>
+                <hr/>
+
+                <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+                <div class="reprint">
+                    <p>
+                        <span class="reprint-tip">Reprint please specify: </span>
+                        <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
+                        <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                        <a href="/2018/10/30/配置安装光盘为yum源/" class="b-link-green">配置安装光盘为yum源</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: 'Tue Oct 30 2018 17:10:00 GMT+0800',
+        owner: 'LIUXUCHONG',
+        repo: 'liuxuchong.github.io',
+        oauth: {
+            client_id: 'f54de68b257c3f12e872',
+            client_secret: 'e9018bda13811bfed32a87ec29f532e2e108f4d5',
+        },
+    });
+
+    gitment.render('gitment-content');
+</script>
+        
+
+        
+
+        
+
+<article id="articles" class="container prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">Previous</div>
+            <div class="card">
+                <a href="/2018/11/01/docker出现ipv4-forwarding-is-disabled/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="docker出现ipv4 forwarding is disabled">
+                        
+                        <span class="card-title">docker出现ipv4 forwarding is disabled</span>
+                    </div>
+                    <div class="card-content article-content">
+                        <div class="summary">
+                            初学docker的时候遇到这个问题不要慌，只须在/usr/lib/sysctl.d/目录下的00-system.conf文件里添加net.ipv4.ip_forward=1即可保存后，执行命令 systemctl restart &amp;
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-calendar fa-fw"></i>2018-11-01
+                            </span>
+                            <span class="publish-author">
+                                <i class="fa fa-user fa-fw"></i>
+                                
+                                刘绪冲
+                                
+                            </span>
+                        </div>
+                    </div>
+                    
+                </a>
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">Next</div>
+            <div class="card">
+                <a href="/2018/10/25/解决mysql：The-server-quit-without-updating-PID-file/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="解决mysql：The server quit without updating PID file">
+                        
+                        <span class="card-title">解决mysql：The server quit without updating PID file</span>
+                    </div>
+                    <div class="card-content article-content">
+                        <div class="summary">
+                            一、卸载原来的mysql出现这种错误极有可能是上一个mysql的残留文件没有删除，在/etc目录下查找有没有my.cnf文件，如果有删除它 rm -rf my.cnf。再去/usr/local和root目录下查看有没有mysql的相关文件，
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-calendar fa-fw"></i>2018-10-25
+                            </span>
+                            <span class="publish-author">
+                                <i class="fa fa-user fa-fw"></i>
+                                
+                                刘绪冲
+                                
+                            </span>
+                        </div>
+                    </div>
+                    
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</article>
+    </div>
+</main>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        
+        <div class="col s12 m4 l4 social-link">
+            <a href="https://github.com/LIUXUCHONG" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+                <i class="fa fa-github fa-lg"></i>
+            </a>
+            <a href="mailto:1187766935@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+                <i class="fa fa-envelope fa-lg"></i>
+            </a>
+            <a href="https://im.qq.com/" class="tooltipped" data-tooltip="QQ: 1187766935" data-position="top" data-delay="50">
+                <i class="fa fa-qq fa-lg"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input" autofocus="">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-double-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+</body>
+</html>

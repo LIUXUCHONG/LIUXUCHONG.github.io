@@ -1,0 +1,404 @@
+<!DOCTYPE HTML>
+<html lang="zh-Hans">
+<head>
+    <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content=", hexo-theme-matery">
+    <meta name="description" content="这是刘绪冲的博客">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>九尾狐</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+</head>
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">九尾狐</span>
+                    </a>
+                </div>
+
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">首页</a>
+    </li>
+    
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">标签</a>
+    </li>
+    
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">归档</a>
+    </li>
+    
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">九尾狐</div>
+        <div class="logo-desc">
+            
+            这是刘绪冲的博客
+            
+        </div>
+    </div>
+    <ul class="menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>归档
+            </a>
+        </li>
+        
+    </ul>
+    <div class="social-link">
+        <a href="https://github.com/LIUXUCHONG" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
+           data-position="top" data-delay="50">
+            <i class="fa fa-github fa-lg"></i>
+        </a>
+        <a href="mailto:1187766935@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我"
+           data-position="top" data-delay="50">
+            <i class="fa fa-envelope fa-lg"></i>
+        </a>
+        <a href="#!" class="tooltipped" data-tooltip="QQ号：1187766935" data-position="top" data-delay="50">
+            <i class="fa fa-qq fa-lg"></i>
+        </a>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        esxi centos7搭建nat和dhcp服务器
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main class="content">
+
+    <!-- 文章内容详情 -->
+    <div id="artDetail" class="container">
+        <div class="card">
+            <div class="card-content article-info">
+                
+                <div class="author-info">
+                    <span>
+                        <i class="fa fa-calendar fa-fw"></i>2018-10-15
+                    </span>
+                </div>
+            </div>
+            <hr>
+            <div class="card-content article-card-content">
+                <div id="articleContent">
+                    <p><strong>什么是NAT</strong>？</p>
+<p>NAT（Network address translation）即网络地址转换，作为一种过渡解决手段，可以用来减少对全球合法IP地址的需求。简单的说，NAT就是在内部专用网络中使用内部地址，而当内部节点要与外界网络发生联系时，就在边缘路由器或者防火墙处，将内部地址转换成公网地址，从而使得在外网（Internet）上使用一个和数个合法IP地址正常传输数据。其中，这里的外网和内网是相对来讲的，下面假设能够访问互联网的网络为外网。<br><strong>什么是DHCP</strong></p>
+<p>DHCP（Dynamic Host Configuration Protocol，动态主机配置协议）通常被应用在大型的局域网络环境中，主要作用是集中的管理、分配IP地址，使网络环境中的主机动态的获得IP地址、Gateway地址、DNS服务器地址等信息，并能够提升地址的使用率。</p>
+<p><strong>实验环境</strong><br>vSphere Client远程esxi<br>首先新建一个虚拟交换机<br><img src="/2018/10/15/esxi-centos7搭建nat和dhcp服务器/1.png" alt=""><br>注意选择创建交换机的时候，不要选中网卡，把默认选中的网卡前的对勾删掉，之所以这么做，是因为我们要把这个网络的请求都转发到VM Network上去，而不要让它自己走物理网卡出去。<br><img src="/2018/10/15/esxi-centos7搭建nat和dhcp服务器/2.png" alt=""><br>点击下一步给交换机随便起个名字，一路下一步即可<br>然后新建一个双网卡的虚拟机，我用的是最小化安装centos7（步骤在这里就不说了 详情见本人博客）<br>然后打开虚拟机设置<br><img src="/2018/10/15/esxi-centos7搭建nat和dhcp服务器/3.png" alt=""><br>把网卡2连接到我们刚才新建的虚拟交换机上<br>这里记录一下网卡2的mac地址，接下来会用到</p>
+<p>然后开机<br>本人服务器是连接校园网的，所以开机后写了一个脚本连上了校园网后才安装了一些软件，如果不联网会yum不到，自行配置联网<br>输入yum -y update更新yum源，确保我们yum到的软件都是最新的<br>然后输入yum -y install net-tools安装一些基本命令<br>接下来输入ifconfig找到刚才记录的mac地址，把这个网卡ip设置成内网ip，另一个设置成外网ip<br>配置如下，外网ip及网关根据实际情况配置，内网ip可参照互联网协议设置(我这里ens160为外网网卡)<br>私有地址的范围分别是：</p>
+<p>A类地址范围：10.0.0.0—10.255.255.255；</p>
+<p>B类地址范围：172.16.0.0—172.31.255.555；</p>
+<p>C类地址范围：192.168.0.0—192.168.255.255。</p>
+<p>vi /etc/sysconfig/network-scripts/ifcfg-ens160</p>
+<blockquote>
+<p>TYPE=Ethernet<br>BOOTPROTO=static<br>IPADDR=172.18.74.180<br>NAME=ens160<br>DEVICE=ens160<br>ONBOOT=yes<br>GATEWAY=172.18.74.253<br>NETMASK=255.255.255.0<br>DNS1=114.114.114.114<br>DNS2=8.8.8.8</p>
+</blockquote>
+<p>vi /etc/sysconfig/network-scripts/ifcfg-ens192</p>
+<blockquote>
+<p>TYPE=Ethernet<br>BOOTPROTO=static<br>IPADDR=192.168.255.1<br>NAME=ens192<br>DEVICE=ens192<br>ONBOOT=yes<br>NETMASK=255.255.255.0<br>DNS=114.114.114.114</p>
+</blockquote>
+<p>注意不要写网关</p>
+<p>重启网卡</p>
+<blockquote>
+<p>service restart network</p>
+</blockquote>
+<p><strong>防火墙配置</strong><br>关闭防火墙</p>
+<blockquote>
+<p>setenforce 0<br>systemctl stop firewalld<br>systemctl disable firewalld</p>
+</blockquote>
+<p>配置防火墙，让发送至内网网卡(ens192)的数据全部通过</p>
+<blockquote>
+<p>iptables -A FORWARD -i ens192 -j ACCEPT</p>
+</blockquote>
+<p><strong>修改数据报头信息</strong></p>
+<blockquote>
+<p>iptables -t nat -A POSTROUTING -s 192.168.255.0/24 -o ens160 -j MASQUERADE</p>
+</blockquote>
+<p><strong>开启Linux路由功能</strong></p>
+<blockquote>
+<p>echo 1 &gt; /proc/sys/net/ipv4/ip_forward<br>cat /proc/sys/net/ipv4/ip_forward</p>
+</blockquote>
+<p><strong>安装配置DHCP服务</strong><br>安装DHCP服务</p>
+<blockquote>
+<p>yum install -y epel*<br>yum install -y dhcp</p>
+</blockquote>
+<p>复制DHCP配置文件</p>
+<blockquote>
+<p>cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf</p>
+</blockquote>
+<p>编辑并修改dhcpd.conf配置文件</p>
+<blockquote>
+<p>vi /etc/dhcp/dhcpd.conf</p>
+</blockquote>
+<p><img src="/2018/10/15/esxi-centos7搭建nat和dhcp服务器/4.png" alt=""><br>画红线处是修改的地方，后面的代码删除即可<br>解释：<br>subnet后跟子网网段<br>netmask后面是子网掩码<br>range是地址池范围<br>option routers是分发默认网关<br>默认租期时间(秒)<br>  default-lease-time 600；<br>最大租期时间(秒)<br>  max-lease-time 7200；<br>DNS服务器地址(多个地址用”,”隔开)<br>  option domain-name-servers 223.5.5.5, 114.114.114.114；<br>为所分配的域分配域名（名字随便起）<br>  option domain-name “vmnet.com”；</p>
+<p><strong>启动DHCP服务</strong></p>
+<blockquote>
+<p>systemctl restart dhcpd<br>systemctl enable dhcpd</p>
+</blockquote>
+<p><strong>查看启动状态</strong></p>
+<blockquote>
+<p>systemctl status dhcpd<br>netstat -uap | grep dhcpd</p>
+</blockquote>
+<p><img src="/2018/10/15/esxi-centos7搭建nat和dhcp服务器/5.png" alt=""><br>搞定！<br>。。。从前车马很慢，书信很远，一生只够爱一个人！</p>
+
+                </div>
+                <hr/>
+
+                <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+                <div class="reprint">
+                    <p>
+                        <span class="reprint-tip">Reprint please specify: </span>
+                        <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
+                        <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                        <a href="/2018/10/15/esxi-centos7搭建nat和dhcp服务器/" class="b-link-green">esxi centos7搭建nat和dhcp服务器</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: 'Mon Oct 15 2018 18:00:55 GMT+0800',
+        owner: 'LIUXUCHONG',
+        repo: 'liuxuchong.github.io',
+        oauth: {
+            client_id: 'f54de68b257c3f12e872',
+            client_secret: 'e9018bda13811bfed32a87ec29f532e2e108f4d5',
+        },
+    });
+
+    gitment.render('gitment-content');
+</script>
+        
+
+        
+
+        
+
+<article id="articles" class="container prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">Previous</div>
+            <div class="card">
+                <a href="/2018/10/18/win10装双系统图文教程/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="win10装双系统图文教程">
+                        
+                        <span class="card-title">win10装双系统图文教程</span>
+                    </div>
+                    <div class="card-content article-content">
+                        <div class="summary">
+                            第一步、创建新加卷右击我的电脑选择管理，在弹出的新页面点击磁盘管理选择一个空间较大的磁盘右击，点击压缩卷随缘选择要压缩的大小然后会出现一个新的空闲分区右击它，点击新建简单卷根据提示一路默认即可
+第二步、准备iso镜像去官方下载win10的i
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-calendar fa-fw"></i>2018-10-18
+                            </span>
+                            <span class="publish-author">
+                                <i class="fa fa-user fa-fw"></i>
+                                
+                                刘绪冲
+                                
+                            </span>
+                        </div>
+                    </div>
+                    
+                </a>
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">Next</div>
+            <div class="card">
+                <a href="/2018/10/12/RSA-host-key-has-changed-ssh公钥分发失败/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="RSA host key has changed,ssh公钥分发失败">
+                        
+                        <span class="card-title">RSA host key has changed,ssh公钥分发失败</span>
+                    </div>
+                    <div class="card-content article-content">
+                        <div class="summary">
+                            分发公钥时出现下图错误
+
+这可能是Linux服务器重新系统、openssh-server重装、更改IP导致的。
+输入以下命令即可
+
+ssh-keygen –R adress-ip-du-serveur
+
+
+
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-calendar fa-fw"></i>2018-10-12
+                            </span>
+                            <span class="publish-author">
+                                <i class="fa fa-user fa-fw"></i>
+                                
+                                刘绪冲
+                                
+                            </span>
+                        </div>
+                    </div>
+                    
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</article>
+    </div>
+</main>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        
+        <div class="col s12 m4 l4 social-link">
+            <a href="https://github.com/LIUXUCHONG" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+                <i class="fa fa-github fa-lg"></i>
+            </a>
+            <a href="mailto:1187766935@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+                <i class="fa fa-envelope fa-lg"></i>
+            </a>
+            <a href="https://im.qq.com/" class="tooltipped" data-tooltip="QQ: 1187766935" data-position="top" data-delay="50">
+                <i class="fa fa-qq fa-lg"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input" autofocus="">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-double-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+</body>
+</html>

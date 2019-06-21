@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<html lang="zh-Hans">
+<head>
+    <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content=", hexo-theme-matery">
+    <meta name="description" content="这是刘绪冲的博客">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>九尾狐</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+</head>
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">九尾狐</span>
+                    </a>
+                </div>
+
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">首页</a>
+    </li>
+    
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">标签</a>
+    </li>
+    
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">归档</a>
+    </li>
+    
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">九尾狐</div>
+        <div class="logo-desc">
+            
+            这是刘绪冲的博客
+            
+        </div>
+    </div>
+    <ul class="menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>归档
+            </a>
+        </li>
+        
+    </ul>
+    <div class="social-link">
+        <a href="https://github.com/LIUXUCHONG" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
+           data-position="top" data-delay="50">
+            <i class="fa fa-github fa-lg"></i>
+        </a>
+        <a href="mailto:1187766935@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我"
+           data-position="top" data-delay="50">
+            <i class="fa fa-envelope fa-lg"></i>
+        </a>
+        <a href="#!" class="tooltipped" data-tooltip="QQ号：1187766935" data-position="top" data-delay="50">
+            <i class="fa fa-qq fa-lg"></i>
+        </a>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Windows-Server2016下安装SQL-Server2012集群
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main class="content">
+
+    <!-- 文章内容详情 -->
+    <div id="artDetail" class="container">
+        <div class="card">
+            <div class="card-content article-info">
+                
+                <div class="author-info">
+                    <span>
+                        <i class="fa fa-calendar fa-fw"></i>2019-01-15
+                    </span>
+                </div>
+            </div>
+            <hr>
+            <div class="card-content article-card-content">
+                <div id="articleContent">
+                    <p>准备工作：<br>真实环境中的三台服务器：<br>一台作为域控服务器，另外两台作为的数据库节点。</p>
+<p><strong>第一步：ip安排</strong><br>ip：<br>节点1: 172.19.5.123  心跳 192.168.1.1<br>节点2：172.19.5.122 心跳 192.168.1.2<br>域控DC： 172.19.5.124<br>故障转移集群： 172.19.5.101<br>分布式事务ip： 172.19.5.102<br>数据库集群ip： 172.19.5.103<br>注意把两个节点的dns写成域控的ip</p>
+<blockquote>
+</blockquote>
+<hr>
+<p><strong>第二步：磁盘准备工作</strong></p>
+<p>需要4个磁盘卷： 仲裁盘（1G）、集群共享盘（200G）、clusterBB（100G）、可用磁盘卷（数据存储盘800G）<br>域控服务器不需要关联这四个卷。<br>通过MD Storage Manager Client磁盘管理工具分配以上四个卷。</p>
+<p>打开MD Storage Manager Client工具<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/1.png" alt=""><br>点击添加存储阵列<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/2.png" alt=""><br>选择手动添加<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/3.png" alt=""><br>填入raid控制模块的两个ip，如果不知道ip就用DellDiscoveryUtility工具扫描一下本段网络，做法如下<br>双机DellDiscoveryUtility应用程序<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/4.png" alt=""><br>下一步<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/5.png" alt=""><br>填写ip段下一步<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/6.png" alt=""><br>下一步<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/7.png" alt=""><br>点击discover<br>等待一会就会扫描出存储的raid模块地址<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/8.png" alt=""><br>可能只会出现一个ip，我们先写一个模块的ip连接上存储查看另一个模块ip把另一个也连接上，这里不做过多的叙述了。<br>然后回到磁盘管理工具<br>选择管理存储阵列<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/9.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/10.png" alt=""><br>点击确定<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/11.png" alt=""><br>在弹出的页面选择Configure，然后选择最下面的Create Disk Group and Virtual Disks<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/12.png" alt=""><br>如果你的磁盘都没有加入磁盘组，默认点击第一个选项，然后根据自己需要去分配磁盘即可，然后映射给主机组，这里磁盘已经分配好了，我们查看已经创建好并映射给主机组的磁盘<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/13.png" alt=""><br>然后查看主机上是否有新磁盘，右击windows菜单，点击磁盘管理<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/14.png" alt=""><br>可以看到有四个没有联机的磁盘，右击，联机，新建卷，默认下一步就行，不多说。<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/15.png" alt=""><br>可用的卷的状态如下<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/16.png" alt=""><br>到这里磁盘就已经准备好了！</p>
+<blockquote>
+<hr>
+<p><strong>第三步：安装域控服务器</strong></p>
+</blockquote>
+<p>以下步骤是在172.19.5.124上进行的<br>打开服务器管理器，添加功能和角色<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/17.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/18.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/19.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/20.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/21.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/22.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/23.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/24.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/25.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/26.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/27.png" alt=""><br>安装完成后会提示提升为域控服务器。点击，出现如下界面：<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/28.png" alt=""><br>下一步<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/29.png" alt=""><br>哈哈，由于自己做的时候忘记截图了，这里ps一张<br>一直到下一步  指定NetBIOS域名TRSCLUSTER(这个域名用于之后登陆该域使用，警告可以忽略）<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/30.png" alt=""><br>一直下一步到先决条件检查，没问题就安装<br>然后打开工具AD用户和计算机<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/31.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/32.png" alt=""><br>右击User，新建，创建用户<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/33.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/34.png" alt=""><br>指定密码永不过期，用户不能更改密码<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/35.png" alt=""><br>给账户创建一个密码，下一步<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/36.png" alt=""><br>完成<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/37.png" alt=""><br>提升用户权限为domainadmin</p>
+<p>双机trsadmin，隶属于，添加，搜索domainadmin，确定<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/38.png" alt=""><br>接下来讲DomainAdmin设置为主要组,并且删除DomainUser组<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/39.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/40.png" alt=""></p>
+<blockquote>
+</blockquote>
+<hr>
+<p><strong>第四步：将节点加入域</strong><br>将节点加入域之前,需要先配置节点的ip地址。<br>节点1的私有ip<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/41.png" alt=""><br>取消ipv6协议<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/42.png" alt=""><br>点击高级，DNS<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/43.png" alt=""><br>取消红框里的对号<br>点击WINS<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/44.png" alt=""><br>禁用NetBIOS<br>私有ip（心跳）设置完毕<br>接下来配置公网ip，只需要配置好ipv4即可<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/45.png" alt=""><br>注意DNS要写成域控服务器的ip<br>然后更改网卡顺序，点击高级，跃点数设为10<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/46.png" alt=""><br>私有网卡的跃点数设置比10大就可以了，跃点数越小优先级越高<br>另一个节点也照此配置<br>接下来是将节点加入域 加入域之前,将两个节点都安装上故障转移群集管理功能。安装方式同添加域服务器时相同,区别是只选择故障转移群集管理即可。<br>添加域的方法,选择这台电脑,右键选择属性。<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/47.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/48.png" alt=""><br>加入域时,需要输入域账号<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/49.png" alt=""><br>加入域完成后,需要重启计算机。 <br>重启完成之后使用之前创建的域管理员账号登录系统<br>TRSCLUSTER\trsadmin</p>
+<hr>
+<p><strong>第五步：创建集群</strong><br>在域控服务器选择服务器管理—工具—故障转移群集管理器<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/50.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/51.png" alt=""><br>第一次创建集群需要运行测试<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/52.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/53.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/54.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/55.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/56.png" alt=""><br>测试完成，开始创建集群<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/57.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/58.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/59.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/60.png" alt=""><br>这里不选将所有符合条件的存储添加到集群，我们手动添加。<br>下一步完成即可完成集群创建<br>然后添加磁盘<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/61.png" alt=""><br>把你想要添加的磁盘添加进来即可，我这里的四块磁盘已经分配好<br>仲裁盘的配置，选中一块磁盘然后右击集群，更多操作，配置集群仲裁，一路默认即可。<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/62.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/63.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/64.png" alt=""><br>群集共享盘，选中磁盘后，在右侧操作栏有一个添加为群集共享卷，点击即可。</p>
+<hr>
+<p><strong>第六步:安装分布式事务协调器</strong><br>接下来配置角色<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/65.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/66.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/67.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/68.png" alt=""><br>下一步，选择一块磁盘，默认下一步ok</p>
+<hr>
+<p><strong>第七步:数据库主节点安装</strong><br>把sqlserver2012镜像拷贝到本机上后双机驱动程序<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/69.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/70.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/71.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/72.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/73.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/74.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/75.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/76.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/77.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/78.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/79.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/80.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/81.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/82.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/83.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/84.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/85.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/86.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/87.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/88.png" alt=""><br>这里的目录选择刚才创建sqlserver集群时所选的的磁盘位置<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/89.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/90.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/91.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/92.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/93.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/94.png" alt=""><br>从节点sqlserver安装<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/95.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/96.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/97.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/98.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/99.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/100.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/101.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/102.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/103.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/104.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/105.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/106.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/107.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/108.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/109.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/110.png" alt=""><br>验证安装，在度武器管理器工具下选择Active Directory 用户和计算机，点击Computers可以看到刚才所建的全部集群<br>查看sqlserver信息<br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/111.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/112.png" alt=""><br><img src="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/113.png" alt=""></p>
+<p>到这里就完成了，也到中午了，吃顿好的给自己补补！</p>
+
+                </div>
+                <hr/>
+
+                <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+                <div class="reprint">
+                    <p>
+                        <span class="reprint-tip">Reprint please specify: </span>
+                        <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
+                        <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                        <a href="/2019/01/15/Windows-Server2016下安装SQL-Server2012集群/" class="b-link-green">Windows-Server2016下安装SQL-Server2012集群</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: 'Tue Jan 15 2019 18:35:33 GMT+0800',
+        owner: 'LIUXUCHONG',
+        repo: 'liuxuchong.github.io',
+        oauth: {
+            client_id: 'f54de68b257c3f12e872',
+            client_secret: 'e9018bda13811bfed32a87ec29f532e2e108f4d5',
+        },
+    });
+
+    gitment.render('gitment-content');
+</script>
+        
+
+        
+
+        
+
+<article id="articles" class="container prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">Previous</div>
+            <div class="card">
+                <a href="/2019/05/15/pod状态一直显示ContainerCreating/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="pod状态一直显示ContainerCreating">
+                        
+                        <span class="card-title">pod状态一直显示ContainerCreating</span>
+                    </div>
+                    <div class="card-content article-content">
+                        <div class="summary">
+                            今天在学习kubernetes的时候启动了一个msyql服务，运行命令
+
+[root@liuxuchong kubernetes]# kubectl create -f mysql-rc.yamlreplicationcontroller 
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-calendar fa-fw"></i>2019-05-15
+                            </span>
+                            <span class="publish-author">
+                                <i class="fa fa-user fa-fw"></i>
+                                
+                                刘绪冲
+                                
+                            </span>
+                        </div>
+                    </div>
+                    
+                </a>
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">Next</div>
+            <div class="card">
+                <a href="/2018/12/08/网络实验要求/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="网络实验要求">
+                        
+                        <span class="card-title">网络实验要求</span>
+                    </div>
+                    <div class="card-content article-content">
+                        <div class="summary">
+                            实验拓扑一、测试安排    本次测试使用cisco Packet Tracer7.0模拟器进行，请按照实验操作文件（pka）的要求完成配置任务。pka文件中的拓扑和设备命名均不许修改，终端和网络设备接口的IP地址按要求进行分配。本次测试的时
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-calendar fa-fw"></i>2018-12-08
+                            </span>
+                            <span class="publish-author">
+                                <i class="fa fa-user fa-fw"></i>
+                                
+                                刘绪冲
+                                
+                            </span>
+                        </div>
+                    </div>
+                    
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</article>
+    </div>
+</main>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        
+        <div class="col s12 m4 l4 social-link">
+            <a href="https://github.com/LIUXUCHONG" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+                <i class="fa fa-github fa-lg"></i>
+            </a>
+            <a href="mailto:1187766935@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+                <i class="fa fa-envelope fa-lg"></i>
+            </a>
+            <a href="https://im.qq.com/" class="tooltipped" data-tooltip="QQ: 1187766935" data-position="top" data-delay="50">
+                <i class="fa fa-qq fa-lg"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input" autofocus="">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-double-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+</body>
+</html>
