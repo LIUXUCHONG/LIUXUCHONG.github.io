@@ -1,0 +1,485 @@
+<!DOCTYPE HTML>
+<html lang="zh-Hans">
+<head>
+    <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content=", hexo-theme-matery">
+    <meta name="description" content="这是刘绪冲的博客">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>九尾狐</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+</head>
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">九尾狐</span>
+                    </a>
+                </div>
+
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">首页</a>
+    </li>
+    
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">标签</a>
+    </li>
+    
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">归档</a>
+    </li>
+    
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">九尾狐</div>
+        <div class="logo-desc">
+            
+            这是刘绪冲的博客
+            
+        </div>
+    </div>
+    <ul class="menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>归档
+            </a>
+        </li>
+        
+    </ul>
+    <div class="social-link">
+        <a href="https://github.com/LIUXUCHONG" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
+           data-position="top" data-delay="50">
+            <i class="fa fa-github fa-lg"></i>
+        </a>
+        <a href="mailto:1187766935@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我"
+           data-position="top" data-delay="50">
+            <i class="fa fa-envelope fa-lg"></i>
+        </a>
+        <a href="#!" class="tooltipped" data-tooltip="QQ号：1187766935" data-position="top" data-delay="50">
+            <i class="fa fa-qq fa-lg"></i>
+        </a>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        解决mysql：The server quit without updating PID file
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main class="content">
+
+    <!-- 文章内容详情 -->
+    <div id="artDetail" class="container">
+        <div class="card">
+            <div class="card-content article-info">
+                
+                <div class="author-info">
+                    <span>
+                        <i class="fa fa-calendar fa-fw"></i>2018-11-22
+                    </span>
+                </div>
+            </div>
+            <hr>
+            <div class="card-content article-card-content">
+                <div id="articleContent">
+                    <p><strong>一、卸载原来的mysql</strong><br><img src="http://i2.51cto.com/images/blog/201809/18/22a6191fcc08d1acf5881cbb4bcfe305.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""><br>出现这种错误极有可能是上一个mysql的残留文件没有删除，在/etc目录下查找有没有my.cnf文件，如果有删除它 rm -rf my.cnf。再去/usr/local和root目录下查看有没有mysql的相关文件，全部清除。然后在命令行输入命令：</p>
+<blockquote>
+<p>rpm -qa |grep mysql</p>
+</blockquote>
+<p><img src="http://i2.51cto.com/images/blog/201809/18/0967af76f61a4145e0861d72fdee485c.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""></p>
+<p>把列出的文件全部删除</p>
+<blockquote>
+<p>rpm -e –nodeps  软件名称</p>
+</blockquote>
+<p><img src="http://i2.51cto.com/images/blog/201809/18/f00de2367e6d8eac55425ee2911ba03a.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""><br>然后执行命令</p>
+<blockquote>
+<p>find / -name mysql</p>
+</blockquote>
+<p>意思是从根目录查找，有没有叫mysql的文件<br>把显示出来的文件全部删除</p>
+<blockquote>
+<p>rm -rf 文件路径/</p>
+</blockquote>
+<p><strong>二、安装mysql</strong></p>
+<p><strong>1.获取包</strong><br>全部卸载完成后开始安装mysql<br>在线下载：wget <a href="https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-5.7.22-linux-glibc2.12-x86_64.tar.gz" target="_blank" rel="noopener">https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-5.7.22-linux-glibc2.12-x86_64.tar.gz</a></p>
+<p>然后把压缩包解压到/usr/local目录</p>
+<blockquote>
+<p>tar zxvf mysql-5.7.22-linux-glibc2.12-x86_64.tar.gz /usr/local</p>
+</blockquote>
+<p>进入/usr/local/目录 把解压包重命名为mysql</p>
+<blockquote>
+<p>mv mysql-5.7.22-linux-glibc2.12-x86_64.tar.gz mysql</p>
+</blockquote>
+<p><strong>2.创建用户组和用户</strong></p>
+<p>创建用户组：</p>
+<blockquote>
+<p>groupadd mysql</p>
+</blockquote>
+<p>创建用户：</p>
+<blockquote>
+<p>useradd -r -g mysql mysql</p>
+</blockquote>
+<p>为了安全性，给mysql数据库创建专有用户，该用户只能访问mysql目录，不能访问系统其它目录</p>
+<p>另外不建议直接用root初始化mysql，否则连接mysql时会报错：[ERROR] Fatal error: Please read “Security” section of the manual to find out how to run mysqld as root!<br><strong>3.给mysql目录指定专有用户和用户组</strong><br>首先创建data目录：</p>
+<blockquote>
+<p>cd /usr/local/mysql</p>
+</blockquote>
+<blockquote>
+<p>mkdir data</p>
+</blockquote>
+<p>指定用户和用户组：</p>
+<blockquote>
+<p>cd /usr/local</p>
+</blockquote>
+<blockquote>
+<p>chown -R mysql mysql/</p>
+</blockquote>
+<blockquote>
+<p>chgrp -R mysql mysql/</p>
+</blockquote>
+<p>-R包含目录下所有和目录和文件</p>
+<p><strong>4.初始化mysql</strong></p>
+<blockquote>
+<p>cd /usr/local/mysql/bin</p>
+</blockquote>
+<blockquote>
+<p>./mysqld –initialize –user=mysql –basedir=/usr/local/mysql/ –datadir=/usr/local/mysql/data/ –lc_messages_dir=/usr/local/mysql/share –lc_messages=en_US</p>
+</blockquote>
+<p>记住生成的临时密码<br><img src="http://i2.51cto.com/images/blog/201809/18/46a6018639bfc17679bbfae6afd878ca.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""></p>
+<p>如果忘记密码或者想重新初始化，可以先将mysql/data目录中文件删除，然后再执行初始化命令<br><strong>5.配置my.cnf</strong><br>从5.7.17后mysql就没有默认的my_default.cnf文件，需要手动创建</p>
+<blockquote>
+<p>cd /etc</p>
+</blockquote>
+<blockquote>
+<p>cat&gt;&gt;my.cnf</p>
+</blockquote>
+<p>输入以下内容，ctrl+D退出</p>
+<blockquote>
+<p>[mysqld]<br>basedir=/usr/local/mysql/<br>datadir=/usr/local/mysql/data/</p>
+</blockquote>
+<p><strong>6.启动mysql</strong></p>
+<blockquote>
+<p>cd /usr/local/mysql/bin</p>
+</blockquote>
+<blockquote>
+<p>./mysqld_safe –user=mysql &amp;（回车返回命令行状态）</p>
+</blockquote>
+<p><strong>7.设为开机启动</strong></p>
+<blockquote>
+<p>cd /usr/local/mysql/support-files/</p>
+</blockquote>
+<blockquote>
+<p>cp mysql.server /etc/init.d/mysql</p>
+</blockquote>
+<blockquote>
+<p>vi /etc/init.d/mysql</p>
+</blockquote>
+<p>将mysql目录填上：</p>
+<blockquote>
+<p>basedir=/usr/local/mysql/</p>
+</blockquote>
+<blockquote>
+<p>datadir=/usr/local/mysql/data/</p>
+</blockquote>
+<p>授权：</p>
+<blockquote>
+<p>chmod +x /etc/init.d/mysql</p>
+</blockquote>
+<p>设为开机启动：</p>
+<blockquote>
+<p>chkconfig –add mysql</p>
+</blockquote>
+<p>service启动<br>重启服务：</p>
+<blockquote>
+<p>service mysql restart</p>
+</blockquote>
+<p>停止服务：</p>
+<blockquote>
+<p>service mysql stop</p>
+</blockquote>
+<p>启动服务：</p>
+<blockquote>
+<p>service mysql start</p>
+</blockquote>
+<p>查看服务：</p>
+<blockquote>
+<p>service mysql status</p>
+</blockquote>
+<p><strong>8.登录mysql修改密码授权远程登录</strong></p>
+<blockquote>
+<p>cd /usr/local/mysql/bin</p>
+</blockquote>
+<p>登录：</p>
+<blockquote>
+<p>mysql -u root -p    输入临时密码</p>
+</blockquote>
+<p>修改密码：</p>
+<blockquote>
+<p>set password=password(“root”);</p>
+</blockquote>
+<p>登录授权：</p>
+<blockquote>
+<p>grant all privileges on <em>.</em> to’root’ @’%’ identified by ‘root’</p>
+</blockquote>
+<p>授权生效：</p>
+<blockquote>
+<p>flush privileges</p>
+</blockquote>
+<p>完成！</p>
+
+                </div>
+                <hr/>
+
+                <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+                <div class="reprint">
+                    <p>
+                        <span class="reprint-tip">Reprint please specify: </span>
+                        <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
+                        <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                        <a href="/2018/11/22/解决mysql：The-server-quit-without-updating-PID-file/" class="b-link-green">解决mysql：The server quit without updating PID file</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: 'Thu Nov 22 2018 20:30:45 GMT+0800',
+        owner: 'LIUXUCHONG',
+        repo: 'liuxuchong.github.io',
+        oauth: {
+            client_id: 'f54de68b257c3f12e872',
+            client_secret: 'e9018bda13811bfed32a87ec29f532e2e108f4d5',
+        },
+    });
+
+    gitment.render('gitment-content');
+</script>
+        
+
+        
+
+        
+
+<article id="articles" class="container prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">Previous</div>
+            <div class="card">
+                <a href="/2018/11/30/配置安装光盘为yum源/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="配置安装光盘为yum源">
+                        
+                        <span class="card-title">配置安装光盘为yum源</span>
+                    </div>
+                    <div class="card-content article-content">
+                        <div class="summary">
+                            首先用vsphere连接上光盘创建一个光盘挂载目录
+
+[root@localhost /]# mkdir -p /mnt/cdrom/
+
+挂载光盘
+
+[root@localhost /]# mount /dev/cdrom /mnt/cdr
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-calendar fa-fw"></i>2018-11-30
+                            </span>
+                            <span class="publish-author">
+                                <i class="fa fa-user fa-fw"></i>
+                                
+                                刘绪冲
+                                
+                            </span>
+                        </div>
+                    </div>
+                    
+                </a>
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">Next</div>
+            <div class="card">
+                <a href="/2018/11/20/Windows安装apache和php/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Windows安装apache和php">
+                        
+                        <span class="card-title">Windows安装apache和php</span>
+                    </div>
+                    <div class="card-content article-content">
+                        <div class="summary">
+                            一、安装Apache首先下载apache安装包官方下载地址https://www.apachehaus.com/cgi-bin/download.plx#APACHE24VC14解压进入apache的conf目录，用记事本打开httpd.c
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-calendar fa-fw"></i>2018-11-20
+                            </span>
+                            <span class="publish-author">
+                                <i class="fa fa-user fa-fw"></i>
+                                
+                                刘绪冲
+                                
+                            </span>
+                        </div>
+                    </div>
+                    
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</article>
+    </div>
+</main>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        
+        <div class="col s12 m4 l4 social-link">
+            <a href="https://github.com/LIUXUCHONG" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+                <i class="fa fa-github fa-lg"></i>
+            </a>
+            <a href="mailto:1187766935@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+                <i class="fa fa-envelope fa-lg"></i>
+            </a>
+            <a href="https://im.qq.com/" class="tooltipped" data-tooltip="QQ: 1187766935" data-position="top" data-delay="50">
+                <i class="fa fa-qq fa-lg"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input" autofocus="">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-double-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+</body>
+</html>

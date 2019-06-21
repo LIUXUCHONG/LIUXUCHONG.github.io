@@ -1,0 +1,547 @@
+<!DOCTYPE HTML>
+<html lang="zh-Hans">
+<head>
+    <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content=", hexo-theme-matery">
+    <meta name="description" content="这是刘绪冲的博客">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>九尾狐</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+</head>
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">九尾狐</span>
+                    </a>
+                </div>
+
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">首页</a>
+    </li>
+    
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">标签</a>
+    </li>
+    
+    
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">归档</a>
+    </li>
+    
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">九尾狐</div>
+        <div class="logo-desc">
+            
+            这是刘绪冲的博客
+            
+        </div>
+    </div>
+    <ul class="menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                <i class="fa fa-link fa-lg fa-fw"></i>归档
+            </a>
+        </li>
+        
+    </ul>
+    <div class="social-link">
+        <a href="https://github.com/LIUXUCHONG" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
+           data-position="top" data-delay="50">
+            <i class="fa fa-github fa-lg"></i>
+        </a>
+        <a href="mailto:1187766935@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我"
+           data-position="top" data-delay="50">
+            <i class="fa fa-envelope fa-lg"></i>
+        </a>
+        <a href="#!" class="tooltipped" data-tooltip="QQ号：1187766935" data-position="top" data-delay="50">
+            <i class="fa fa-qq fa-lg"></i>
+        </a>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Hadoop集群环境搭建
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main class="content">
+
+    <!-- 文章内容详情 -->
+    <div id="artDetail" class="container">
+        <div class="card">
+            <div class="card-content article-info">
+                
+                <div class="author-info">
+                    <span>
+                        <i class="fa fa-calendar fa-fw"></i>2018-10-15
+                    </span>
+                </div>
+            </div>
+            <hr>
+            <div class="card-content article-card-content">
+                <div id="articleContent">
+                    <p><strong><code>第一部分：准备Linux环境</code></strong><br>创建虚拟机安装系统的步骤在这里就不讲了，详细步骤请看本人其他文章<br>打开建好的虚拟机<br><strong>一、修改Hostname</strong><br>1、 临时修改hostname</p>
+<blockquote>
+<p> hostname bigdata-01.liu.com</p>
+</blockquote>
+<p>这种修改方式，系统重启后就会失效<br>2、 永久修改hostname</p>
+<blockquote>
+<p>vim /etc/sysconfig/network</p>
+</blockquote>
+<p>打开后编辑如下内容</p>
+<blockquote>
+<p>NETWORKING=yes  #使用网络<br>HOSTNAME=bigdata-01.liu.com  #设置主机名</p>
+</blockquote>
+<p><strong>二、配置Host</strong></p>
+<blockquote>
+<p>vim /etc/hosts</p>
+</blockquote>
+<p>添加如下内容</p>
+<blockquote>
+<p>172.18.74.172 bigdata-01.liu.com</p>
+</blockquote>
+<p><strong>三、关闭防火墙</strong></p>
+<p>查看防火墙状态</p>
+<blockquote>
+<p>service iptables status</p>
+</blockquote>
+<p>临时关闭防火墙</p>
+<blockquote>
+<p>service iptables stop</p>
+</blockquote>
+<p>永久关闭防火墙(需要重启才能生效)</p>
+<blockquote>
+<p>chkconfig iptables off</p>
+</blockquote>
+<p><strong>四、关闭selinux</strong><br>selinux是Linux一个子安全机制，学习环境可以将它禁用</p>
+<blockquote>
+<p>vim /etc/sysconfig/selinux</p>
+</blockquote>
+<p>把SELINUX设置成disabled</p>
+<blockquote>
+<p>SELINUX=disabled</p>
+</blockquote>
+<p><strong>五、安装JDK</strong><br>检测系统是否安装jdk</p>
+<blockquote>
+<p>java -version</p>
+</blockquote>
+<p>如果显示有openjdk需要先卸载，再安装Oracle的jdk（其他版本的jdk对hadoop的一些命令不是很支持）</p>
+<blockquote>
+<p>rpm -qa | grep java</p>
+</blockquote>
+<p><img src="/2018/10/15/Hadoop集群环境搭建/1.png" alt=""><br>卸载openjdk，.noarch的文件可以不用删除</p>
+<blockquote>
+<p>rpm -e –nodeps java-1.7.0-openjdk-headless-1.7.0.191-2.6.15.4.e17_5.x86_64<br>rpm -e –nodeps java-1.7.0-openjdk-1.7.0.191-2.6.15.4.e17_5.x86_64</p>
+</blockquote>
+<p>然后再次使用rpm -qa | grep java 查看是否已经卸载openjdk，如果还有就再卸载一遍</p>
+<p>用xshell远程工具远程虚拟机，安装lrzsz命令</p>
+<blockquote>
+<p>yum -y install lrzsz</p>
+</blockquote>
+<p>导入jdk包并解压到 /opt/modules目录下</p>
+<blockquote>
+<p>rz<br>tar -zvxf jdk-8u181-linux-x64.tar.gz -C /opt/modules</p>
+</blockquote>
+<p>添加环境变量<br>设置JDK的环境变量 JAVA_HOME，需要修改配置文件/etc/profile，追加</p>
+<blockquote>
+<p>export JAVA_HOME=”/opt/modules/jdk1.8.0_181”<br>export PATH=$JAVA_HOME/bin:$PATH</p>
+</blockquote>
+<p><img src="/2018/10/15/Hadoop集群环境搭建/2.png" alt=""><br>修改完毕后，执行 source /etc/profile 使修改生效<br>再次执行 java –version,可以看见已经安装完成<br><img src="/2018/10/15/Hadoop集群环境搭建/3.png" alt=""></p>
+<p><strong>第二部分：hadoop安装</strong><br>完全分部式是真正利用多台Linux主机来进行部署Hadoop，对Linux机器集群进行规划，使得Hadoop各个模块分别部署在不同的多台机器上。<br><strong>一、环境准备</strong><br>1.克隆虚拟机<br>Vmware左侧选中要克隆的机器，这里对原有的BigData01机器进行克隆，虚拟机菜单中，选中管理菜单下的克隆命令。</p>
+<p>选择“创建完整克隆”，虚拟机名称为BigData02，选择虚拟机文件保存路径，进行克隆。</p>
+<p>再次克隆一个名为BigData03的虚拟机。<br>2.配置网络<br>修改网卡名称<br>在BigData02和BigData03机器上编辑网卡信息。执行sudo vim /etc/udev/rules.d/70-persistent-net.rules命令。因为是从BigData01机器克隆来的，所以会保留BigData01的网卡eth0，并且再添加一个网卡eth1。并且eth0的Mac地址和BigData01的地址是一样的，Mac地址不允许相同，所以要删除eth0，只保留eth1网卡，并且要将eth1改名为eth0。将修改后的eth0的mac地址复制下来，修改network-scripts文件中的HWADDR属性。</p>
+<blockquote>
+<p>vim /etc/sysconfig/network-scripts/ifcfg-eth0</p>
+</blockquote>
+<p>修改网络参数：</p>
+<p>BigData02机器IP改为172.18.74.173</p>
+<p>BigData03机器IP改为172.18.74.174<br>！！如果是在真实的服务器里搭建Hadoop环境就需要再建两个虚拟机，按照上面的步骤再来一遍了，服务器里克隆主机不是很理想！！<br>3.配置Hostname以及hosts<br>BigData02配置hostname为 bigdata-02.liu.com</p>
+<p>BigData03配置hostname为 bigdata-03.liu.com<br>BigData01、BigData02、BigData03三台机器hosts都配置为：</p>
+<blockquote>
+<p>172.18.74.172 bigdata-01.liu.com<br>172.18.74.173 bigdata-02.liu.com<br>172.18.74.174 bigdata-03.liu.com</p>
+</blockquote>
+<p>4.配置Windows上的SSH客户端</p>
+<p>在本地Windows中的SSH客户端上添加对BigData02、BigData03机器的SSH链接</p>
+<p><strong>二、服务器功能规划</strong></p>
+<table>
+<thead>
+<tr>
+<th>bigdata-01.liu.com</th>
+<th>bigdata-02.liu.com</th>
+<th>bigdata-03.liu.com</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NameNode</td>
+<td>ResourceManage</td>
+<td>SecondaryNameNode</td>
+</tr>
+<tr>
+<td>DataNode</td>
+<td>DataNode</td>
+<td>DataNode</td>
+</tr>
+<tr>
+<td>NodeManager</td>
+<td>NodeManager</td>
+<td>NodeManager</td>
+</tr>
+<tr>
+<td>HistoryServer</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>三、在第一台机器上安装新的Hadoop</strong><br>创建hadoop目录</p>
+<blockquote>
+<p>mkdir -p /opt/modules/app</p>
+</blockquote>
+<p>导入Hadoop压缩包并解压到Hadoop目录</p>
+<blockquote>
+<p>rz<br>tar -zxf /opt/sofeware/hadoop-2.7.4-with-centos-6.7.tar.gz -C /opt/modules/app/</p>
+</blockquote>
+<p>切换到/opt/modules/app/hadoop-2.7.4/etc/hadoop目录，配置该目录下的Hadoop JDK路径即修改hadoop-env.sh、mapred-env.sh、yarn-env.sh文件中的JDK路径:</p>
+<blockquote>
+<p>export JAVA_HOME=”/opt/modules/jdk1.8.0_181”</p>
+</blockquote>
+<p>配置core-site.xml<br>vim core-site.xml</p>
+<blockquote>
+<configuration><br> <property><br>   <name>fs.defaultFS</name><br>   <value>hdfs://bigdata-01.liu.com:8020</value><br> </property><br> <property><br>   <name>hadoop.tmp.dir</name><br>   <value>/opt/modules/app/hadoop-2.7.4/data/tmp</value><br> </property><br> <property><br>     <name>dfs.namenode.name.dir</name><br>     <value>file://${hadoop.tmp.dir}/dfs/name</value><br> </property><br> <property><br>     <name>dfs.datanode.data.dir</name><br>     <value>file://${hadoop.tmp.dir}/dfs/data</value><br> </property><br></configuration>
+</blockquote>
+<p>fs.defaultFS为NameNode的地址。</p>
+<p>hadoop.tmp.dir为hadoop临时目录的地址，默认情况下，NameNode和DataNode的数据文件都会存在这个目录下的对应子目录下。应该保证此目录是存在的，如果不存在，先创建。</p>
+<p>配置hdfs-site.xml<br>vim hdfs-site.xml</p>
+<blockquote>
+</blockquote>
+<configuration><br> <property><br>   <name>dfs.namenode.secondary.http-address</name><br>   <value>bigdata-03.liu.com:50090</value><br> </property><br></configuration>
+
+
+<p>dfs.namenode.secondary.http-address是指定secondaryNameNode的http访问地址和端口号，因为在规划中，我们将BigData03规划为SecondaryNameNode服务器,所以这里设置：bigdata-03.liu.com:50090<br>配置slaves<br>vim slaves</p>
+<blockquote>
+<p>bigdata-01.liu.com<br>bigdata-02.liu.com<br>bigdata-03.liu.com</p>
+</blockquote>
+<p>slaves文件是指定HDFS上有哪些DataNode节点</p>
+<p>配置yarn-site.xml<br>vim yarn-site.xml</p>
+<blockquote>
+<configuration><br>    <property><br>        <name>yarn.nodemanager.aux-services</name><br>        <value>mapreduce_shuffle</value><br>    </property><br>    <property><br>        <name>yarn.resourcemanager.hostname</name><br>        <value>bigdata-02.liu.com</value><br>    </property><br>    <property><br>        <name>yarn.log-aggregation-enable</name><br>        <value>true</value><br>    </property><br>    <property><br>        <name>yarn.log-aggregation.retain-seconds</name><br>        <value>106800</value><br>    </property><br></configuration>
+</blockquote>
+<p>根据规划yarn.resourcemanager.hostname这个指定resourcemanager服务器指向bigdata-02.liu.com</p>
+<p>yarn.log-aggregation-enable是配置是否启用日志聚集功能</p>
+<p>yarn.log-aggregation.retain-seconds是配置聚集的日志在HDFS上最多保存多长时间<br>配置mapred-site.xml<br>从mapred-site.xml.template复制一个mapred-site.xml文件</p>
+<blockquote>
+<p>cp mapred-site.xml.template mapred-site.xml</p>
+</blockquote>
+<p>vim mapred-site.xml</p>
+<blockquote>
+<configuration><br>    <property><br>        <name>mapreduce.framework.name</name><br>        <value>yarn</value><br>    </property><br>    <property><br>        <name>mapreduce.jobhistory.address</name><br>        <value>bigdata-01.liu.com:10020</value><br>    </property><br>    <property><br>        <name>mapreduce.jobhistory.webapp.address</name><br>        <value>bigdata-01.liu.com:19888</value><br>    </property><br></configuration>
+</blockquote>
+<p>mapreduce.framework.name设置mapreduce任务运行在yarn上</p>
+<p>mapreduce.jobhistory.address是设置mapreduce的历史服务器安装在BigData01机器上</p>
+<p>mapreduce.jobhistory.webapp.address是设置历史服务器的web页面地址和端口号<br><strong>四、设置SSH无密码登录</strong><br>Hadoop集群中的各个机器间会相互地通过SSH访问，每次访问都输入密码是不现实的，所以要配置各个机器间的SSH是无密码登录的<br>在BigData01上生成公钥</p>
+<blockquote>
+<p>ssh-keygen -t rsa<br> 一路回车，都设置为默认值，然后再当前用户的Home目录下的.ssh目录中会生成公钥文件（id_rsa.pub）和私钥文件（id_rsa），  .ssh是隐藏文件在home目录下ls -a就会显示出来</p>
+</blockquote>
+<p> 分发公钥</p>
+<blockquote>
+<p>ssh-copy-id bigdata-01.liu.com<br>ssh-copy-id bigdata-02.liu.com<br>ssh-copy-id bigdata-03.liu.com</p>
+</blockquote>
+<p><strong>五、分发Hadoop文件</strong><br>首先在其他两台机器上创建存放Hadoop的目录</p>
+<blockquote>
+<p>mkdir -p /opt/modules/app</p>
+</blockquote>
+<p>通过Scp分发</p>
+<blockquote>
+<p>du -sh /opt/modules/app/hadoop-2.7.4/share/doc<br>scp -r /opt/modules/app/hadoop-2.7.4/ bigdata-02.liu.com:/opt/modules/app<br>scp -r /opt/modules/app/hadoop-2.7.4/ bigdata-03.liu.com:/opt/modules/app</p>
+</blockquote>
+<p>格式NameNode<br>在NameNode机器bigdata-01上执行格式化:</p>
+<blockquote>
+<p>/opt/modules/app/hadoop-2.7.4/bin/hdfs namenode –format</p>
+</blockquote>
+<p>格式化后在 /opt/modules/app/hadoop-2.7.4/data/tmp/dfs/data/ 目录下会生成一个current目录，里面有一系列文件<br><img src="/2018/10/15/Hadoop集群环境搭建/4.png" alt=""><br>注意：<br>如果需要重新格式化NameNode,需要先将原来NameNode和DataNode下的文件全部删除，不然会报错，NameNode和DataNode所在的目录是在core-site.xml中hadoop.tmp.dir、dfs.namenode.name.dir、dfs.datanode.data.dir属性里配置的。<br>因为每次格式化，默认是创建一个集群ID，并写入NameNode和DataNode的VERSION文件中（VERSION文件所在目录为dfs/name/current 和 dfs/data/current），重新格式化时，默认会生成一个新的集群ID,如果不删除原来的目录，会导致namenode中的VERSION文件中是新的集群ID,而DataNode中是旧的集群ID，不一致时会报错。</p>
+<p><strong>六、启动集群</strong><br>切换到/opt/modules/app/hadoop-2.7.4目录下<br>启动HDFS</p>
+<blockquote>
+<p>/opt/modules/app/hadoop-2.7.4/sbin/start-dfs.sh</p>
+</blockquote>
+<p>jps查看已经启动的服务<br><img src="/2018/10/15/Hadoop集群环境搭建/5.png" alt=""><br>启动YARN</p>
+<blockquote>
+<p>/opt/modules/app/hadoop-2.7.4/sbin/start-yarn.sh</p>
+</blockquote>
+<p><img src="/2018/10/15/Hadoop集群环境搭建/6.png" alt=""></p>
+<p>也可以使用这条命令一步到位</p>
+<blockquote>
+<p>/opt/modules/app/hadoop-2.7.4/sbin/start-all.sh</p>
+</blockquote>
+<p>在BigData02上启动ResourceManager:</p>
+<blockquote>
+<p> sbin/yarn-daemon.sh start resourcemanager</p>
+</blockquote>
+<p>启动日志服务器<br>因为我们规划的是在BigData03服务器上运行MapReduce日志服务，所以要在BigData03上启动</p>
+<blockquote>
+<p>/opt/modules/app/hadoop-2.7.4/sbin/mr-jobhistory-daemon.sh start historyserver</p>
+</blockquote>
+<p><img src="/2018/10/15/Hadoop集群环境搭建/7.png" alt=""><br>查看HDFS Web页面<br><a href="http://bigdata-01.liu.com:50070/" target="_blank" rel="noopener">http://bigdata-01.liu.com:50070/</a><br>如果域名没有解析可以在搜索栏中输入ip+端口如：</p>
+<blockquote>
+<p>172.18.74.172:50070</p>
+</blockquote>
+<p><img src="/2018/10/15/Hadoop集群环境搭建/8.png" alt=""><br>查看YARN Web 页面<br><a href="http://bigdata-02.liu.com:8088/cluster" target="_blank" rel="noopener">http://bigdata-02.liu.com:8088/cluster</a></p>
+<blockquote>
+<p>172.18.74.173:8088/cluster</p>
+</blockquote>
+<p><img src="/2018/10/15/Hadoop集群环境搭建/9.png" alt=""><br>好啦，到这里Hadoop集群环境的搭建就完成啦。建议Ha友们搭建Hadoop环境时先去了解一下各个组件是什么这样更有利于你顺利的完成Hadoop环境的搭建，我的一些同学他们学这个比较早，那时候也没人了解Hadoop是什么，听他们说搭建了10天半个月的才搭建出来，我就是在他们的影响下逐渐了解了点Hadoop的知识，用了一天多的时间搭建好了，搭建过程中还遇到了不少突发情况，所以如果搭建过程中没有什么意外情况再加上提前了解过，半天就能搞定了，千万不要遇到困难就放弃，坚持一定会胜利的！！<br>。。。从前车马很慢，书信很远，一生只够爱一个人！！！</p>
+
+                </div>
+                <hr/>
+
+                <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+                <div class="reprint">
+                    <p>
+                        <span class="reprint-tip">Reprint please specify: </span>
+                        <a href="http://yoursite.com" class="b-link-green">九尾狐</a>
+                        <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                        <a href="/2018/10/15/Hadoop集群环境搭建/" class="b-link-green">Hadoop集群环境搭建</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: 'Mon Oct 15 2018 18:10:55 GMT+0800',
+        owner: 'LIUXUCHONG',
+        repo: 'liuxuchong.github.io',
+        oauth: {
+            client_id: 'f54de68b257c3f12e872',
+            client_secret: 'e9018bda13811bfed32a87ec29f532e2e108f4d5',
+        },
+    });
+
+    gitment.render('gitment-content');
+</script>
+        
+
+        
+
+        
+
+<article id="articles" class="container prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">Previous</div>
+            <div class="card">
+                <a href="/2018/10/18/master-jps-没有namenode问题/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="master jps 没有namenode问题">
+                        
+                        <span class="card-title">master jps 没有namenode问题</span>
+                    </div>
+                    <div class="card-content article-content">
+                        <div class="summary">
+                            在主节点机器上执行命令/opt/modules/app/hadoop-2.7.4/sbin/start-all.sh（相当于执行/opt/modules/app/hadoop-2.5.0/sbin/start-dfs.sh和/opt/mod
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-calendar fa-fw"></i>2018-10-18
+                            </span>
+                            <span class="publish-author">
+                                <i class="fa fa-user fa-fw"></i>
+                                
+                                刘绪冲
+                                
+                            </span>
+                        </div>
+                    </div>
+                    
+                </a>
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">Next</div>
+            <div class="card">
+                <a href="/2018/10/10/史上最详细版Centos6安装详细教程/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="史上最详细版Centos6安装详细教程">
+                        
+                        <span class="card-title">史上最详细版Centos6安装详细教程</span>
+                    </div>
+                    <div class="card-content article-content">
+                        <div class="summary">
+                            镜像CentOS-6.8-x86_64-bin-DVD1.ISO将下载好的镜像上传到服务器，并选择该镜像（详情请看上篇exsi镜像上传文章）
+一、安装开始开机选择第一项这里询问我们是否要对光盘进行校验,这里我们选择  “skip”  跳过点
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-calendar fa-fw"></i>2018-10-10
+                            </span>
+                            <span class="publish-author">
+                                <i class="fa fa-user fa-fw"></i>
+                                
+                                刘绪冲
+                                
+                            </span>
+                        </div>
+                    </div>
+                    
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</article>
+    </div>
+</main>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        
+        <div class="col s12 m4 l4 social-link">
+            <a href="https://github.com/LIUXUCHONG" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+                <i class="fa fa-github fa-lg"></i>
+            </a>
+            <a href="mailto:1187766935@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+                <i class="fa fa-envelope fa-lg"></i>
+            </a>
+            <a href="https://im.qq.com/" class="tooltipped" data-tooltip="QQ: 1187766935" data-position="top" data-delay="50">
+                <i class="fa fa-qq fa-lg"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input" autofocus="">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-double-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+</body>
+</html>

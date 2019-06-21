@@ -216,27 +216,22 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">Previous</div>
             <div class="card">
-                <a href="/2018/11/05/搭建ftp的yum源/">
+                <a href="/2018/11/01/esxi-centos7搭建nat和dhcp服务器/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="搭建ftp的yum源">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="esxi centos7搭建nat和dhcp服务器">
                         
-                        <span class="card-title">搭建ftp的yum源</span>
+                        <span class="card-title">esxi centos7搭建nat和dhcp服务器</span>
                     </div>
                     <div class="card-content article-content">
                         <div class="summary">
-                            在A机器上搭建ftp服务，B机器安装httpd首先搭建ftp
-
-[root@localhost ~]# yum -y install vsftpd*
-
-启动ftp服务
-
-[root@localhost ~]# /etc/init.d/vsf
+                            什么是NAT？
+NAT（Network address translation）即网络地址转换，作为一种过渡解决手段，可以用来减少对全球合法IP地址的需求。简单的说，NAT就是在内部专用网络中使用内部地址，而当内部节点要与外界网络发生联系时
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-calendar fa-fw"></i>2018-11-05
+                                <i class="fa fa-calendar fa-fw"></i>2018-11-01
                             </span>
                             <span class="publish-author">
                                 <i class="fa fa-user fa-fw"></i>
@@ -255,27 +250,29 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">Next</div>
             <div class="card">
-                <a href="/2018/10/30/配置安装光盘为yum源/">
+                <a href="/2018/10/28/RSA-host-key-has-changed-ssh公钥分发失败/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="配置安装光盘为yum源">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="RSA host key has changed,ssh公钥分发失败">
                         
-                        <span class="card-title">配置安装光盘为yum源</span>
+                        <span class="card-title">RSA host key has changed,ssh公钥分发失败</span>
                     </div>
                     <div class="card-content article-content">
                         <div class="summary">
-                            首先用vsphere连接上光盘创建一个光盘挂载目录
+                            分发公钥时出现下图错误
 
-[root@localhost /]# mkdir -p /mnt/cdrom/
+这可能是Linux服务器重新系统、openssh-server重装、更改IP导致的。
+输入以下命令即可
 
-挂载光盘
+ssh-keygen –R adress-ip-du-serveur
 
-[root@localhost /]# mount /dev/cdrom /mnt/cdr
+
+
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-calendar fa-fw"></i>2018-10-30
+                                <i class="fa fa-calendar fa-fw"></i>2018-10-28
                             </span>
                             <span class="publish-author">
                                 <i class="fa fa-user fa-fw"></i>
